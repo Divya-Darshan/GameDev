@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4hgl85xlmc58"]
+
+[ext_resource type="Texture2D" uid="uid://dbpq6gxwyw5mh" path="res://Char/gojo/idle/0-0.png" id="1_0t6sk"]
+[ext_resource type="Script" path="res://script/gojo.gd" id="1_exwdj"]
+[ext_resource type="Texture2D" uid="uid://b48fgh81dw511" path="res://Char/gojo/idle/0-1.png" id="2_pwp45"]
+[ext_resource type="Texture2D" uid="uid://bfvqk001hr6vw" path="res://Char/shadow.png" id="2_xwyyr"]
+[ext_resource type="Texture2D" uid="uid://b5ucy242b15a8" path="res://Char/gojo/idle/0-2.png" id="3_icvcb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o7i8d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0t6sk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pwp45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_icvcb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gs0p6"]
+
+[node name="gojo" type="CharacterBody2D"]
+position = Vector2(1, -11)
+script = ExtResource("1_exwdj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, 12)
+scale = Vector2(0.136576, -0.0515408)
+texture = ExtResource("2_xwyyr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 7)
+sprite_frames = SubResource("SpriteFrames_o7i8d")
+animation = &"idle"
+frame_progress = 0.287211
+offset = Vector2(0, -28.635)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 10)
+shape = SubResource("CircleShape2D_gs0p6")

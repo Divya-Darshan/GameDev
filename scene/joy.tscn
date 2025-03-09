@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c40mlro1uriau"]
+
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_c746c"]
+
+[node name="joy" type="CanvasLayer"]
+
+[node name="Virtual Joystick" parent="." instance=ExtResource("1_c746c")]
+modulate = Color(0, 0, 0, 1)
+offset_left = -11.0
+offset_top = -302.0
+offset_right = 289.0
+offset_bottom = -2.0
+pressed_color = Color(1, 1, 1, 1)

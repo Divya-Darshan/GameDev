@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjljnd53c3ltx"]
+
+[ext_resource type="Script" path="res://script/sw.gd" id="1_eaptb"]
+[ext_resource type="PackedScene" uid="uid://bkpwab5aew2us" path="res://Chars scene/knight.tscn" id="1_ws5fd"]
+[ext_resource type="PackedScene" uid="uid://djt20k28hdv4d" path="res://Chars scene/batgirl.tscn" id="2_lnvym"]
+[ext_resource type="Texture2D" uid="uid://dej1f1hj6ycra" path="res://Map/lobby/btn/left arrow.png" id="4_xv02k"]
+[ext_resource type="Texture2D" uid="uid://dbqbciea1pdwe" path="res://Map/lobby/btn/right arrow.png" id="5_uc3bo"]
+[ext_resource type="PackedScene" uid="uid://c4hgl85xlmc58" path="res://Chars scene/gojo.tscn" id="6_j3nbc"]
+
+[node name="sw" type="Node2D"]
+position = Vector2(581, 334)
+script = ExtResource("1_eaptb")
+
+[node name="Knight" parent="." instance=ExtResource("1_ws5fd")]
+position = Vector2(-1045, 12)
+
+[node name="batgirl" parent="." instance=ExtResource("2_lnvym")]
+position = Vector2(-925, 0)
+
+[node name="gojo" parent="." instance=ExtResource("6_j3nbc")]
+position = Vector2(-811, -27)
+up_direction = Vector2(0, 1)
+
+[node name="LeftArrow" type="Sprite2D" parent="."]
+position = Vector2(-148, -13)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_xv02k")
+
+[node name="RightArrow" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(143, -13)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_uc3bo")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -27)
+zoom = Vector2(3.5, 3.5)
