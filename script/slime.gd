@@ -24,6 +24,7 @@ func slime():
 	pass
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	
 	player = body
 	player_ch = true
 

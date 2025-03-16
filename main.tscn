@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=22 format=4 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="PackedScene" uid="uid://bkpwab5aew2us" path="res://Chars scene/knight.tscn" id="1_8tqmb"]
 [ext_resource type="PackedScene" uid="uid://c40mlro1uriau" path="res://scene/joy.tscn" id="3_33ww5"]
@@ -17,7 +17,6 @@
 [ext_resource type="Script" path="res://script/camera_2d.gd" id="12_hs1pl"]
 [ext_resource type="Script" path="res://script/ham.gd" id="12_xaqwq"]
 [ext_resource type="Texture2D" uid="uid://b6qve13nvqk3x" path="res://btn-img/GUI.png" id="13_6sbj4"]
-[ext_resource type="PackedScene" uid="uid://cr85dr36fwxfi" path="res://Chars scene/luffy.tscn" id="16_cv02s"]
 [ext_resource type="PackedScene" uid="uid://c2uu0ew0wk4mx" path="res://Enemy/scene/slime.tscn" id="17_oeu23"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lag0"]
@@ -309,6 +308,7 @@ offset_top = 116.0
 offset_right = 251.0
 offset_bottom = 156.0
 grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="settings/VBoxContainer"]
 
@@ -320,6 +320,7 @@ theme_override_icons/grabber = ExtResource("11_sw7k8")
 theme_override_icons/grabber_highlight = ExtResource("11_sw7k8")
 theme_override_icons/grabber_disabled = ExtResource("11_sw7k8")
 theme_override_icons/tick = ExtResource("12_57pe1")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="settings/VBoxContainer/TouchScreenButton/HSlider"]
 layout_mode = 0
@@ -331,6 +332,7 @@ scale = Vector2(0.963219, 0.912404)
 theme_override_fonts/font = ExtResource("4_gf7pg")
 theme_override_font_sizes/font_size = 46
 text = "Zoom"
+metadata/_edit_use_anchors_ = true
 
 [node name="joy" parent="." instance=ExtResource("3_33ww5")]
 
@@ -349,7 +351,7 @@ grow_vertical = 0
 scale = Vector2(0.5, 0.5)
 metadata/_edit_use_anchors_ = true
 
-[node name="t btn" type="TouchScreenButton" parent="btn/HBoxContainer"]
+[node name="t" type="TouchScreenButton" parent="btn/HBoxContainer"]
 texture_filter = 2
 position = Vector2(-481, -565)
 scale = Vector2(2, 2.044)
@@ -357,7 +359,7 @@ texture_normal = ExtResource("3_g8wod")
 texture_pressed = ExtResource("4_8c70f")
 passby_press = true
 
-[node name="b btn" type="TouchScreenButton" parent="btn/HBoxContainer"]
+[node name="b" type="TouchScreenButton" parent="btn/HBoxContainer"]
 texture_filter = 2
 position = Vector2(-665, -396)
 scale = Vector2(2, 2.044)
@@ -366,7 +368,7 @@ texture_pressed = ExtResource("6_x465f")
 passby_press = true
 visibility_mode = 1
 
-[node name="o btn" type="TouchScreenButton" parent="btn/HBoxContainer"]
+[node name="o" type="TouchScreenButton" parent="btn/HBoxContainer"]
 texture_filter = 2
 position = Vector2(-295, -396)
 scale = Vector2(2, 2.044)
@@ -374,7 +376,7 @@ texture_normal = ExtResource("7_mbywx")
 texture_pressed = ExtResource("8_vqmeh")
 passby_press = true
 
-[node name="x btn" type="TouchScreenButton" parent="btn/HBoxContainer"]
+[node name="x" type="TouchScreenButton" parent="btn/HBoxContainer"]
 texture_filter = 2
 position = Vector2(-481, -228)
 scale = Vector2(2, 2.044)
@@ -393,6 +395,7 @@ offset_top = 21.0
 offset_right = -62.0
 offset_bottom = 61.0
 grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="ham" type="TouchScreenButton" parent="ham/HBoxContainer"]
 texture_filter = 1
@@ -400,9 +403,6 @@ scale = Vector2(3, 2.985)
 texture_normal = SubResource("AtlasTexture_25bsk")
 visibility_mode = 1
 script = ExtResource("12_xaqwq")
-
-[node name="luffy" parent="." instance=ExtResource("16_cv02s")]
-position = Vector2(499, 504)
 
 [node name="Knight" parent="." instance=ExtResource("1_8tqmb")]
 position = Vector2(445, 505)
@@ -416,19 +416,17 @@ script = ExtResource("12_hs1pl")
 modulate = Color(0, 0, 0, 0.459)
 light_mask = 524288
 visibility_layer = 524288
-offset_left = -1583.0
-offset_top = 1436.0
-offset_right = -1533.0
-offset_bottom = 1478.0
-scale = Vector2(71.2043, -62.7874)
+offset_left = -1340.0
+offset_top = 427.0
+offset_right = -1311.0
+offset_bottom = 450.0
+scale = Vector2(86.2316, -58.5088)
+metadata/_edit_use_anchors_ = true
 
 [node name="slime" parent="." instance=ExtResource("17_oeu23")]
 position = Vector2(494, 116)
 
-[node name="slime2" parent="." instance=ExtResource("17_oeu23")]
-position = Vector2(1054, 116)
-
 [connection signal="value_changed" from="settings/VBoxContainer/TouchScreenButton/HSlider" to="Knight/Camera2D" method="_on_h_slider_value_changed"]
-[connection signal="pressed" from="btn/HBoxContainer/t btn" to="Knight" method="_on_t_btn_pressed"]
-[connection signal="pressed" from="btn/HBoxContainer/b btn" to="Knight" method="_on_b_btn_pressed"]
+[connection signal="pressed" from="btn/HBoxContainer/t" to="Knight" method="_on_t_pressed"]
+[connection signal="pressed" from="btn/HBoxContainer/b" to="Knight" method="_on_b_pressed"]
 [connection signal="pressed" from="ham/HBoxContainer/ham" to="ham/HBoxContainer/ham" method="_on_pressed"]

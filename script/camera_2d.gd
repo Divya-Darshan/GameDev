@@ -3,7 +3,7 @@ extends Camera2D
 @export var zoom_min: float = 1.0  # Allows really far zoom out
 @export var zoom_max: float = 9.0  # Allows really far zoom in
 @export var zoom_speed: float = 0.9
-@export var zoom_smooth_speed: float = 0.2
+@export var zoom_smooth_speed: float = 0.9  # Reduced for smoother transition
 
 var desired_zoom: float = 1.0
 var touch_start_position: Vector2
@@ -21,7 +21,7 @@ func _ready():
 	desired_zoom = zoom.x
 
 func _process(delta):
-	zoom = zoom.lerp(Vector2(desired_zoom, desired_zoom), zoom_smooth_speed)
+	zoom = zoom.lerp(Vector2(desired_zoom, desired_zoom), zoom_smooth_speed * delta * 10)
 
 func _on_h_slider_value_changed(value: float) -> void:
 	desired_zoom = clamp(value, zoom_min, zoom_max)
@@ -43,7 +43,7 @@ func _input(event):
 	# Detect touch drag (Move)
 	elif event is InputEventScreenDrag and is_touching and is_touching_slider:
 		var touch_delta = event.relative.x
-		var zoom_adjustment = touch_delta * 0.01  # Scale effect
+		var zoom_adjustment = touch_delta * 0.005  # Reduced effect for finer control
 
 		desired_zoom = clamp(desired_zoom - zoom_adjustment, zoom_min, zoom_max)
 

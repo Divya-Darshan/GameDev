@@ -9,9 +9,9 @@ var bow_timer = true
 var arrow = preload("res://scene/arrow.tscn")
 var last_direction = Vector2.RIGHT
 
-var acck = ["attack2", "attack1"]
+var acck = ["ack2", "ack1"]
 
-@onready var sprite = $AnimatedSprite2D  # Reference to AnimatedSprite2D
+@onready var sprite = $AnimatedSprite2D
 @onready var marker = $Marker2D
 
 var reset_timer: Timer
@@ -24,7 +24,7 @@ func _ready():
 	add_child(reset_timer)
 	
 	# Ensure that animation_finished is connected
-	sprite.animation_finished.connect(_on_animation_finished)
+	sprite.animation_finished.connect(_on_animation_finished) 
 
 func _physics_process(delta):
 	# Get movement input
@@ -40,8 +40,8 @@ func _physics_process(delta):
 			state = "idle"
 		else:
 			state = "walk"
-	
-	# Adjust speed if attacking
+
+
 	var current_speed = speed * (attack_speed_multiplier if is_attacking else 1)
 	velocity = dir * current_speed
 	move_and_slide()
@@ -61,7 +61,7 @@ func play_anime(d):
 
 func _on_animation_finished():
 	# Check if the finished animation was one of the attack animations.
-	if sprite.animation in ["attack", "attack2", "attack1"]:
+	if sprite.animation in ["ack1", "ack2", "ack1"]:
 		is_attacking = false
 		bow_eq = true
 		sprite.play("idle")
@@ -83,12 +83,12 @@ func _on_reset_timer_timeout():
 	bow_timer = true
 
 func _on_ackbtn_pressed() -> void:
-	# If an attack is already in progress, do nothing.
+
 	if is_attacking:
 		return
 	bow_eq = false
 	is_attacking = true
-	sprite.play(acck.pick_random())  # Randomly pick an attack animation
+	sprite.play(acck.pick_random())
 
 func _on_ackbtn_released() -> void:
-	bow_eq = true
+	bow_eq = true 
