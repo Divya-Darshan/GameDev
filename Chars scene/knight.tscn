@@ -297,10 +297,28 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g6sj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1d8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0h3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6sj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1d8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0h3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6sj8")
 }],
 "loop": false,
 "name": &"gethit",
-"speed": 5.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -395,7 +413,7 @@ texture_filter = 1
 position = Vector2(0, -74)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tc055")
-animation = &"idle"
+animation = &"death"
 offset = Vector2(4.985, 0)
 
 [node name="pl_hit" type="Area2D" parent="."]
@@ -405,4 +423,3 @@ position = Vector2(9, -27)
 shape = SubResource("RectangleShape2D_ssqj2")
 
 [connection signal="body_entered" from="pl_hit" to="." method="_on_pl_hit_body_entered"]
-[connection signal="body_exited" from="pl_hit" to="." method="_on_pl_hit_body_exited"]

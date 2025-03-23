@@ -1,6 +1,6 @@
 [gd_scene load_steps=55 format=3 uid="uid://djt20k28hdv4d"]
 
-[ext_resource type="Script" path="res://script/batgirl.gd" id="1_2xfip"]
+[ext_resource type="Script" uid="uid://b5576u0fu6qbo" path="res://script/batgirl.gd" id="1_2xfip"]
 [ext_resource type="Texture2D" uid="uid://dt85xor0s57w2" path="res://Char/battle girl/BattingGirl_attack02-Sheet.png" id="1_lwedh"]
 [ext_resource type="Texture2D" uid="uid://bfvqk001hr6vw" path="res://Char/shadow.png" id="2_8uvyf"]
 [ext_resource type="Texture2D" uid="uid://cgiirfcsdtkhv" path="res://Char/battle girl/BattingGirl_attack03-Sheet.png" id="2_ekwod"]
