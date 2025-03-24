@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c2uu0ew0wk4mx"]
+[gd_scene load_steps=25 format=3 uid="uid://c2uu0ew0wk4mx"]
 
 [ext_resource type="Texture2D" uid="uid://3e23kyy3bssj" path="res://Enemy/Slime red.png" id="1_n8svl"]
 [ext_resource type="Script" path="res://script/slime.gd" id="1_od0cr"]
@@ -155,51 +155,27 @@ animations = [{
 "speed": 9.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vpu1"]
-size = Vector2(16.4832, 14.0754)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_oh26m"]
-radius = 157.52
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ijq12"]
-radius = 17.5
+[sub_resource type="CircleShape2D" id="CircleShape2D_60pf3"]
 
 [node name="slime" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_od0cr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, 1.19209e-07)
-scale = Vector2(-0.121519, -0.0360001)
+position = Vector2(-2.38419e-07, 0)
+scale = Vector2(-0.0967714, -0.0307501)
 texture = ExtResource("2_d54mc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_3701o")
-animation = &"atk1"
-frame = 4
-frame_progress = 0.878287
+animation = &"die"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
-rotation = 1.5708
-scale = Vector2(0.187287, -0.620013)
-shape = SubResource("RectangleShape2D_2vpu1")
+[node name="range" type="Area2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
+scale = Vector2(8.98397, 9.12567)
+shape = SubResource("CircleShape2D_60pf3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_oh26m")
-
-[node name="hit_bot_slime_red" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_bot_slime_red"]
-position = Vector2(0, -13.5)
-shape = SubResource("CircleShape2D_ijq12")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="hit_bot_slime_red" to="." method="_on_hit_bot_slime_red_body_entered"]
-[connection signal="body_exited" from="hit_bot_slime_red" to="." method="_on_hit_bot_slime_red_body_exited"]
+[connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]

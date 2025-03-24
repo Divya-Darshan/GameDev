@@ -415,14 +415,14 @@ position = Vector2(445, 505)
 [node name="Camera2D" type="Camera2D" parent="Knight"]
 position = Vector2(15, -40)
 zoom = Vector2(5, 5)
-position_smoothing_enabled = true
-position_smoothing_speed = 8.0
+position_smoothing_speed = 2.0
+rotation_smoothing_speed = 8.0
 script = ExtResource("12_hs1pl")
 
 [node name="ColorRect" type="ColorRect" parent="Knight/Camera2D"]
 modulate = Color(0, 0, 0, 0.459)
-light_mask = 524288
-visibility_layer = 524288
+z_as_relative = false
+texture_filter = 1
 offset_left = -1340.0
 offset_top = 427.0
 offset_right = -1311.0

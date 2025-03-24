@@ -7,21 +7,15 @@ var ply_alive = true
 var ply_health = 100
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var area: Area2D = $Area2D
+@onready var area = $Area2D/CollisionShape2D
+
 
 func _ready(): 
-	await get_tree().process_frame  
-	
-	if sprite:
 		sprite.animation_finished.connect(_on_animated_sprite_2d_animation_finished)
-	else:
-		print("Error: AnimatedSprite2D not found!")
 
-	if area:
-		area.body_entered.connect(_on_pl_hit_body_entered)
-		area.body_exited.connect(_on_pl_hit_body_exited)
-	else:
-		print("Error: Area2D not found!")
+		
+func player():
+	pass
 
 func _physics_process(delta):
 	var dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -53,33 +47,6 @@ func attack(animation_name: String):
 	is_attacking = true
 	sprite.play(animation_name)
 
-# Mark the function as `async` to allow `await` to work
-func _on_pl_hit_body_entered(body: Node2D):
-	if body and body.name == "slime":
-		for i in range(10): 
-			await get_tree().create_timer(1).timeout
-			ply_health -= 10
-			
-			print(ply_health)
-			if ply_health == 0:
-				ply_alive = false
-				sprite.play("death")
-				await get_tree().create_timer(1).timeout
-				fade_out_and_remove()  # Fade out and remove player once health reaches 0
-				return  # Exit the loop if player is dead
-
-
-
-func fade_out_and_remove():
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "modulate:a", 0.0, 2)  
-	await tween.finished
-	queue_free()  # Remove the player from the scene after fading out
-
-		
-func _on_pl_hit_body_exited(body: Node2D):
-	if body:
-		pass
 
 func handle_touch_input(action: String):
-	pass
+	pass  

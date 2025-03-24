@@ -10,3 +10,7 @@ func handle_touch_input(action: String):
 			pass # 
 		"o":
 			pass 
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("Body entered:", body.name, "Type:", body.get_class())
