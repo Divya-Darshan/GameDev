@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c2uu0ew0wk4mx"]
+[gd_scene load_steps=26 format=3 uid="uid://c2uu0ew0wk4mx"]
 
 [ext_resource type="Texture2D" uid="uid://3e23kyy3bssj" path="res://Enemy/Slime red.png" id="1_n8svl"]
 [ext_resource type="Script" path="res://script/slime.gd" id="1_od0cr"]
@@ -157,6 +157,9 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_60pf3"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_804we"]
+radius = 12.5399
+
 [node name="slime" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_od0cr")
@@ -174,8 +177,15 @@ animation = &"die"
 [node name="range" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
-scale = Vector2(8.98397, 9.12567)
+scale = Vector2(8, 8.126)
 shape = SubResource("CircleShape2D_60pf3")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -10.5)
+shape = SubResource("CircleShape2D_804we")
 
 [connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

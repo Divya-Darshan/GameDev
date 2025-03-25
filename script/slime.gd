@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 		range_collision.set_deferred("disabled", true)  # Use set_deferred
 
 func _on_range_body_entered(body: Node2D) -> void:
-	if body.has_method("player"):  # Ensure this method exists in the player script
+	if body.has_method("player"): # Ensure this method exists in the player script
 		playerin_area = true
 		player = body
 
@@ -32,3 +32,10 @@ func _on_range_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
 		playerin_area = false
 		player = null  # Reset player when they leave
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	var event = $"../btn/HBoxContainer/Control/t"
+	if event.pressed:
+		print(body.name)
+		
