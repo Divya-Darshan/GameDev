@@ -7,15 +7,12 @@ var ply_alive = true
 var ply_health = 100
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var area = $Area2D/CollisionShape2D
-
+@onready var attack_area: Area2D = $AttackArea  # Ensure this node exists!
 
 func _ready(): 
+	# Ensure AnimatedSprite2D exists before connecting the signal
+	if sprite:
 		sprite.animation_finished.connect(_on_animated_sprite_2d_animation_finished)
-
-		
-func player():
-	pass
 
 func _physics_process(delta):
 	var dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -46,7 +43,3 @@ func attack(animation_name: String):
 		return
 	is_attacking = true
 	sprite.play(animation_name)
-
-
-func handle_touch_input(action: String):
-	pass  

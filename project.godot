@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="GAME"
+config/version="0.1"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://Food/Wine 2.png"
+config/icon="res://Potion/Red Potion 2.png"
 
 [autoload]
 
