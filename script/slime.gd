@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 50
+var speed = 60
 var health = 100
 var dead = false
 var player_in_area = false
@@ -9,14 +9,10 @@ var player
 
 @onready var sprite = $AnimatedSprite2D
 @onready var range_collision = $range/CollisionShape2D
-@onready var hitbox_area = $hitbox  # Ensure this is the actual Area2D node
 
 func _ready():
 	dead = false
-	# Connect the hitbox area signal to detect player entering
-	if hitbox_area:
-		hitbox_area.body_entered.connect(_on_hitbox_body_entered)
-		hitbox_area.body_exited.connect(_on_hitbox_body_exited)
+
 
 func eny():
 	pass
@@ -33,7 +29,7 @@ func _physics_process(delta: float) -> void:
 			else:
 				velocity = Vector2.ZERO  
 
-			move_and_slide()  
+			move_and_slide()
 			sprite.play("atk1")
 		else:
 			velocity = Vector2.ZERO
@@ -43,6 +39,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_range_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
+		print(body.name)
 		player_in_area = true
 		player = body
 
@@ -63,13 +60,3 @@ func die():
 	sprite.play("death")
 	await sprite.animation_finished
 	queue_free()
-
-# Hitbox body entered
-func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body.has_method("player"):
-		player_inside_hitbox = true
-
-# Hitbox body exited
-func _on_hitbox_body_exited(body: Node2D) -> void:
-	if body.has_method("player"):
-		player_inside_hitbox = false

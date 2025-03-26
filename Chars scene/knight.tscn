@@ -346,9 +346,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j78gu"]
-radius = 14.7602
-height = 29.5205
+[sub_resource type="CircleShape2D" id="CircleShape2D_667od"]
 
 [node name="Knight" type="CharacterBody2D"]
 collision_layer = 3
@@ -374,11 +372,11 @@ frame = 9
 frame_progress = 1.0
 offset = Vector2(4.985, 0)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="hitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, -21)
-scale = Vector2(7.52021, 2.71419)
-shape = SubResource("CapsuleShape2D_j78gu")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(2, -20)
+scale = Vector2(5.61853, 5.44517)
+shape = SubResource("CircleShape2D_667od")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

@@ -155,10 +155,9 @@ animations = [{
 "speed": 9.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_60pf3"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_p6k67"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_804we"]
-radius = 24.5
+[sub_resource type="CircleShape2D" id="CircleShape2D_60pf3"]
 
 [node name="slime" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -174,6 +173,11 @@ position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_3701o")
 animation = &"die"
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10.5)
+scale = Vector2(1.36994, 1.24064)
+shape = SubResource("CircleShape2D_p6k67")
+
 [node name="range" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
@@ -181,13 +185,5 @@ position = Vector2(0, -10.5)
 scale = Vector2(8, 8.126)
 shape = SubResource("CircleShape2D_60pf3")
 
-[node name="hitbox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(0, -10.5)
-shape = SubResource("CircleShape2D_804we")
-
 [connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]
-[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
-[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
