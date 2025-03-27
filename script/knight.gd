@@ -1,5 +1,7 @@
 extends "res://script/dry/BaseCharacter.gd"
 
+@onready var touch_button = $"../btn/HBoxContainer/Control/t"
+
 func handle_touch_input(action: String):
 	match action:
 		"t":
@@ -15,7 +17,10 @@ func  player():
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	print("Body entered:", body.name, "Type:", body.get_class())  # Print the type of the body
+	print(body.name) # Print the type of the body
 	if body.has_method("take_damage"):  # Check if the body has the 'take_damage' method
-		body.take_damage(10)  # Apply damage
-		print("💥 Enemy hit!")
+		#if touch_button.is_pressed():
+			print(touch_button.is_pressed())
+			body.take_damage(10)  # Apply damage
+			print("💥 Enemy hit!")
+		

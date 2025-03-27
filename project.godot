@@ -15,7 +15,7 @@ config/version="0.1"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/image="res://Food/Wine 2.png"
+boot_splash/image="res://btn-img/ps4/UI_Flat_Button02a_1.png"
 config/icon="res://Potion/Red Potion 2.png"
 
 [autoload]

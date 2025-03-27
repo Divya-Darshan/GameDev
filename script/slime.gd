@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 var speed = 60
-var health = 100
+var health = 30
 var dead = false
 var player_in_area = false
-var player_inside_hitbox = false  # Track if player is inside hitbox
+var player_inside_hitbox = true  # Track if player is inside hitbox
 var player
 
 @onready var sprite = $AnimatedSprite2D
@@ -39,7 +39,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_range_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
-		print(body.name)
 		player_in_area = true
 		player = body
 
@@ -47,16 +46,21 @@ func _on_range_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_in_area = false
 		player = null
+		
 
-# Take damage only when attacking inside hitbox
 func take_damage(amount: int):
 	if player_inside_hitbox:  # Only take damage if player is inside hitbox
 		health -= amount
+		print(health)
 		if health <= 0:
-			die()
+			dead = true  # Mark as dead to prevent movement
+			sprite.visible = true
+			sprite.modulate.a = 1.0  # Fully visible
+			sprite.play("death")
+			print("Enemy has 0 health, playing death animation...")
 
-func die():
-	dead = true
-	sprite.play("death")
-	await sprite.animation_finished
-	queue_free()
+			await sprite.animation_finished  # Wait for animation to finish
+
+			queue_free()  # Now remove the enemy
+
+			
