@@ -49,9 +49,9 @@ func _on_range_body_exited(body: Node2D) -> void:
 		
 
 func take_damage(amount: int):
+	print(health)
 	if player_inside_hitbox:  # Only take damage if player is inside hitbox
 		health -= amount
-		print(health)
 		if health <= 0:
 			dead = true  # Mark as dead to prevent movement
 			sprite.visible = true

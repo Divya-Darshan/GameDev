@@ -155,7 +155,8 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_p6k67"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_snxnv"]
+size = Vector2(14.0148, 16.0453)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_60pf3"]
 
@@ -176,9 +177,9 @@ frame = 5
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10.5)
-scale = Vector2(1.36994, 1.24064)
-shape = SubResource("CircleShape2D_p6k67")
+position = Vector2(0, -4.5)
+scale = Vector2(1.33796, 0.674877)
+shape = SubResource("RectangleShape2D_snxnv")
 
 [node name="range" type="Area2D" parent="."]
 

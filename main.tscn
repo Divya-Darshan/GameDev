@@ -435,6 +435,7 @@ position = Vector2(494, 116)
 
 [connection signal="value_changed" from="settings/VBoxContainer/TouchScreenButton/HSlider" to="Knight/Camera2D" method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="btn/HBoxContainer/Control/t" to="btn/HBoxContainer/Control" method="_on_t_pressed"]
+[connection signal="released" from="btn/HBoxContainer/Control/t" to="btn/HBoxContainer/Control" method="_on_t_released"]
 [connection signal="pressed" from="btn/HBoxContainer/Control/b" to="btn/HBoxContainer/Control" method="_on_b_pressed"]
 [connection signal="pressed" from="btn/HBoxContainer/Control/o" to="btn/HBoxContainer/Control" method="_on_o_pressed"]
 [connection signal="pressed" from="btn/HBoxContainer/Control/x" to="btn/HBoxContainer/Control" method="_on_x_pressed"]
