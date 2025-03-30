@@ -1,23 +1,23 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjljnd53c3ltx"]
 
 [ext_resource type="Script" path="res://script/sw.gd" id="1_eaptb"]
-[ext_resource type="PackedScene" uid="uid://bkpwab5aew2us" path="res://Chars scene/knight.tscn" id="1_ws5fd"]
 [ext_resource type="PackedScene" uid="uid://djt20k28hdv4d" path="res://Chars scene/batgirl.tscn" id="2_lnvym"]
+[ext_resource type="PackedScene" uid="uid://cr85dr36fwxfi" path="res://Chars scene/luffy.tscn" id="4_kddve"]
 [ext_resource type="PackedScene" uid="uid://c4hgl85xlmc58" path="res://Chars scene/gojo.tscn" id="6_j3nbc"]
 
 [node name="sw" type="Node2D"]
 position = Vector2(581, 334)
 script = ExtResource("1_eaptb")
 
-[node name="Knight" parent="." instance=ExtResource("1_ws5fd")]
-position = Vector2(-1045, 12)
-
 [node name="batgirl" parent="." instance=ExtResource("2_lnvym")]
 position = Vector2(-925, 0)
 
 [node name="gojo" parent="." instance=ExtResource("6_j3nbc")]
-position = Vector2(-811, -27)
+position = Vector2(-812, 13)
 up_direction = Vector2(0, 1)
+
+[node name="luffy" parent="." instance=ExtResource("4_kddve")]
+position = Vector2(-709, 13)
 
 [node name="Timer" type="Timer" parent="."]
 

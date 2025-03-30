@@ -50,7 +50,13 @@ func _input(event):
 		if slider:
 			slider.value = desired_zoom  # Sync slider with zoom
 
-# Function to check if the touch is inside the slider area
+# Function to check if the touch is inside the full area of the slider
 func is_touch_inside_slider(touch_position: Vector2) -> bool:
-	var slider_rect: Rect2 = slider.get_global_rect()
+	if slider == null:
+		return false
+	
+	var global_position = slider.global_position
+	var global_size = slider.get_size()  # Ensure full size is used
+	var slider_rect = Rect2(global_position, global_size)
+
 	return slider_rect.has_point(touch_position)

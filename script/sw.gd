@@ -2,7 +2,6 @@ extends Node2D
 
 # Declare PackedScene variables for each character's scene
 var gojo : PackedScene
-var knight : PackedScene
 var batgirl : PackedScene
 var luffy : PackedScene
 
@@ -17,11 +16,10 @@ var can_swipe : bool = true
 func _ready():
 	# Load character scenes
 	gojo = load("res://Chars scene/gojo.tscn")
-	knight = load("res://Chars scene/knight.tscn")
 	batgirl = load("res://Chars scene/batgirl.tscn")
 	luffy = load("res://Chars scene/luffy.tscn")
 	# Store them in an array for easy access
-	character_scenes = [ knight, batgirl, gojo, luffy]
+	character_scenes = [batgirl, gojo, luffy]
 	
 	# Load the first character (default to knight)
 	load_character(0)

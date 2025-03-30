@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://cr85dr36fwxfi"]
 
-[ext_resource type="Script" uid="uid://bj118p8w5q8ql" path="res://script/luffy.gd" id="1_nfeya"]
+[ext_resource type="Script" path="res://script/luffy.gd" id="1_nfeya"]
 [ext_resource type="Texture2D" uid="uid://bfvqk001hr6vw" path="res://Char/shadow.png" id="2_fagmm"]
 [ext_resource type="Texture2D" uid="uid://b5iedjcixjlaf" path="res://Char/luffy/ack2/200-0.png" id="3_5v2ca"]
 [ext_resource type="Texture2D" uid="uid://cx5fcwbfl3fkm" path="res://Char/luffy/idle/0-0.png" id="3_k5ewf"]
@@ -79,7 +79,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"ack2",
-"speed": 5.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -119,7 +119,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 8.0
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3g6of"]
@@ -139,6 +139,7 @@ position = Vector2(0, -29)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_w6nsv")
 animation = &"idle"
+frame_progress = 0.244892
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
