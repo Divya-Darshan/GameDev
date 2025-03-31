@@ -56,7 +56,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"ack1",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -130,7 +130,7 @@ position = Vector2(0, 13)
 script = ExtResource("1_nfeya")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -2)
+position = Vector2(0, 1)
 scale = Vector2(0.155626, -0.0261461)
 texture = ExtResource("2_fagmm")
 
@@ -138,8 +138,9 @@ texture = ExtResource("2_fagmm")
 position = Vector2(0, -29)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_w6nsv")
-animation = &"idle"
-frame_progress = 0.244892
+animation = &"ack1"
+frame = 7
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)

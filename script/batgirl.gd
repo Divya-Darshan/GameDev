@@ -57,7 +57,7 @@ func play_anime(d):
 
 func _on_animation_finished():
 	# Check if the finished animation was one of the attack animations.
-	if sprite.animation in ["attack", "attack2", "attack1"]:
+	if sprite.animation in ["attack2", "attack1"]:
 		is_attacking = false
 		sprite.play("idle")
 
