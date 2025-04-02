@@ -1,6 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://dbd84pkg5bk7n"]
+[gd_scene load_steps=26 format=3 uid="uid://dbd84pkg5bk7n"]
 
-[ext_resource type="Texture2D" uid="uid://bfvqk001hr6vw" path="res://Char/shadow.png" id="1_vh2lx"]
+[ext_resource type="Script" path="res://script/eny/blue_slime.gd" id="1_jis7d"]
 [ext_resource type="Texture2D" uid="uid://b4x1cg86jlh61" path="res://Enemy/Slime blue.png" id="2_d6irs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sm16j"]
@@ -108,7 +108,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"ack1",
-"speed": 7.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -131,7 +131,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"death",
-"speed": 7.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -151,25 +151,44 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mq66w"]
-size = Vector2(9, 6)
+[sub_resource type="CircleShape2D" id="CircleShape2D_nhwaf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4qv2r"]
+radius = 49.2544
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bfl7s"]
+radius = 14.0357
 
 [node name="blue_slime" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
-
-[node name="Shadow" type="Sprite2D" parent="."]
-position = Vector2(-1, 16)
-scale = Vector2(0.111317, 0.0317939)
-texture = ExtResource("1_vh2lx")
+script = ExtResource("1_jis7d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7i08e")
-animation = &"idle"
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 15)
-shape = SubResource("RectangleShape2D_mq66w")
+scale = Vector2(0.486551, 0.425186)
+shape = SubResource("CircleShape2D_nhwaf")
+
+[node name="range" type="Area2D" parent="."]
+position = Vector2(0, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
+shape = SubResource("CircleShape2D_4qv2r")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(-1, 9)
+shape = SubResource("CircleShape2D_bfl7s")
+
+[connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]

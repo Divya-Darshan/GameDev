@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cr85dr36fwxfi"]
+[gd_scene load_steps=33 format=3 uid="uid://cr85dr36fwxfi"]
 
 [ext_resource type="Script" path="res://script/luffy.gd" id="1_nfeya"]
 [ext_resource type="Texture2D" uid="uid://bfvqk001hr6vw" path="res://Char/shadow.png" id="2_fagmm"]
@@ -26,6 +26,9 @@
 [ext_resource type="Texture2D" uid="uid://cy4cg6lb21pwe" path="res://Char/luffy/ack1/900-3.png" id="14_btss3"]
 [ext_resource type="Texture2D" uid="uid://b2it1vmhlgt34" path="res://Char/luffy/ack1/900-4.png" id="15_ut03m"]
 [ext_resource type="Texture2D" uid="uid://cdketmll3ugd2" path="res://Char/luffy/ack1/900-5.png" id="16_a8non"]
+[ext_resource type="Texture2D" uid="uid://4j3lu74momkc" path="res://Char/luffy/death/5-4.png" id="18_tt4br"]
+[ext_resource type="Texture2D" uid="uid://dxnkkhnsebvt1" path="res://Char/luffy/death/5-8.png" id="19_tb3tj"]
+[ext_resource type="Texture2D" uid="uid://calniofuvq7u6" path="res://Char/luffy/death/5-9.png" id="20_sdbhg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w6nsv"]
 animations = [{
@@ -83,6 +86,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("18_tt4br")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_tb3tj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_sdbhg")
+}],
+"loop": false,
+"name": &"death",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("3_k5ewf")
 }, {
 "duration": 1.0,
@@ -125,8 +142,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_3g6of"]
 radius = 23.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovyw5"]
+
 [node name="luffy" type="CharacterBody2D"]
 position = Vector2(0, 13)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_nfeya")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -138,11 +159,21 @@ texture = ExtResource("2_fagmm")
 position = Vector2(0, -29)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_w6nsv")
-animation = &"ack1"
-frame = 7
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
 scale = Vector2(0.39967, 0.40087)
 shape = SubResource("CircleShape2D_3g6of")
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -20)
+scale = Vector2(2.87509, -4.37317)
+shape = SubResource("RectangleShape2D_ovyw5")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]

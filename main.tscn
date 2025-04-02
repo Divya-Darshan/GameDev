@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=15 format=4 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="PackedScene" uid="uid://c40mlro1uriau" path="res://scene/joy.tscn" id="3_33ww5"]
 [ext_resource type="Texture2D" uid="uid://b00rnglekyujx" path="res://btn-img/ps4/T_P5_Triangle_Color.png" id="3_g8wod"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://cgxdnl7gmxnya" path="res://btn-img/ps4/T_P5_Cross_Color.png" id="9_skesh"]
 [ext_resource type="Texture2D" uid="uid://ccllgkrok3lpp" path="res://btn-img/ps4/T_P5_Cross.png" id="10_fo5xh"]
 [ext_resource type="PackedScene" uid="uid://dbd84pkg5bk7n" path="res://Enemy/scene/blue_slime.tscn" id="12_1pkyb"]
-[ext_resource type="PackedScene" uid="uid://djt20k28hdv4d" path="res://Chars scene/batgirl.tscn" id="13_7hohb"]
 [ext_resource type="PackedScene" uid="uid://cr85dr36fwxfi" path="res://Chars scene/luffy.tscn" id="17_ksv5d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lag0"]
@@ -338,12 +337,23 @@ texture_pressed = ExtResource("10_fo5xh")
 passby_press = true
 
 [node name="blue_slime" parent="." instance=ExtResource("12_1pkyb")]
+position = Vector2(729, 524)
 
-[node name="batgirl" parent="." instance=ExtResource("13_7hohb")]
-position = Vector2(35, 6)
+[node name="blue_slime4" parent="." instance=ExtResource("12_1pkyb")]
+position = Vector2(896, 342)
 
-[node name="Camera2D" type="Camera2D" parent="batgirl"]
-position = Vector2(-35, 7)
-zoom = Vector2(5, 5)
+[node name="blue_slime2" parent="." instance=ExtResource("12_1pkyb")]
+position = Vector2(564, 606)
+scale = Vector2(1.61316, 1.66657)
+
+[node name="blue_slime3" parent="." instance=ExtResource("12_1pkyb")]
+position = Vector2(350, 453)
+scale = Vector2(1.61316, 1.66657)
 
 [node name="luffy" parent="." instance=ExtResource("17_ksv5d")]
+position = Vector2(656, 503)
+
+[node name="Camera2D" type="Camera2D" parent="luffy"]
+position = Vector2(0, -18)
+zoom = Vector2(5, 5)
+position_smoothing_speed = 10.0

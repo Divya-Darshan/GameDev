@@ -1,5 +1,12 @@
 extends CharacterBody2D
 
+var health = 100
+var alive = true
+var eny_inrange = false
+var can_attack = true
+
+var ack_cooldown = 1.3
+
 var speed = 300
 var state = "idle"
 var is_attacking = false
@@ -16,22 +23,26 @@ var last_direction = Vector2.RIGHT
 
 var reset_timer: Timer
 
+func player():
+	pass
+
 func _ready():
-	# Find the attack button in the scene
+	# Find the buttons in the scene
 	t_btn = get_node_or_null("../btn/HBoxContainer/t")
 	b_btn = get_node_or_null("../btn/HBoxContainer/b")
 	o_btn = get_node_or_null("../btn/HBoxContainer/o")
 	x_btn = get_node_or_null("../btn/HBoxContainer/x")
 	
-	# Ensure that the button signal is connected when the character is loaded
+	# Ensure that each button signal is connected correctly
 	if t_btn and not t_btn.pressed.is_connected(_on_t_pressed):
 		t_btn.pressed.connect(_on_t_pressed)
-	if b_btn and not b_btn.pressed.is_connected(_on_t_pressed):
-		b_btn.pressed.connect(_on_t_pressed)
-	if o_btn and not o_btn.pressed.is_connected(_on_t_pressed):
-		o_btn.pressed.connect(_on_t_pressed)
-	if x_btn and not x_btn.pressed.is_connected(_on_t_pressed):
-		x_btn.pressed.connect(_on_t_pressed)
+	if b_btn and not b_btn.pressed.is_connected(_on_b_pressed):
+		b_btn.pressed.connect(_on_b_pressed)  # Corrected function name
+	if o_btn and not o_btn.pressed.is_connected(_on_o_pressed):
+		o_btn.pressed.connect(_on_o_pressed)  # Corrected function name
+	if x_btn and not x_btn.pressed.is_connected(_on_x_pressed):
+		x_btn.pressed.connect(_on_x_pressed)  # Corrected function name
+
 
 	reset_timer = Timer.new()
 	reset_timer.wait_time = 1.0  # 1 second delay for bow arrow
@@ -43,6 +54,16 @@ func _ready():
 
 func _physics_process(delta):
 	# Get movement input
+	
+	eny_ack()
+	
+	if health == 0:
+		alive = false
+		sprite.play("death")
+		await sprite.animation_finished  # Wait for death animation to finish
+		sprite.frame = sprite.sprite_frames.get_frame_count("death") - 1  # Set to last frame
+		fade_out_and_free()
+	
 	var dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 	# Update last known direction if joystick is moved.
@@ -57,6 +78,12 @@ func _physics_process(delta):
 	# Update movement animations properly
 	update_state(dir)
 	update_animation(dir)
+	
+func fade_out_and_free():
+	var tween = get_tree().create_tween()
+	tween.tween_property(sprite, "modulate:a", 0, 1.0)  # Fade out over 1 second
+	await tween.finished
+	queue_free()
 
 func update_state(dir):
 	if is_attacking:
@@ -102,3 +129,29 @@ func _on_b_pressed() -> void:
 	# Flip attack animation based on last movement direction
 	if last_direction.x != 0:
 		sprite.flip_h = last_direction.x < 0
+
+
+func _on_o_pressed() -> void:
+	print('hello world!')
+
+
+func _on_x_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.has_method('eny'):
+		eny_inrange = true
+
+
+func _on_hitbox_body_exited(body: Node2D) -> void:
+	if body.has_method('eny'):
+		eny_inrange = false 
+		
+func eny_ack():
+	if can_attack and health > 0:
+		if eny_inrange:
+			health -= 10
+			can_attack = false
+			await get_tree().create_timer(ack_cooldown).timeout
+			can_attack = true
