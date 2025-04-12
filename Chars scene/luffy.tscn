@@ -156,7 +156,7 @@ sprite_frames = SubResource("SpriteFrames_w6nsv")
 animation = &"ack1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
+position = Vector2(0, -25)
 scale = Vector2(0.39967, 0.40087)
 shape = SubResource("CircleShape2D_3g6of")
 

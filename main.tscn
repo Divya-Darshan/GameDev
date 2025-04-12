@@ -349,6 +349,9 @@ zoom = Vector2(4, 4)
 [node name="Skeleton" parent="." instance=ExtResource("12_uxcwn")]
 position = Vector2(540, 395)
 
+[node name="Skeleton2" parent="." instance=ExtResource("12_uxcwn")]
+position = Vector2(784, 390)
+
 [node name="blue_slime" parent="." instance=ExtResource("12_1pkyb")]
 position = Vector2(802, 455)
 scale = Vector2(1.40683, 1.35445)
