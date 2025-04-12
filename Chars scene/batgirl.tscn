@@ -1,8 +1,7 @@
-[gd_scene load_steps=55 format=3 uid="uid://djt20k28hdv4d"]
+[gd_scene load_steps=54 format=3 uid="uid://djt20k28hdv4d"]
 
-[ext_resource type="Script" uid="uid://b5576u0fu6qbo" path="res://script/batgirl.gd" id="1_2xfip"]
+[ext_resource type="Script" path="res://script/batgirl.gd" id="1_2xfip"]
 [ext_resource type="Texture2D" uid="uid://dt85xor0s57w2" path="res://Char/battle girl/BattingGirl_attack02-Sheet.png" id="1_lwedh"]
-[ext_resource type="Texture2D" uid="uid://bfvqk001hr6vw" path="res://Char/shadow.png" id="2_8uvyf"]
 [ext_resource type="Texture2D" uid="uid://cgiirfcsdtkhv" path="res://Char/battle girl/BattingGirl_attack03-Sheet.png" id="2_ekwod"]
 [ext_resource type="Texture2D" uid="uid://cg414lvsnsjoq" path="res://Char/battle girl/BattingGirl_Hurt-Sheet.png" id="3_7pfrx"]
 [ext_resource type="Texture2D" uid="uid://cbvss1d2bjynk" path="res://Char/battle girl/BattingGirl_Idle-Sheet.png" id="4_6ak4a"]
@@ -355,11 +354,6 @@ animations = [{
 
 [node name="batgirl" type="CharacterBody2D"]
 script = ExtResource("1_2xfip")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2, 12)
-scale = Vector2(0.136576, -0.0515408)
-texture = ExtResource("2_8uvyf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fran6")

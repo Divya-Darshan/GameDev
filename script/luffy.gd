@@ -5,7 +5,7 @@ var alive = true
 var eny_inrange = false
 var can_attack = true
 
-var ack_cooldown = 1.3
+var ack_cooldown =  5.0
 
 var speed = 300
 var state = "idle"
@@ -58,10 +58,10 @@ func _physics_process(delta):
 	eny_ack()
 	
 	if health == 0:
+		#health = 100 # respawn the player after death
 		alive = false
 		sprite.play("death")
-		await sprite.animation_finished  # Wait for death animation to finish
-		sprite.frame = sprite.sprite_frames.get_frame_count("death") - 1  # Set to last frame
+		await get_tree().create_timer(0.7).timeout # Wait for death animation to finish
 		fade_out_and_free()
 	
 	var dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -80,9 +80,7 @@ func _physics_process(delta):
 	update_animation(dir)
 	
 func fade_out_and_free():
-	var tween = get_tree().create_tween()
-	tween.tween_property(sprite, "modulate:a", 0, 1.0)  # Fade out over 1 second
-	await tween.finished
+
 	queue_free()
 
 func update_state(dir):
@@ -152,6 +150,7 @@ func eny_ack():
 	if can_attack and health > 0:
 		if eny_inrange:
 			health -= 10
+			print("ply get damage from eny💥💥")
 			can_attack = false
 			await get_tree().create_timer(ack_cooldown).timeout
 			can_attack = true
