@@ -26,7 +26,6 @@ CharGlobal="*res://script/global/char_global.gd"
 
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
-window/handheld/orientation=6
 
 [dotnet]
 

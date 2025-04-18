@@ -1,13 +1,67 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4hgl85xlmc58"]
+[gd_scene load_steps=23 format=3 uid="uid://c4hgl85xlmc58"]
 
 [ext_resource type="Texture2D" uid="uid://dbpq6gxwyw5mh" path="res://Char/gojo/idle/0-0.png" id="1_0t6sk"]
-[ext_resource type="Script" uid="uid://dy70f3f2b4y50" path="res://script/gojo.gd" id="1_exwdj"]
+[ext_resource type="Script" path="res://script/gojo.gd" id="1_exwdj"]
 [ext_resource type="Texture2D" uid="uid://b48fgh81dw511" path="res://Char/gojo/idle/0-1.png" id="2_pwp45"]
 [ext_resource type="Texture2D" uid="uid://bfvqk001hr6vw" path="res://Char/shadow.png" id="2_xwyyr"]
 [ext_resource type="Texture2D" uid="uid://b5ucy242b15a8" path="res://Char/gojo/idle/0-2.png" id="3_icvcb"]
+[ext_resource type="Texture2D" uid="uid://lnlvylqi0cfl" path="res://Char/gojo/ack2/1200-0.png" id="3_kab85"]
+[ext_resource type="Texture2D" uid="uid://djkyv0nypsebr" path="res://Char/gojo/ack2/1200-1.png" id="4_g6am8"]
+[ext_resource type="Texture2D" uid="uid://daafir5alp83m" path="res://Char/gojo/ack2/1200-2.png" id="5_tacap"]
+[ext_resource type="Texture2D" uid="uid://dfj0wnwnuqdvo" path="res://Char/gojo/ack2/1200-3.png" id="6_q3fnb"]
+[ext_resource type="Texture2D" uid="uid://dqxvw7n0k5wdt" path="res://Char/gojo/ack1/310-0.png" id="7_x2tld"]
+[ext_resource type="Texture2D" uid="uid://5vp2ws1l8h77" path="res://Char/gojo/ack1/310-1.png" id="8_d2s8x"]
+[ext_resource type="Texture2D" uid="uid://cul51fqg3gkqi" path="res://Char/gojo/ack1/310-2.png" id="9_86s6j"]
+[ext_resource type="Texture2D" uid="uid://cxoby14w83o78" path="res://Char/gojo/ack1/310-3.png" id="10_v8ijk"]
+[ext_resource type="Texture2D" uid="uid://dpj47q63rvj3g" path="res://Char/gojo/ack1/310-4.png" id="11_sfmmf"]
+[ext_resource type="Texture2D" uid="uid://dhbhf6ufsxeay" path="res://Char/gojo/ack1/310-5.png" id="12_4y252"]
+[ext_resource type="Texture2D" uid="uid://4do247gdksyp" path="res://Char/gojo/walk/20-0.png" id="16_ukp70"]
+[ext_resource type="Texture2D" uid="uid://diodtosnwtoxl" path="res://Char/gojo/walk/20-1.png" id="17_1hf2l"]
+[ext_resource type="Texture2D" uid="uid://mkdmvm0feeic" path="res://Char/gojo/walk/20-2.png" id="18_lnfb4"]
+[ext_resource type="Texture2D" uid="uid://bh8efce4fnm4" path="res://Char/gojo/walk/20-3.png" id="19_ekh7c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o7i8d"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kab85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g6am8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tacap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q3fnb")
+}],
+"loop": false,
+"name": &"ack1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_x2tld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_d2s8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_86s6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v8ijk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sfmmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4y252")
+}],
+"loop": false,
+"name": &"ack2",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_0t6sk")
@@ -21,26 +75,57 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ukp70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_1hf2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_lnfb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ekh7c")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gs0p6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fprc4"]
 
 [node name="gojo" type="CharacterBody2D"]
 position = Vector2(1, -11)
 script = ExtResource("1_exwdj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2, 12)
+position = Vector2(0, 35)
 scale = Vector2(0.136576, -0.0515408)
 texture = ExtResource("2_xwyyr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, 7)
+position = Vector2(0, 28)
 sprite_frames = SubResource("SpriteFrames_o7i8d")
-animation = &"idle"
-frame_progress = 0.287211
+animation = &"ack2"
 offset = Vector2(0, -28.635)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, 10)
+position = Vector2(0, 27)
 shape = SubResource("CircleShape2D_gs0p6")
+
+[node name="hitbox" type="Area2D" parent="."]
+position = Vector2(0, 24)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -25)
+scale = Vector2(4.03127, 4.65094)
+shape = SubResource("RectangleShape2D_fprc4")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
