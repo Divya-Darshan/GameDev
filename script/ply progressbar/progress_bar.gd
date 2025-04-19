@@ -1,6 +1,6 @@
 extends TextureProgressBar
 
-@onready var player = get_node("../../gojo")  # Adjust this path if needed
+@onready var player = get_node("../..")  # Adjust this path if needed
 
 func _ready() -> void:
 	max_value = 100
@@ -15,4 +15,3 @@ func update():
 	# Safety check: clamp health between 0 and 100
 	var percent = clamp((player.health / 100.0) * 100.0, 0, 100)
 	value = percent
-	print("Health:", player.health, "-> ProgressBar value set to:", value)

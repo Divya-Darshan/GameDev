@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://7j64rj6kdg2b"]
+[gd_scene load_steps=38 format=3 uid="uid://7j64rj6kdg2b"]
 
 [ext_resource type="Script" path="res://script/skeleton.gd" id="1_jhi3l"]
 [ext_resource type="Texture2D" uid="uid://dhin45b6fl8hh" path="res://Enemy/Skeleton/Attack.png" id="2_q7uo0"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://balrs2y8qaa0q" path="res://Enemy/Skeleton/Idle.png" id="4_a3y88"]
 [ext_resource type="Texture2D" uid="uid://dgmcdtf71iu1s" path="res://Enemy/Skeleton/Take Hit.png" id="5_6ov80"]
 [ext_resource type="Texture2D" uid="uid://b2pd8j778plm2" path="res://Enemy/Skeleton/Walk.png" id="7_2olfv"]
+[ext_resource type="Texture2D" uid="uid://wh4b72x23hxw" path="res://ply healthbar/under.png" id="7_hp3vp"]
+[ext_resource type="Texture2D" uid="uid://7ofndoaifrmd" path="res://ply healthbar/over.png" id="8_wfpcy"]
+[ext_resource type="Script" path="res://script/eny pro/skeleton.gd" id="9_lprpc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhwaf"]
 
@@ -171,7 +174,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kr35i")
 }],
-"loop": false,
+"loop": true,
 "name": &"gethit",
 "speed": 9.0
 }, {
@@ -239,7 +242,27 @@ shape = SubResource("RectangleShape2D_qkh6w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7i08e")
-animation = &"ack1"
+animation = &"gethit"
+frame = 3
+frame_progress = 1.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.6923
+offset_top = -39.2465
+offset_right = 52.3077
+offset_bottom = -23.2465
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+texture_under = ExtResource("7_hp3vp")
+texture_progress = ExtResource("8_wfpcy")
+script = ExtResource("9_lprpc")
 
 [connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]

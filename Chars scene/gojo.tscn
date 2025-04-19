@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c4hgl85xlmc58"]
+[gd_scene load_steps=26 format=3 uid="uid://c4hgl85xlmc58"]
 
 [ext_resource type="Texture2D" uid="uid://dbpq6gxwyw5mh" path="res://Char/gojo/idle/0-0.png" id="1_0t6sk"]
 [ext_resource type="Script" path="res://script/gojo.gd" id="1_exwdj"]
@@ -19,6 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://diodtosnwtoxl" path="res://Char/gojo/walk/20-1.png" id="17_1hf2l"]
 [ext_resource type="Texture2D" uid="uid://mkdmvm0feeic" path="res://Char/gojo/walk/20-2.png" id="18_lnfb4"]
 [ext_resource type="Texture2D" uid="uid://bh8efce4fnm4" path="res://Char/gojo/walk/20-3.png" id="19_ekh7c"]
+[ext_resource type="Texture2D" uid="uid://wh4b72x23hxw" path="res://ply healthbar/under.png" id="20_u2cmt"]
+[ext_resource type="Texture2D" uid="uid://7ofndoaifrmd" path="res://ply healthbar/over.png" id="21_vwr5q"]
+[ext_resource type="Script" path="res://script/ply progressbar/progress_bar.gd" id="22_hhepk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o7i8d"]
 animations = [{
@@ -126,6 +129,23 @@ collision_mask = 3
 position = Vector2(0, -25)
 scale = Vector2(4.03127, 4.65094)
 shape = SubResource("RectangleShape2D_fprc4")
+
+[node name="health bar" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="health bar"]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -350.0
+offset_top = 57.0
+offset_right = -270.0
+offset_bottom = 73.0
+grow_horizontal = 0
+scale = Vector2(4.32, 4.32)
+texture_under = ExtResource("20_u2cmt")
+texture_progress = ExtResource("21_vwr5q")
+script = ExtResource("22_hhepk")
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]

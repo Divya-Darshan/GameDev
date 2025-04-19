@@ -8,7 +8,7 @@ var alive = true
 var eny_inrange = false
 var can_attack = true
 
-var ack_cooldown =  2.3
+var ack_cooldown =  2
 
 var speed = 300
 var state = "idle"
@@ -154,8 +154,8 @@ func eny_ack():
 		if eny_inrange:
 			health -= 10
 			currenthealth = health  # 🟢 Sync currenthealth!
-			helchg.emit()
 			print("ply get damage from eny💥💥")
 			can_attack = false
 			await get_tree().create_timer(ack_cooldown).timeout
 			can_attack = true
+			helchg.emit()

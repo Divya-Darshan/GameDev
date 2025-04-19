@@ -1,12 +1,9 @@
-[gd_scene load_steps=20 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=17 format=4 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="PackedScene" uid="uid://c40mlro1uriau" path="res://scene/joy.tscn" id="3_33ww5"]
 [ext_resource type="Texture2D" uid="uid://b00rnglekyujx" path="res://btn-img/ps4/T_P5_Triangle_Color.png" id="3_g8wod"]
 [ext_resource type="Texture2D" uid="uid://hvdxl1v3u0n3" path="res://Map/TX Tileset Grass.png" id="3_nvhit"]
-[ext_resource type="Texture2D" uid="uid://wh4b72x23hxw" path="res://ply healthbar/under.png" id="3_pwbna"]
-[ext_resource type="Script" path="res://script/ply progressbar/progress_bar.gd" id="3_s561v"]
 [ext_resource type="Texture2D" uid="uid://b7al3r3rbhks2" path="res://btn-img/ps4/T_P5_Triangle.png" id="4_8c70f"]
-[ext_resource type="Texture2D" uid="uid://7ofndoaifrmd" path="res://ply healthbar/over.png" id="4_kokvb"]
 [ext_resource type="Texture2D" uid="uid://p1a57k2arulh" path="res://btn-img/ps4/T_P5_Square_Color.png" id="5_55tqi"]
 [ext_resource type="Texture2D" uid="uid://bgjqbnpeo3e82" path="res://btn-img/ps4/T_P5_Square.png" id="6_x465f"]
 [ext_resource type="Texture2D" uid="uid://kwje44mbep8i" path="res://btn-img/ps4/T_P5_Circle_Color.png" id="7_mbywx"]
@@ -292,19 +289,6 @@ tile_map_data = PackedByteArray("AAD5/wEAAAAEAAoAAAD5/wIAAAACAAIAAAD5/wMAAAADAAg
 tile_set = SubResource("TileSet_7wwfm")
 
 [node name="joy" parent="." instance=ExtResource("3_33ww5")]
-
-[node name="health bar" type="CanvasLayer" parent="."]
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="health bar"]
-texture_filter = 1
-offset_left = 293.0
-offset_top = 537.0
-offset_right = 373.0
-offset_bottom = 553.0
-scale = Vector2(4.32, 4.32)
-texture_under = ExtResource("3_pwbna")
-texture_progress = ExtResource("4_kokvb")
-script = ExtResource("3_s561v")
 
 [node name="btn" type="CanvasLayer" parent="."]
 
