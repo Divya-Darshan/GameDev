@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c4hgl85xlmc58"]
+[gd_scene load_steps=27 format=3 uid="uid://c4hgl85xlmc58"]
 
 [ext_resource type="Texture2D" uid="uid://dbpq6gxwyw5mh" path="res://Char/gojo/idle/0-0.png" id="1_0t6sk"]
 [ext_resource type="Script" path="res://script/gojo.gd" id="1_exwdj"]
@@ -19,8 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://diodtosnwtoxl" path="res://Char/gojo/walk/20-1.png" id="17_1hf2l"]
 [ext_resource type="Texture2D" uid="uid://mkdmvm0feeic" path="res://Char/gojo/walk/20-2.png" id="18_lnfb4"]
 [ext_resource type="Texture2D" uid="uid://bh8efce4fnm4" path="res://Char/gojo/walk/20-3.png" id="19_ekh7c"]
-[ext_resource type="Texture2D" uid="uid://wh4b72x23hxw" path="res://ply healthbar/under.png" id="20_u2cmt"]
-[ext_resource type="Texture2D" uid="uid://7ofndoaifrmd" path="res://ply healthbar/over.png" id="21_vwr5q"]
+[ext_resource type="Texture2D" uid="uid://c0yxmstc1k72u" path="res://ply healthbar/HealthBar DARK.png" id="20_bm008"]
 [ext_resource type="Script" path="res://script/ply progressbar/progress_bar.gd" id="22_hhepk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o7i8d"]
@@ -100,6 +99,15 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_gs0p6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fprc4"]
+size = Vector2(20.7702, 32.1609)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3lyi"]
+atlas = ExtResource("20_bm008")
+region = Rect2(17, 164, 61, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlku1"]
+atlas = ExtResource("20_bm008")
+region = Rect2(18, 152, 59, 6)
 
 [node name="gojo" type="CharacterBody2D"]
 position = Vector2(1, -11)
@@ -113,7 +121,7 @@ texture = ExtResource("2_xwyyr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 28)
 sprite_frames = SubResource("SpriteFrames_o7i8d")
-animation = &"ack2"
+animation = &"ack1"
 offset = Vector2(0, -28.635)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -121,30 +129,39 @@ position = Vector2(0, 27)
 shape = SubResource("CircleShape2D_gs0p6")
 
 [node name="hitbox" type="Area2D" parent="."]
-position = Vector2(0, 24)
+position = Vector2(0, 27)
+scale = Vector2(0.32245, 0.195207)
 collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(0, -25)
-scale = Vector2(4.03127, 4.65094)
+position = Vector2(-1.19209e-07, -81.9643)
+scale = Vector2(5.35967, -7.65025)
 shape = SubResource("RectangleShape2D_fprc4")
 
 [node name="health bar" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="health bar"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="health bar"]
 texture_filter = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -350.0
-offset_top = 57.0
-offset_right = -270.0
-offset_bottom = 73.0
+offset_left = -408.0
+offset_top = 69.0
+offset_right = -309.0
+offset_bottom = 86.0
 grow_horizontal = 0
-scale = Vector2(4.32, 4.32)
-texture_under = ExtResource("20_u2cmt")
-texture_progress = ExtResource("21_vwr5q")
+scale = Vector2(6.5, 6.5)
+value = 100.0
+texture_under = SubResource("AtlasTexture_n3lyi")
+texture_progress = SubResource("AtlasTexture_vlku1")
+texture_progress_offset = Vector2(1, 1)
 script = ExtResource("22_hhepk")
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

@@ -8,7 +8,7 @@ var alive = true
 var eny_inrange = false
 var can_attack = true
 
-var ack_cooldown =  2
+var ack_cooldown =  1.5
 
 var speed = 300
 var state = "idle"
@@ -65,7 +65,7 @@ func _physics_process(delta):
 		alive = false
 		sprite.play("death")
 		await get_tree().create_timer(0.7).timeout # Wait for death animation to finish
-		fade_out_and_free()
+		queue_free()
 	
 	var dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
@@ -81,10 +81,8 @@ func _physics_process(delta):
 	# Update movement animations properly
 	update_state(dir)
 	update_animation(dir)
-	
-func fade_out_and_free():
 
-	queue_free()
+	
 
 func update_state(dir):
 	if is_attacking:
@@ -133,7 +131,9 @@ func _on_b_pressed() -> void:
 
 
 func _on_o_pressed() -> void:
-	print('hello world!')
+	health = 100
+	print(health)
+	helchg.emit() 
 
 
 func _on_x_pressed() -> void:
@@ -147,15 +147,13 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 
 func _on_hitbox_body_exited(body: Node2D) -> void:
 	if body.has_method('eny'):
-		eny_inrange = false 
+		eny_inrange = false
 		
 func eny_ack():
-	if can_attack and health > 0:
-		if eny_inrange:
-			health -= 10
-			currenthealth = health  # 🟢 Sync currenthealth!
-			print("ply get damage from eny💥💥")
-			can_attack = false
-			await get_tree().create_timer(ack_cooldown).timeout
-			can_attack = true
-			helchg.emit()
+	if can_attack and eny_inrange and health > 0:
+		health -= 5
+		print("💥 Player damaged! Health:", health)
+		helchg.emit()  # Signal to update health bar
+		can_attack = false
+		await get_tree().create_timer(ack_cooldown).timeout  # Wait for attack cooldown
+		can_attack = true

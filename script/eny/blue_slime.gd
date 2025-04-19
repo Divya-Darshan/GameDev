@@ -3,8 +3,8 @@ extends CharacterBody2D
 signal enyhelchg
 
 var speed := 40
-var stop_distance := 15
-var ack_cooldown := 0.6
+var stop_distance := 5
+var ack_cooldown := 0.5
 
 var health := 100
 var currenthealth := 100
@@ -14,16 +14,27 @@ var player_inrange := false
 var ply_inchase := false
 var player = null
 
+var bar_tween: Tween  # Tween for smooth health bar transitions
+
 @onready var t_btn = get_node_or_null("../btn/HBoxContainer/t")
 @onready var b_btn = get_node_or_null("../btn/HBoxContainer/b")
 @onready var o_btn = get_node_or_null("../btn/HBoxContainer/o")
 @onready var x_btn = get_node_or_null("../btn/HBoxContainer/x")
 @onready var sprite = $AnimatedSprite2D
+@onready var health_bar = $TextureProgressBar
 
 func _ready() -> void:
 	if t_btn and not t_btn.pressed.is_connected(_on_t_pressed):
 		t_btn.pressed.connect(_on_t_pressed)
-	# You can connect more buttons here if needed.
+	if b_btn and not b_btn.pressed.is_connected(_on_b_pressed):
+		b_btn.pressed.connect(_on_b_pressed)
+
+	# Health bar starts hidden and transparent
+	health_bar.visible = false
+	health_bar.modulate.a = 0
+
+func eny():
+	pass
 
 func _physics_process(delta: float) -> void:
 	if not alive:
@@ -55,7 +66,6 @@ func die():
 	sprite.play("death")
 	await sprite.animation_finished
 
-	# Fade out effect
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite, "modulate:a", 0, 0.8).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await tween.finished
@@ -65,11 +75,14 @@ func die():
 func _on_t_pressed() -> void:
 	ply_ack()
 
+func _on_b_pressed() -> void:
+	ply_ack()
+
 func ply_ack():
 	if can_attack and alive and player_inrange:
 		print("player Enemy took damage")
 		currenthealth -= 10
-		currenthealth = max(0, currenthealth)  # Ensure it doesn't go negative
+		currenthealth = max(0, currenthealth)
 		enyhelchg.emit()
 
 		if currenthealth <= 0:
@@ -84,11 +97,13 @@ func _on_range_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		player = body
 		ply_inchase = true
+		smooth_show_healthbar(true) #which display the with fade animation
 
 func _on_range_body_exited(body: Node2D) -> void:
 	if body == player:
 		player = null
 		ply_inchase = false
+		smooth_show_healthbar(false) #which disable the with fade animation
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
@@ -97,3 +112,25 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 func _on_hitbox_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_inrange = false
+
+func smooth_show_healthbar(show: bool) -> void:
+	if show and not health_bar.visible:
+		health_bar.visible = true
+		health_bar.modulate.a = 0
+
+	if bar_tween and bar_tween.is_valid():
+		bar_tween.kill()
+
+	bar_tween = get_tree().create_tween()
+
+	var target_alpha = 1.0 if show else 0.0
+
+	bar_tween.tween_property(
+		health_bar,
+		"modulate:a",
+		target_alpha,
+		0.4
+	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+
+	if not show:
+		bar_tween.tween_callback(func(): health_bar.visible = false)

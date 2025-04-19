@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3e23kyy3bssj"
-path="res://.godot/imported/Slime red.png-5dd87b2ac6de332df59239b5cd522dbc.ctex"
+path="res://.godot/imported/Slime red.png-1976cd7e8f4fd518cca15b2e9224a930.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemy/Slime red.png"
-dest_files=["res://.godot/imported/Slime red.png-5dd87b2ac6de332df59239b5cd522dbc.ctex"]
+source_file="res://Enemy/slime/Slime red.png"
+dest_files=["res://.godot/imported/Slime red.png-1976cd7e8f4fd518cca15b2e9224a930.ctex"]
 
 [params]
 

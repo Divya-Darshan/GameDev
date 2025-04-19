@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=19 format=4 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="PackedScene" uid="uid://c40mlro1uriau" path="res://scene/joy.tscn" id="3_33ww5"]
 [ext_resource type="Texture2D" uid="uid://b00rnglekyujx" path="res://btn-img/ps4/T_P5_Triangle_Color.png" id="3_g8wod"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://7j64rj6kdg2b" path="res://Enemy/scene/Skeleton.tscn" id="12_uxcwn"]
 [ext_resource type="PackedScene" uid="uid://52l6nfm306u" path="res://Enemy/scene/red_slime.tscn" id="13_obfw7"]
 [ext_resource type="PackedScene" uid="uid://c4hgl85xlmc58" path="res://Chars scene/gojo.tscn" id="14_1k648"]
+[ext_resource type="PackedScene" uid="uid://28hht6eccsl5" path="res://Enemy/scene/mus.tscn" id="14_f2ywo"]
+[ext_resource type="PackedScene" uid="uid://bagrxogyorj1e" path="res://Enemy/scene/ goblin.tscn" id="15_xg3q6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lag0"]
 texture = ExtResource("3_nvhit")
@@ -360,5 +362,11 @@ position = Vector2(638, 474)
 position = Vector2(3, -25)
 zoom = Vector2(4, 4)
 
-[node name="Skeleton" parent="." instance=ExtResource("12_uxcwn")]
-position = Vector2(368, 318)
+[node name="mus" parent="." instance=ExtResource("14_f2ywo")]
+position = Vector2(378, 455)
+
+[node name="goblin" parent="." instance=ExtResource("15_xg3q6")]
+position = Vector2(727, 198)
+
+[node name="Skeleton2" parent="." instance=ExtResource("12_uxcwn")]
+position = Vector2(823, 680)

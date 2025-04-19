@@ -1,9 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://dbd84pkg5bk7n"]
+[gd_scene load_steps=31 format=3 uid="uid://dbd84pkg5bk7n"]
 
 [ext_resource type="Script" path="res://script/eny/blue_slime.gd" id="1_jis7d"]
-[ext_resource type="Texture2D" uid="uid://b4x1cg86jlh61" path="res://Enemy/Slime blue.png" id="2_d6irs"]
-[ext_resource type="Texture2D" uid="uid://wh4b72x23hxw" path="res://ply healthbar/under.png" id="3_mgr46"]
-[ext_resource type="Texture2D" uid="uid://7ofndoaifrmd" path="res://ply healthbar/over.png" id="4_7renb"]
+[ext_resource type="Texture2D" uid="uid://b4x1cg86jlh61" path="res://Enemy/slime/Slime blue.png" id="2_d6irs"]
+[ext_resource type="Texture2D" uid="uid://bfvqk001hr6vw" path="res://Char/shadow.png" id="2_squqx"]
+[ext_resource type="Texture2D" uid="uid://c0yxmstc1k72u" path="res://ply healthbar/HealthBar DARK.png" id="3_gb7xx"]
 [ext_resource type="Script" path="res://script/eny pro/slime.gd" id="5_1kqhp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sm16j"]
@@ -165,10 +165,23 @@ radius = 49.2544
 [sub_resource type="CircleShape2D" id="CircleShape2D_bfl7s"]
 radius = 14.0357
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g6to"]
+atlas = ExtResource("3_gb7xx")
+region = Rect2(17, 133, 61, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tekn"]
+atlas = ExtResource("3_gb7xx")
+region = Rect2(18, 121, 59, 6)
+
 [node name="blue_slime" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_jis7d")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(-1, 15)
+scale = Vector2(0.0954737, 0.040874)
+texture = ExtResource("2_squqx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7i08e")
@@ -198,15 +211,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -14.0
-offset_right = 60.0
-offset_bottom = 2.0
+offset_left = -30.0
+offset_top = -26.0
+offset_right = 50.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-texture_under = ExtResource("3_mgr46")
-texture_progress = ExtResource("4_7renb")
+texture_under = SubResource("AtlasTexture_4g6to")
+texture_progress = SubResource("AtlasTexture_3tekn")
+texture_progress_offset = Vector2(1, 1)
 script = ExtResource("5_1kqhp")
 
 [connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
