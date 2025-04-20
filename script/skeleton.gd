@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal enyhelchg
 
-var speed = 40
+var speed = 45
 var stop_distance = 10
 var ack_cooldown = 0.5
 
@@ -80,20 +80,17 @@ func _on_range_body_entered(body: Node2D) -> void:
 		player = body
 		ply_inchase = true
 		sprite.play("walk")
-		
 
 func _on_range_body_exited(body: Node2D) -> void:
 	if not is_dead:
 		player = null
 		ply_inchase = false
-		
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method('player') :
 		player_inrange = true
 		sprite.play("ack1")
 		smooth_show_healthbar(true)
-		
 
 func _on_hitbox_body_exited(body: Node2D) -> void:
 	if body.has_method('player'):

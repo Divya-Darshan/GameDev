@@ -13,7 +13,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhwaf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4qv2r"]
-radius = 173.998
+radius = 129.072
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qkh6w"]
 
@@ -277,7 +277,7 @@ clip_children = 2
 position = Vector2(-33.8527, -975.936)
 scale = Vector2(8.8017, 38.8544)
 sprite_frames = SubResource("SpriteFrames_7i08e")
-animation = &"idle"
+animation = &"gethit"
 
 [connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]
