@@ -57,22 +57,6 @@ region = Rect2(900, 0, 150, 150)
 atlas = ExtResource("2_q7uo0")
 region = Rect2(1050, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mba77"]
-atlas = ExtResource("3_qm3ft")
-region = Rect2(0, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_et8hl"]
-atlas = ExtResource("3_qm3ft")
-region = Rect2(150, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vjqq1"]
-atlas = ExtResource("3_qm3ft")
-region = Rect2(300, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1jpl3"]
-atlas = ExtResource("3_qm3ft")
-region = Rect2(450, 0, 150, 150)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_jumtj"]
 atlas = ExtResource("5_6ov80")
 region = Rect2(0, 0, 150, 150)
@@ -87,6 +71,22 @@ region = Rect2(300, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kr35i"]
 atlas = ExtResource("5_6ov80")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orlvj"]
+atlas = ExtResource("3_qm3ft")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ams1"]
+atlas = ExtResource("3_qm3ft")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00tp1"]
+atlas = ExtResource("3_qm3ft")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soat1"]
+atlas = ExtResource("3_qm3ft")
 region = Rect2(450, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vjdeb"]
@@ -154,20 +154,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mba77")
+"texture": SubResource("AtlasTexture_jumtj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_et8hl")
+"texture": SubResource("AtlasTexture_fh8ca")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vjqq1")
+"texture": SubResource("AtlasTexture_1ixq5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1jpl3")
+"texture": SubResource("AtlasTexture_kr35i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orlvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ams1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00tp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soat1")
 }],
 "loop": false,
 "name": &"death",
-"speed": 8.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -277,7 +289,7 @@ clip_children = 2
 position = Vector2(-33.8527, -975.936)
 scale = Vector2(8.8017, 38.8544)
 sprite_frames = SubResource("SpriteFrames_7i08e")
-animation = &"gethit"
+animation = &"ack1"
 
 [connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]

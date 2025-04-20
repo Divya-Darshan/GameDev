@@ -75,6 +75,20 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_4y252")
 }],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_x2tld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_s4fon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4y252")
+}],
 "loop": false,
 "name": &"gethit",
 "speed": 8.0
@@ -137,7 +151,7 @@ texture = ExtResource("2_xwyyr")
 use_parent_material = true
 position = Vector2(0, 28)
 sprite_frames = SubResource("SpriteFrames_o7i8d")
-animation = &"ack2"
+animation = &"death"
 offset = Vector2(0, -28.635)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
