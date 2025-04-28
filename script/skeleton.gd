@@ -40,7 +40,7 @@ func _on_b_pressed() -> void:
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
-		return
+		return  # Early return if enemy is dead (no movement or actions)
 
 	if currenthealth <= 0:
 		die()
@@ -66,13 +66,19 @@ func _physics_process(delta: float) -> void:
 	move_and_collide(velocity * delta)
 
 func die():
+	if is_dead:
+		return  # Prevent multiple deaths
+
 	is_dead = true
 	sprite.play("death")
-	await sprite.animation_finished
+	await sprite.animation_finished  # Wait for death animation to finish
+
+	# Fade out the enemy before removal
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite, "modulate:a", 0, 0.8).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await tween.finished
 
+	# Free the enemy from memory after fading out
 	queue_free()
 
 func _on_range_body_entered(body: Node2D) -> void:
@@ -106,7 +112,7 @@ func ply_ack():
 		sprite.play("gethit")
 
 		if currenthealth <= 0:
-			die()
+			die()  # Call die if health goes to 0
 			return
 		
 		# Smooth transition for getting hit or taking damage

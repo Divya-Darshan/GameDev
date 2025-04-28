@@ -139,7 +139,7 @@ func play_gethit_animation() -> void:
 
 func skeleton_ack():
 	if can_attack and eny_inrange and health > 0:
-		health -= 4
+		health -= 1.6
 		helchg.emit()
 
 		if last_gethit_health - health >= 10:

@@ -139,6 +139,7 @@ atlas = ExtResource("20_bm008")
 region = Rect2(18, 152, 59, 6)
 
 [node name="gojo" type="CharacterBody2D"]
+y_sort_enabled = true
 position = Vector2(1, -11)
 script = ExtResource("1_exwdj")
 
@@ -192,6 +193,10 @@ texture_progress = SubResource("AtlasTexture_vlku1")
 texture_progress_offset = Vector2(1, 1)
 tint_under = Color(0, 0, 0, 1)
 script = ExtResource("22_hhepk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2, 0)
+zoom = Vector2(3, 3)
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]

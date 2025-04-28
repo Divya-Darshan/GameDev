@@ -262,6 +262,7 @@ scale = Vector2(2.19308, 3.37133)
 shape = SubResource("RectangleShape2D_qkh6w")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+y_sort_enabled = true
 texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
