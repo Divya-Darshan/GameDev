@@ -44,5 +44,5 @@ Want to try it right away on Android?
 
 ```bash
 curl -L -o app.apk https://raw.githubusercontent.com/Divya-Darshan/your-repo-name/main/app/app.apk
-
+```
 ⭐ Star the repo if you're excited for the full release! 🌟
