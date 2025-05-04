@@ -196,7 +196,7 @@ script = ExtResource("22_hhepk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2, 0)
-zoom = Vector2(3, 3)
+zoom = Vector2(2.5, 2.5)
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
