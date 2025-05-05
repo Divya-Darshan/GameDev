@@ -55,3 +55,9 @@ Clone the Repo:
 git clone https://github.com/Divya-Darshan/GameDev.git
 ```
 ⭐ Star the repo if you're excited for the full release! 🌟
+
+# My Project
+
+![GitHub last commit](https://img.shields.io/github/last-commit/octocat/Hello-World)
+![License](https://img.shields.io/github/license/octocat/Hello-World)
+

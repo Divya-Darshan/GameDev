@@ -144,15 +144,17 @@ position = Vector2(1, -11)
 script = ExtResource("1_exwdj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 35)
-scale = Vector2(0.136576, -0.0515408)
+position = Vector2(0, 34)
+scale = Vector2(0.119492, -0.0423713)
 texture = ExtResource("2_xwyyr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_as_relative = false
 use_parent_material = true
 position = Vector2(0, 28)
+scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_o7i8d")
-animation = &"death"
+animation = &"idle"
 offset = Vector2(0, -28.635)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -196,7 +198,7 @@ script = ExtResource("22_hhepk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2, 0)
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(4, 4)
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
