@@ -16,7 +16,7 @@ var is_attacking := false
 var attack_speed_multiplier := 0.10
 var last_direction := Vector2.RIGHT
 
-@onready var sprite := $AnimatedSprite2D
+@onready var sprite := $Sprite2D/AnimatedSprite2D
 @onready var marker := $Marker2D
 @onready var t_btn := get_node_or_null("../btn/HBoxContainer/t")
 @onready var b_btn := get_node_or_null("../btn/HBoxContainer/b")

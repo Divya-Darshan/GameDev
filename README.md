@@ -1,6 +1,6 @@
-# 🥷 Anime Combat Game (Alpha) 🎮
+# Not Nmaed Yet!🎮
 
-> ⚔️ A Godot-powered anime-style combat game with epic battles, fun characters, and real-time action — now in **alpha** for Android! 📱
+> A Godot-powered anime-style game — now in **alpha** for Android! 📱
 
 ---
 
@@ -11,7 +11,7 @@
 - 💀 Skeleton enemy with follow & attack AI  
 - ❤️ Dynamic health bars for all entities  
 - 🕹️ Joystick and pixel-style UI  
-- 📦 Android APK available for download
+- 📦 Android APK available for download <a href="https://raw.githubusercontent.com/Divya-Darshan/GameDev/main/app/app.apk"> Click Here!</a>
 
 ---
 
@@ -20,10 +20,8 @@
 📱 Download the latest **alpha build** from the [`/app`](./app) folder:
   
 <h2 align="center">
-  👉👉<a href="https://raw.githubusercontent.com/Divya-Darshan/GameDev/main/app/app.apk"><b>⬇️ CLICK HERE TO DOWNLOAD APK ⬇️</b></a>🟢
+  👉👉<a href="https://raw.githubusercontent.com/Divya-Darshan/GameDev/main/app/app.apk"><b>CLICK HERE TO DOWNLOAD APK</b></a>🟢
 </h2>
-
-
 
 ---
 
@@ -41,10 +39,9 @@ Built by [Divya Darshan](https://github.com/Divya-Darshan)
 
 ---
 
-
 ### 📦 Download the APK
 
-Wanna try it right away?
+Wanna try it right away on pc?
 
 ```bash
 curl -L -o app.apk https://raw.githubusercontent.com/Divya-Darshan/your-repo-name/main/app/app.apk

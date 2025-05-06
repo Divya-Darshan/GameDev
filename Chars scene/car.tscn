@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c4hgl85xlmc58"]
+[gd_scene load_steps=34 format=3 uid="uid://buhhg3uirbfak"]
 
 [ext_resource type="Texture2D" uid="uid://dbpq6gxwyw5mh" path="res://Char/gojo/idle/0-0.png" id="1_0t6sk"]
 [ext_resource type="Script" path="res://script/gojo.gd" id="1_exwdj"]
@@ -16,10 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://dpj47q63rvj3g" path="res://Char/gojo/ack1/310-4.png" id="11_sfmmf"]
 [ext_resource type="Texture2D" uid="uid://dhbhf6ufsxeay" path="res://Char/gojo/ack1/310-5.png" id="12_4y252"]
 [ext_resource type="Texture2D" uid="uid://cm4knabvd1c2n" path="res://Char/gojo/ack1/310-6.png" id="13_s4fon"]
-[ext_resource type="Texture2D" uid="uid://4do247gdksyp" path="res://Char/gojo/walk/20-0.png" id="16_ukp70"]
-[ext_resource type="Texture2D" uid="uid://diodtosnwtoxl" path="res://Char/gojo/walk/20-1.png" id="17_1hf2l"]
-[ext_resource type="Texture2D" uid="uid://mkdmvm0feeic" path="res://Char/gojo/walk/20-2.png" id="18_lnfb4"]
-[ext_resource type="Texture2D" uid="uid://bh8efce4fnm4" path="res://Char/gojo/walk/20-3.png" id="19_ekh7c"]
 [ext_resource type="Texture2D" uid="uid://c0yxmstc1k72u" path="res://ply healthbar/HealthBar DARK.png" id="20_bm008"]
 [ext_resource type="Script" path="res://script/ply progressbar/progress_bar.gd" id="22_hhepk"]
 
@@ -35,6 +31,36 @@ region = Rect2(17, 164, 61, 9)
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlku1"]
 atlas = ExtResource("20_bm008")
 region = Rect2(18, 152, 59, 6)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ewoeu"]
+load_path = "res://.godot/imported/0001.png-698e4091be49c55f1ceffa78c78fd22a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c5yer"]
+load_path = "res://.godot/imported/0002.png-fb813370c1986e421c1db0a8b4ce0456.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8avkg"]
+load_path = "res://.godot/imported/0003.png-22ab06ea28a91f8428039a1cd33c99bf.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nloka"]
+load_path = "res://.godot/imported/0004.png-7575dcfc470f287f6dfeae98b324ae0a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7w6s0"]
+load_path = "res://.godot/imported/0005.png-851008dfb3daf2e9afe78c44ffd6ec35.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dg1gv"]
+load_path = "res://.godot/imported/0006.png-696d1a84822772327a455dd069e2c764.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ud4vo"]
+load_path = "res://.godot/imported/0007.png-c769a918aee6a232592c71ddefa26e98.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gpjmu"]
+load_path = "res://.godot/imported/0008.png-5e73aaf4e8db6eaa761f2350de99f95e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xa5ao"]
+load_path = "res://.godot/imported/0009.png-f0e91a6806dfe40027efe5a4c5ab3db2.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o6kcl"]
+load_path = "res://.godot/imported/0010.png-7715c77dbe5543aa3ef536dd0f7bf5ef.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o7i8d"]
 animations = [{
@@ -122,20 +148,38 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_ukp70")
+"texture": SubResource("CompressedTexture2D_ewoeu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_1hf2l")
+"texture": SubResource("CompressedTexture2D_c5yer")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_lnfb4")
+"texture": SubResource("CompressedTexture2D_8avkg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_ekh7c")
+"texture": SubResource("CompressedTexture2D_nloka")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_7w6s0")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_dg1gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_ud4vo")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_gpjmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_xa5ao")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_o6kcl")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 7.0
+"speed": 10.0
 }]
 
 [node name="gojo" type="CharacterBody2D"]
@@ -197,9 +241,8 @@ use_parent_material = true
 position = Vector2(0, 141.605)
 scale = Vector2(8.36876, -23.6009)
 sprite_frames = SubResource("SpriteFrames_o7i8d")
-animation = &"ack1"
-frame = 3
-frame_progress = 1.0
+animation = &"walk"
+frame_progress = 0.833538
 offset = Vector2(0, -28.635)
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
