@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=17 format=4 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="Script" path="res://script/spawner/main.gd" id="1_fkgq3"]
 [ext_resource type="Texture2D" uid="uid://nc2wgodmdjm6" path="res://Map/zeo254-completed-commission.png" id="2_x7nov"]
 [ext_resource type="Texture2D" uid="uid://dcn6l5t6a3qoq" path="res://btn-img/ps4/gdb-playstation-2.png" id="3_4lq1o"]
 [ext_resource type="PackedScene" uid="uid://c40mlro1uriau" path="res://scene/joy.tscn" id="3_33ww5"]
+[ext_resource type="PackedScene" uid="uid://x3dwqi4gsllu" path="res://env/small_tree.tscn" id="6_qt54t"]
 [ext_resource type="PackedScene" uid="uid://c4hgl85xlmc58" path="res://Chars scene/gojo.tscn" id="14_1k648"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dkswf"]
@@ -118,7 +119,6 @@ tile_set = SubResource("TileSet_7wwfm")
 [node name="btn" type="CanvasLayer" parent="."]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="btn"]
-modulate = Color(1, 1, 1, 0.65098)
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -162,5 +162,17 @@ texture_normal = SubResource("AtlasTexture_170kf")
 texture_pressed = SubResource("AtlasTexture_1niwf")
 passby_press = true
 
+[node name="small-tree" parent="." instance=ExtResource("6_qt54t")]
+position = Vector2(507, 351)
+
+[node name="cycle" type="ColorRect" parent="."]
+visible = false
+self_modulate = Color(0, 0, 0, 0.486275)
+z_index = 4096
+z_as_relative = false
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(35.1221, 24.106)
+
 [node name="gojo" parent="." instance=ExtResource("14_1k648")]
-position = Vector2(456, 317)
+position = Vector2(566, 463)

@@ -184,22 +184,20 @@ script = ExtResource("22_hhepk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2, 0)
-zoom = Vector2(4, 4)
+zoom = Vector2(3, 3)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 34)
-scale = Vector2(0.119492, -0.0423713)
+position = Vector2(-1, 34)
+scale = Vector2(0.15885, -0.058967)
 texture = ExtResource("2_xwyyr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
 z_as_relative = false
 use_parent_material = true
-position = Vector2(0, 141.605)
-scale = Vector2(8.36876, -23.6009)
+position = Vector2(6.29525, 101.752)
+scale = Vector2(6.29525, -16.9587)
 sprite_frames = SubResource("SpriteFrames_o7i8d")
-animation = &"ack1"
-frame = 3
-frame_progress = 1.0
+animation = &"idle"
 offset = Vector2(0, -28.635)
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
