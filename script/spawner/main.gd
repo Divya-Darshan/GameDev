@@ -145,3 +145,4 @@ func despawn_active_mobs():
 			mobs.erase(mob)
 			mob_last_interaction.erase(mob)
 			active_mobs.erase(mob)
+			print("hello world")

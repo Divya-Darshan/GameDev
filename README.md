@@ -1,6 +1,7 @@
 # Not Named Yet!🎮
 
 > A Godot-powered anime-style game — now in **alpha** for Android! 📱
+![Survival](https://img.shields.io/badge/survival-red?style=flat-square) ![Godot](https://img.shields.io/badge/engine-godot_4-blue?logo=godot-engine&style=flat-square) ![Platform](https://img.shields.io/badge/platform-mobile--first-green?style=flat-square) ![Status](https://img.shields.io/badge/status-in--development-yellow?style=flat-square)
 
 ---
 
