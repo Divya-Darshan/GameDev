@@ -1,4 +1,4 @@
-# Not Nmaed Yet!🎮
+# Not Named Yet!🎮
 
 > A Godot-powered anime-style game — now in **alpha** for Android! 📱
 
