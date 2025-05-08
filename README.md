@@ -3,11 +3,12 @@
 > A Godot-powered anime-style game — now in **alpha** for Android! 📱
 
 <p align="center">
-  <img src="https://img.shields.io/badge/genre-Survival--pink?style=flat-square" alt="Genre">
+  <img src="https://img.shields.io/badge/genre-Survival-red?style=flat-square" alt="Genre">
   <img src="https://img.shields.io/badge/engine-godot_4-blue?logo=godot-engine&style=flat-square" alt="Engine">
   <img src="https://img.shields.io/badge/platform-mobile--first-green?style=flat-square" alt="Platform">
   <img src="https://img.shields.io/badge/status-in--development-yellow?style=flat-square" alt="Status">
 </p>
+
 
 ---
 
