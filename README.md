@@ -7,7 +7,6 @@
 ## 🔥 Features
 
 - 👊 Real-time combat system  
-- 💥 Player & enemy attack animations  
 - 💀 Skeleton enemy with follow & attack AI  
 - ❤️ Dynamic health bars for all entities  
 - 🕹️ Joystick and pixel-style UI  

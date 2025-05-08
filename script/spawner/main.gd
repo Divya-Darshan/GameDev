@@ -84,7 +84,7 @@ func spawn_random_enemies():
 		mobs.append(enemy_scene)
 		active_mobs.append(enemy_scene)
 		mob_last_interaction[enemy_scene] = Time.get_ticks_msec() / 1000
-		apply_smooth_fade_in_effect(enemy_scene)
+		apply_fade_in_effect(enemy_scene)
 
 func get_spawn_position_near_random_player() -> Vector2:
 	if players.is_empty():
@@ -100,7 +100,7 @@ func get_spawn_position_near_random_player() -> Vector2:
 	var offset = Vector2(cos(angle), sin(angle)) * distance
 	return player.global_position + offset
 
-func apply_smooth_fade_in_effect(mob):
+func apply_fade_in_effect(mob):
 	mob.modulate.a = 0
 	var tween = create_tween()
 	tween.tween_property(mob, "modulate:a", 1, 1.0)
@@ -109,7 +109,7 @@ func apply_smooth_fade_in_effect(mob):
 # New function to check and remove any inactive or stuck mobs during the daytime
 func check_for_dead_mobs():
 	var now = Time.get_ticks_msec() / 1000
-	for mob in mobs.duplicate():
+	for mob in mobs.duplicate():  # Ensure that we're iterating through a copy of mobs
 		if not is_instance_valid(mob):
 			continue
 
@@ -120,12 +120,12 @@ func check_for_dead_mobs():
 
 		# If it's daytime (morning), make sure all mobs are checked and removed
 		if not is_active:
-			if mob.has_method("die"):
+			if mob.has_method("die"):  # Check if the mob has a 'die' method
 				await mob.call("die")  # Play death animation if mob has a die method
 			else:
 				mob.queue_free()  # Directly free mob if no death method
-			mobs.erase(mob)
-			mob_last_interaction.erase(mob)
+			mobs.erase(mob)  # Remove the mob from the mobs array
+			mob_last_interaction.erase(mob)  # Remove the mob's last interaction record
 
 func get_nearest_player_distance(pos: Vector2) -> float:
 	var min_dist = INF
