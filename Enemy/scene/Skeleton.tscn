@@ -13,7 +13,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhwaf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4qv2r"]
-radius = 129.072
+radius = 114.889
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qkh6w"]
 

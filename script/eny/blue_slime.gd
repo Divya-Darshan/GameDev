@@ -9,6 +9,7 @@ var ack_cooldown := 0.5
 var health := 100
 var currenthealth := 100
 var alive := true
+var is_dead := false  # <-- Added for safe despawn handling
 var can_attack := true
 var player_inrange := false
 var ply_inchase := false
@@ -62,6 +63,10 @@ func _physics_process(delta: float) -> void:
 	move_and_collide(velocity * delta)
 
 func die():
+	if is_dead:
+		return  # Prevent multiple death calls
+
+	is_dead = true
 	alive = false
 	sprite.play("death")
 	await sprite.animation_finished
@@ -97,13 +102,13 @@ func _on_range_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		player = body
 		ply_inchase = true
-		smooth_show_healthbar(true) #which display the with fade animation
+		smooth_show_healthbar(true)
 
 func _on_range_body_exited(body: Node2D) -> void:
 	if body == player:
 		player = null
 		ply_inchase = false
-		smooth_show_healthbar(false) #which disable the with fade animation
+		smooth_show_healthbar(false)
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
