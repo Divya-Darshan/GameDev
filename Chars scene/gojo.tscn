@@ -1,9 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://c4hgl85xlmc58"]
+[gd_scene load_steps=38 format=3 uid="uid://c4hgl85xlmc58"]
 
 [ext_resource type="Texture2D" uid="uid://dbpq6gxwyw5mh" path="res://Char/gojo/idle/0-0.png" id="1_0t6sk"]
 [ext_resource type="Script" path="res://script/gojo.gd" id="1_exwdj"]
 [ext_resource type="Texture2D" uid="uid://b48fgh81dw511" path="res://Char/gojo/idle/0-1.png" id="2_pwp45"]
-[ext_resource type="Texture2D" uid="uid://bfvqk001hr6vw" path="res://Char/shadow.png" id="2_xwyyr"]
 [ext_resource type="Texture2D" uid="uid://b5ucy242b15a8" path="res://Char/gojo/idle/0-2.png" id="3_icvcb"]
 [ext_resource type="Texture2D" uid="uid://lnlvylqi0cfl" path="res://Char/gojo/ack2/1200-0.png" id="3_kab85"]
 [ext_resource type="Texture2D" uid="uid://djkyv0nypsebr" path="res://Char/gojo/ack2/1200-1.png" id="4_g6am8"]
@@ -22,8 +21,12 @@
 [ext_resource type="Texture2D" uid="uid://bh8efce4fnm4" path="res://Char/gojo/walk/20-3.png" id="19_ekh7c"]
 [ext_resource type="Texture2D" uid="uid://c0yxmstc1k72u" path="res://ply healthbar/HealthBar DARK.png" id="20_bm008"]
 [ext_resource type="Script" path="res://script/ply progressbar/progress_bar.gd" id="22_hhepk"]
+[ext_resource type="Texture2D" uid="uid://dcn6l5t6a3qoq" path="res://btn-img/ps4/gdb-playstation-2.png" id="23_tkmfa"]
+[ext_resource type="PackedScene" uid="uid://c40mlro1uriau" path="res://scene/joy.tscn" id="24_3yb5g"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gs0p6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qcb2"]
+atlas = ExtResource("23_tkmfa")
+region = Rect2(112.638, 352.585, 15.0044, 15.1607)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fprc4"]
 size = Vector2(20.7702, 32.1609)
@@ -35,6 +38,38 @@ region = Rect2(17, 164, 61, 9)
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlku1"]
 atlas = ExtResource("20_bm008")
 region = Rect2(18, 152, 59, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a76da"]
+atlas = ExtResource("23_tkmfa")
+region = Rect2(482, 34, 12, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe8m0"]
+atlas = ExtResource("23_tkmfa")
+region = Rect2(530, 35, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct0oc"]
+atlas = ExtResource("23_tkmfa")
+region = Rect2(482, 82, 12, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxc5p"]
+atlas = ExtResource("23_tkmfa")
+region = Rect2(530, 83, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3yo1"]
+atlas = ExtResource("23_tkmfa")
+region = Rect2(482, 50, 12, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1mmx"]
+atlas = ExtResource("23_tkmfa")
+region = Rect2(530, 51, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ic18r"]
+atlas = ExtResource("23_tkmfa")
+region = Rect2(482, 66, 12, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ou7ec"]
+atlas = ExtResource("23_tkmfa")
+region = Rect2(530, 67, 12, 13)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o7i8d"]
 animations = [{
@@ -138,14 +173,18 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu5cp"]
+
 [node name="gojo" type="CharacterBody2D"]
-y_sort_enabled = true
 position = Vector2(1, -11)
 script = ExtResource("1_exwdj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 27)
-shape = SubResource("CircleShape2D_gs0p6")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 0.305882)
+position = Vector2(0, 34)
+rotation = 3.14159
+scale = Vector2(2.145, -0.967)
+texture = SubResource("AtlasTexture_5qcb2")
 
 [node name="hitbox" type="Area2D" parent="."]
 position = Vector2(0, 27)
@@ -185,20 +224,72 @@ script = ExtResource("22_hhepk")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2, 0)
 zoom = Vector2(3, 3)
+process_callback = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, 34)
-scale = Vector2(0.15885, -0.058967)
-texture = ExtResource("2_xwyyr")
+[node name="btn" type="CanvasLayer" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
-z_as_relative = false
+[node name="HBoxContainer" type="HBoxContainer" parent="btn"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -42.0
+offset_right = 72.0
+offset_bottom = -2.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="t" type="TouchScreenButton" parent="btn/HBoxContainer"]
+position = Vector2(-520, -490)
+scale = Vector2(16, 15)
+texture_normal = SubResource("AtlasTexture_a76da")
+texture_pressed = SubResource("AtlasTexture_fe8m0")
+passby_press = true
+
+[node name="b" type="TouchScreenButton" parent="btn/HBoxContainer"]
+position = Vector2(-704, -321)
+scale = Vector2(16, 15)
+texture_normal = SubResource("AtlasTexture_ct0oc")
+texture_pressed = SubResource("AtlasTexture_wxc5p")
+passby_press = true
+visibility_mode = 1
+
+[node name="o" type="TouchScreenButton" parent="btn/HBoxContainer"]
+position = Vector2(-334, -321)
+scale = Vector2(16, 15)
+texture_normal = SubResource("AtlasTexture_w3yo1")
+texture_pressed = SubResource("AtlasTexture_l1mmx")
+passby_press = true
+
+[node name="x" type="TouchScreenButton" parent="btn/HBoxContainer"]
+position = Vector2(-520, -153)
+scale = Vector2(16, 15)
+texture_normal = SubResource("AtlasTexture_ic18r")
+texture_pressed = SubResource("AtlasTexture_ou7ec")
+passby_press = true
+
+[node name="joy" parent="." instance=ExtResource("24_3yb5g")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 use_parent_material = true
-position = Vector2(6.29525, 101.752)
-scale = Vector2(6.29525, -16.9587)
+position = Vector2(4.76837e-07, 28)
+scale = Vector2(1.00288, 1)
 sprite_frames = SubResource("SpriteFrames_o7i8d")
 animation = &"idle"
 offset = Vector2(0, -28.635)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.96046e-08, 27)
+scale = Vector2(0.818149, 0.836315)
+shape = SubResource("RectangleShape2D_mu5cp")
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]

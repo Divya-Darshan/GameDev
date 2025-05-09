@@ -250,11 +250,11 @@ texture = ExtResource("1_fpqjn")
 [sub_resource type="TileSet" id="TileSet_v0qhp"]
 sources/0 = SubResource("TileSetAtlasSource_7auyi")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_subhp"]
-size = Vector2(13, 12)
+[sub_resource type="CircleShape2D" id="CircleShape2D_hli3r"]
+radius = 8.90623
 
 [node name="small-tree" type="StaticBody2D"]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.8, 1.8)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-24, -117)
@@ -263,5 +263,5 @@ tile_map_data = PackedByteArray("AAD+/wAAAAASAAQAAAD+/wEAAAASAAUAAAD+/wIAAAASAAY
 tile_set = SubResource("TileSet_v0qhp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -1)
-shape = SubResource("RectangleShape2D_subhp")
+position = Vector2(0, 6.11111)
+shape = SubResource("CircleShape2D_hli3r")

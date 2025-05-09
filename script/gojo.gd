@@ -10,18 +10,18 @@ var can_attack := true
 
 var ack_cooldown := 0.8
 
-var speed := 300
+var speed := 200
 var state := "idle"
 var is_attacking := false
 var attack_speed_multiplier := 0.10
 var last_direction := Vector2.RIGHT
 
-@onready var sprite := $Sprite2D/AnimatedSprite2D
+@onready var sprite := $AnimatedSprite2D
 @onready var marker := $Marker2D
-@onready var t_btn := get_node_or_null("../btn/HBoxContainer/t")
-@onready var b_btn := get_node_or_null("../btn/HBoxContainer/b")
-@onready var o_btn := get_node_or_null("../btn/HBoxContainer/o")
-@onready var x_btn := get_node_or_null("../btn/HBoxContainer/x")
+@onready var t_btn := get_node_or_null("./btn/HBoxContainer/t")
+@onready var b_btn := get_node_or_null("./btn/HBoxContainer/b")
+@onready var o_btn := get_node_or_null("./btn/HBoxContainer/o")
+@onready var x_btn := get_node_or_null("./btn/HBoxContainer/x")
 
 var reset_timer := Timer.new()
 var last_gethit_health: int = health
