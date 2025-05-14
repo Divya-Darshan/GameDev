@@ -1,0 +1,116 @@
+extends CharacterBody2D
+
+var health := 100
+const SPEED = 200.0
+const DEADZONE = 0.1
+
+@onready var animated_sprite = $AnimatedSprite2D
+@onready var touch_controls = $"../Touchcontrols"
+
+var is_attacking1 = false
+var is_attacking2 = false  # For the second attack action
+var is_inter = false
+var is_inter2 = false
+var last_direction = 1  # 1 = right, -1 = left
+var ack_in = false
+
+
+
+
+
+
+
+
+
+func _ready():
+	if touch_controls:
+		touch_controls.button_pressed.connect(_on_touch_button_pressed)
+	animated_sprite.play("default")
+	
+
+func _on_touch_button_pressed(action_name: String) -> void:
+	if action_name == "attack1" and not is_attacking1:
+		attack1()
+	elif action_name == "attack2" and not is_attacking2:
+		attack2()
+	elif action_name == "inter" and not is_inter:
+		inter()
+	elif action_name == "inter2" and not is_inter2:
+		inter2()
+
+func attack1() -> void:
+	is_attacking1 = true
+	animated_sprite.play("ack1")  # Play the first attack animation
+	await animated_sprite.animation_finished
+	animated_sprite.play("default")
+	is_attacking1 = false
+	ack_in = true
+
+func attack2() -> void:
+	is_attacking2 = true
+	animated_sprite.play("hit")  # Play the second attack animation
+	await animated_sprite.animation_finished
+	animated_sprite.play("default")
+	is_attacking2 = false
+
+func inter() -> void:
+	is_inter = true
+	animated_sprite.play("hit")  # Play the first special animation
+	await animated_sprite.animation_finished
+	animated_sprite.play("default")
+	is_inter = false
+
+func inter2() -> void:
+	is_inter2 = true
+	animated_sprite.play("hit")  # Play the second special animation
+	await animated_sprite.animation_finished
+	animated_sprite.play("default")
+	is_inter2 = false
+
+func _physics_process(delta: float) -> void:
+	print(health)
+	if is_attacking1 or is_attacking2 or is_inter or is_inter2:
+		return  # Prevent movement and other actions during attack or special animations
+
+	var direction = Vector2.ZERO
+	var horizontal = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	var vertical = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+
+	if abs(horizontal) < DEADZONE:
+		horizontal = 0
+	if abs(vertical) < DEADZONE:
+		vertical = 0
+
+	direction.x = horizontal
+	direction.y = vertical
+
+	if direction.length() > 0:
+		direction = direction.normalized()
+
+	velocity.x = direction.x * SPEED
+	velocity.y = direction.y * SPEED
+
+	# Update last facing direction only if player is actively moving left or right
+	if horizontal != 0:
+		last_direction = sign(horizontal)
+
+	# Play animations
+	if direction == Vector2.ZERO:
+		animated_sprite.play("default")
+	else:
+		animated_sprite.play("run")
+
+	move_and_slide()
+
+	# Flip sprite based on last known horizontal direction
+	animated_sprite.flip_h = last_direction < 0
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if ack_in:
+		if health == 0:
+			queue_free()
+		else:
+			health -= 10
+			ack_in = false
+	

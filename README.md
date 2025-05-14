@@ -51,7 +51,7 @@ Built by [Divya Darshan](https://github.com/Divya-Darshan)
 Wanna try it right away on pc?
 
 ```bash
-curl -L -o app.apk https://raw.githubusercontent.com/Divya-Darshan/your-repo-name/main/app/app.apk
+curl -L -o app.apk https://raw.githubusercontent.com/Divya-Darshan/GameDev/main/app/app.apk
 ```
 
 Clone the Repo:
@@ -59,6 +59,3 @@ Clone the Repo:
 git clone https://github.com/Divya-Darshan/GameDev.git
 ```
 ⭐ Star the repo if you're excited for the full release! 🌟
-
-
-

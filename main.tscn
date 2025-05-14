@@ -1,5 +1,34 @@
-[gd_scene format=3 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=5 format=3 uid="uid://xdwundx3x7v2"]
+
+[ext_resource type="PackedScene" uid="uid://dpqv2okc6ggr5" path="res://char scene/sem/sem.tscn" id="1_in2r8"]
+[ext_resource type="PackedScene" uid="uid://c7i3w627hjbum" path="res://control/touchcontrols.tscn" id="3_h8082"]
+[ext_resource type="Texture2D" uid="uid://by86u7tig0d70" path="res://icon.svg" id="3_s5hro"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1jqh"]
 
 [node name="MAIN" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(-11, -109)
+
+[node name="Touchcontrols" parent="." instance=ExtResource("3_h8082")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_in2r8")]
+position = Vector2(525, 559)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+ignore_rotation = false
+zoom = Vector2(5, 5)
+position_smoothing_speed = 9.0
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(291, 348)
+texture = ExtResource("3_s5hro")
+
+[node name="sem" parent="." instance=ExtResource("1_in2r8")]
+position = Vector2(456, 559)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(413, 557)
+shape = SubResource("RectangleShape2D_c1jqh")
