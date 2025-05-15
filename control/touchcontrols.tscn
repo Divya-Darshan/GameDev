@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7i3w627hjbum"]
+[gd_scene load_steps=14 format=3 uid="uid://c7i3w627hjbum"]
 
 [ext_resource type="Script" path="res://control/touchcontrols.gd" id="1_owfuy"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_bdc5w"]
 [ext_resource type="Texture2D" uid="uid://dqc3ore6pkv8h" path="res://uibtn/gdb-playstation-2.png" id="2_kn3v7"]
+[ext_resource type="Texture2D" uid="uid://begt7h836uh8o" path="res://uibtn/GUI.png" id="4_1ktgx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pkmkh"]
 atlas = ExtResource("2_kn3v7")
@@ -36,12 +37,16 @@ region = Rect2(80.951, 240.897, 14.0897, 15.1231)
 atlas = ExtResource("2_kn3v7")
 region = Rect2(64.9682, 241.927, 14.07, 14.1363)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw33g"]
+atlas = ExtResource("4_1ktgx")
+region = Rect2(166.203, 37.9808, 19.2087, 19.9904)
+
 [node name="Touchcontrols" type="CanvasLayer"]
 script = ExtResource("1_owfuy")
 
 [node name="t" type="TouchScreenButton" parent="."]
-position = Vector2(901, 358)
-scale = Vector2(7, 7)
+position = Vector2(902, 366)
+scale = Vector2(6, 6)
 texture_normal = SubResource("AtlasTexture_pkmkh")
 texture_pressed = SubResource("AtlasTexture_0diou")
 shape_centered = false
@@ -50,22 +55,22 @@ passby_press = true
 visibility_mode = 1
 
 [node name="o" type="TouchScreenButton" parent="."]
-position = Vector2(997, 443)
-scale = Vector2(7, 7)
+position = Vector2(986, 441)
+scale = Vector2(6, 6)
 texture_normal = SubResource("AtlasTexture_7m365")
 texture_pressed = SubResource("AtlasTexture_22r6y")
 passby_press = true
 
 [node name="x" type="TouchScreenButton" parent="."]
-position = Vector2(902, 525)
-scale = Vector2(7, 7)
+position = Vector2(902, 516)
+scale = Vector2(6, 6)
 texture_normal = SubResource("AtlasTexture_f36es")
 texture_pressed = SubResource("AtlasTexture_66mij")
 passby_press = true
 
 [node name="b" type="TouchScreenButton" parent="."]
-position = Vector2(804, 441)
-scale = Vector2(7, 7)
+position = Vector2(817, 441)
+scale = Vector2(6, 6)
 texture_normal = SubResource("AtlasTexture_k6qvk")
 texture_pressed = SubResource("AtlasTexture_drbyn")
 passby_press = true
@@ -76,7 +81,23 @@ offset_top = -257.0
 offset_right = 321.0
 offset_bottom = 43.0
 
+[node name="ps" type="TouchScreenButton" parent="."]
+position = Vector2(1052, 19)
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_fw33g")
+texture_pressed = SubResource("AtlasTexture_fw33g")
+
+[node name="ColorRect" type="ColorRect" parent="ps"]
+visible = false
+offset_left = 45.5
+offset_top = -13.5
+offset_right = 85.5
+offset_bottom = 26.5
+scale = Vector2(-8.17374, 4.55616)
+color = Color(0, 0, 0, 0.0705882)
+
 [connection signal="pressed" from="t" to="." method="_on_t_pressed"]
 [connection signal="pressed" from="o" to="." method="_on_o_pressed"]
 [connection signal="pressed" from="x" to="." method="_on_x_pressed"]
 [connection signal="pressed" from="b" to="." method="_on_b_pressed"]
+[connection signal="pressed" from="ps" to="." method="_on_ps_pressed"]

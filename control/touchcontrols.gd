@@ -7,6 +7,7 @@ signal button_pressed(action_name)
 @onready var o = $o
 @onready var x = $x
 @onready var b = $b
+@onready var ps = $ps/ColorRect
 
 func _ready():
 	# Connect the buttons to their corresponding actions.
@@ -44,3 +45,7 @@ func _on_button_pressed_b() -> void:
 func get_joystick_direction() -> Vector2:
 	# Fetch the joystick direction from the actual VirtualJoystick node
 	return joystick.output if joystick else Vector2.ZERO
+
+
+func _on_ps_pressed() -> void:
+	ps.visible = !ps.visible

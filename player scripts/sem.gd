@@ -108,9 +108,12 @@ func _physics_process(delta: float) -> void:
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if ack_in:
-		if health == 0:
-			queue_free()
-		else:
+		ack_in = false
+
+		if health > 0:
 			health -= 10
-			ack_in = false
+			if health <= 0:
+				queue_free()
+
+	
 	
