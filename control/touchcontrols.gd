@@ -3,11 +3,14 @@ extends CanvasLayer
 signal button_pressed(action_name)
 
 @onready var joystick = $"Virtual Joystick"
-@onready var t = $t
-@onready var o = $o
-@onready var x = $x
-@onready var b = $b
-@onready var ps = $ps/ColorRect
+@onready var t = $HBoxbtn/t
+@onready var o = $HBoxbtn/o
+@onready var x = $HBoxbtn/x
+@onready var b = $HBoxbtn/b
+@onready var ps = $HBoxps/ps/ColorRect
+@onready var hboxbtn = $HBoxbtn
+@onready var play = $HBoxps/ps/play
+@onready var close = $HBoxps/ps/close
 
 func _ready():
 	# Connect the buttons to their corresponding actions.
@@ -49,3 +52,7 @@ func get_joystick_direction() -> Vector2:
 
 func _on_ps_pressed() -> void:
 	ps.visible = !ps.visible
+	joystick.visible = !joystick.visible
+	hboxbtn.visible = !hboxbtn.visible
+	close.visible = !close.visible
+	play.visible = !play.visible
