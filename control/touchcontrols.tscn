@@ -93,7 +93,7 @@ offset_bottom = 648.0
 grow_horizontal = 0
 
 [node name="ps" type="TouchScreenButton" parent="HBoxps"]
-position = Vector2(1052, 19)
+position = Vector2(1028, 25)
 scale = Vector2(4, 4)
 texture_normal = ExtResource("3_nedgk")
 texture_pressed = ExtResource("3_nedgk")

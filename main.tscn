@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=6 format=3 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="PackedScene" uid="uid://dpqv2okc6ggr5" path="res://char scene/sem/sem.tscn" id="1_in2r8"]
 [ext_resource type="PackedScene" uid="uid://c7i3w627hjbum" path="res://control/touchcontrols.tscn" id="3_h8082"]
 [ext_resource type="Texture2D" uid="uid://by86u7tig0d70" path="res://icon.svg" id="3_s5hro"]
+[ext_resource type="PackedScene" uid="uid://rs6ol2hy57td" path="res://eny scene/Skeleton/ski.tscn" id="4_c0t7d"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1jqh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agrk7"]
 
 [node name="MAIN" type="Node2D"]
 y_sort_enabled = true
@@ -25,11 +26,11 @@ position_smoothing_speed = 9.0
 position = Vector2(291, 348)
 texture = ExtResource("3_s5hro")
 
-[node name="sem" parent="." instance=ExtResource("1_in2r8")]
-position = Vector2(456, 559)
+[node name="ski" parent="." instance=ExtResource("4_c0t7d")]
+position = Vector2(596, 443)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(413, 557)
-shape = SubResource("RectangleShape2D_c1jqh")
+position = Vector2(434, 562)
+shape = SubResource("RectangleShape2D_agrk7")

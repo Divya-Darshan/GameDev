@@ -1,12 +1,18 @@
 extends CharacterBody2D
 
 var health := 100
+signal progressbar
+@export var cur_heath := health
 const SPEED = 200.0
 const DEADZONE = 0.1
+const FULL_DAMAGE_DELAY := 0.5  # seconds
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var touch_controls = $"../Touchcontrols"
 
+
+var last_attack_time := 0.0
+var players_in_range := []
 var is_attacking1 = false
 var is_attacking2 = false  # For the second attack action
 var is_inter = false
@@ -37,21 +43,39 @@ func _on_touch_button_pressed(action_name: String) -> void:
 		inter()
 	elif action_name == "inter2" and not is_inter2:
 		inter2()
+		
+func take_damage(amount: int) -> void:
+	health -= amount
+	progressbar.emit()
+	print("Took damage, health:", health)
+	if health <= 0:
+		queue_free()
 
 func attack1() -> void:
 	is_attacking1 = true
-	animated_sprite.play("ack1")  # Play the first attack animation
+	animated_sprite.play("ack1")
+	for target in players_in_range:
+		if target and target.has_method("take_damage"):
+			target.take_damage(10)
+			await animated_sprite.animation_finished
+			animated_sprite.play("hit")
 	await animated_sprite.animation_finished
 	animated_sprite.play("default")
 	is_attacking1 = false
-	ack_in = true
+
+
 
 func attack2() -> void:
-	is_attacking2 = true
-	animated_sprite.play("hit")  # Play the second attack animation
+	is_attacking1 = true
+	animated_sprite.play("ack1")
+	for target in players_in_range:
+		if target and target.has_method("take_damage"):
+			target.take_damage(10)
+			await animated_sprite.animation_finished
+			animated_sprite.play("hit")
 	await animated_sprite.animation_finished
 	animated_sprite.play("default")
-	is_attacking2 = false
+	is_attacking1 = false
 
 func inter() -> void:
 	is_inter = true
@@ -68,7 +92,7 @@ func inter2() -> void:
 	is_inter2 = false
 
 func _physics_process(delta: float) -> void:
-	print(health)
+	
 	if is_attacking1 or is_attacking2 or is_inter or is_inter2:
 		return  # Prevent movement and other actions during attack or special animations
 
@@ -105,15 +129,21 @@ func _physics_process(delta: float) -> void:
 	# Flip sprite based on last known horizontal direction
 	animated_sprite.flip_h = last_direction < 0
 
+func is_player() -> bool:
+	return true
+
+
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	if ack_in:
-		ack_in = false
+	if body != self and body.has_method("is_player") and body.is_player():
+		if not players_in_range.has(body):
+			players_in_range.append(body)
 
-		if health > 0:
-			health -= 10
-			if health <= 0:
-				queue_free()
+func _on_hitbox_body_exited(body: Node2D) -> void:
+	if players_in_range.has(body):
+		players_in_range.erase(body)
+
+
 
 	
 	
