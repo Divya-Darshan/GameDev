@@ -9,6 +9,7 @@ const FULL_DAMAGE_DELAY := 0.5  # seconds
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var touch_controls = $"../Touchcontrols"
+@onready var slashsfx: AudioStreamPlayer2D = $slashsfx
 
 
 var last_attack_time := 0.0
@@ -31,7 +32,8 @@ var ack_in = false
 func _ready():
 	if touch_controls:
 		touch_controls.button_pressed.connect(_on_touch_button_pressed)
-	animated_sprite.play("default")
+		animated_sprite.speed_scale = 1.0
+	
 	
 
 func _on_touch_button_pressed(action_name: String) -> void:
@@ -54,6 +56,8 @@ func take_damage(amount: int) -> void:
 func attack1() -> void:
 	is_attacking1 = true
 	animated_sprite.play("ack1")
+	slashsfx.pitch_scale = randf_range(0.9, 1.2)
+	slashsfx.play()
 	for target in players_in_range:
 		if target and target.has_method("take_damage"):
 			target.take_damage(10)
@@ -62,6 +66,15 @@ func attack1() -> void:
 	await animated_sprite.animation_finished
 	animated_sprite.play("default")
 	is_attacking1 = false
+	
+func play_hit_animation():
+	animated_sprite.play("hit")
+
+
+	
+	 # Slows down animation to half speed
+
+
 
 
 

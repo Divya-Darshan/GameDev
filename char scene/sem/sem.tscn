@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dpqv2okc6ggr5"]
+[gd_scene load_steps=51 format=3 uid="uid://dpqv2okc6ggr5"]
 
 [ext_resource type="Script" path="res://player scripts/sem.gd" id="1_0qdvd"]
 [ext_resource type="Texture2D" uid="uid://c732fixpbkk8j" path="res://char scene/sem/ATTACK 1.png" id="1_xmgxq"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bdbbn2i4wskfr" path="res://uibtn/probase.tres" id="7_8ioto"]
 [ext_resource type="Script" path="res://player scripts/progressbar/progressbar.gd" id="8_6cr0n"]
 [ext_resource type="Texture2D" uid="uid://bfey0hscp0qvc" path="res://uibtn/proover.tres" id="8_pc23k"]
+[ext_resource type="AudioStream" uid="uid://c85g2sc5bkray" path="res://sfx/character/slash.wav" id="10_8q5of"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_efksp"]
 
@@ -247,7 +248,13 @@ animations = [{
 "texture": SubResource("AtlasTexture_u26au")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_dav3h")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_1npqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u26au")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dav3h")
@@ -257,7 +264,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit",
-"speed": 8.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -345,7 +352,9 @@ shape = SubResource("CircleShape2D_koqaw")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_fh5tc")
-animation = &"run"
+animation = &"hit"
+frame = 5
+frame_progress = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -363,6 +372,10 @@ texture_progress = ExtResource("8_pc23k")
 tint_under = Color(0.589096, 0.589096, 0.589096, 1)
 script = ExtResource("8_6cr0n")
 metadata/_edit_use_anchors_ = true
+
+[node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_8q5of")
+volume_db = -7.0
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]

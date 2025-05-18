@@ -22,6 +22,15 @@ ignore_rotation = false
 zoom = Vector2(5, 5)
 position_smoothing_speed = 9.0
 
+[node name="CharacterBody2D2" parent="." instance=ExtResource("1_in2r8")]
+position = Vector2(507, 596)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D2"]
+position = Vector2(4, -13)
+ignore_rotation = false
+zoom = Vector2(5, 5)
+position_smoothing_speed = 9.0
+
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(291, 348)
 texture = ExtResource("3_s5hro")
