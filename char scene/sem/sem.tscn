@@ -375,7 +375,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_8q5of")
-volume_db = -7.0
+volume_db = -1.0
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]

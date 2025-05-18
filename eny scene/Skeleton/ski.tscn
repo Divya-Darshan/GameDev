@@ -1,14 +1,17 @@
-[gd_scene load_steps=38 format=3 uid="uid://rs6ol2hy57td"]
+[gd_scene load_steps=41 format=3 uid="uid://rs6ol2hy57td"]
 
 [ext_resource type="Texture2D" uid="uid://dhin45b6fl8hh" path="res://eny scene/Skeleton/Attack.png" id="1_m3mv1"]
 [ext_resource type="Script" path="res://eny script/eny.gd" id="1_obcnn"]
 [ext_resource type="Texture2D" uid="uid://cr22o6ybb081y" path="res://eny scene/Skeleton/Death.png" id="2_xtcad"]
 [ext_resource type="Texture2D" uid="uid://balrs2y8qaa0q" path="res://eny scene/Skeleton/Idle.png" id="3_6k8xb"]
 [ext_resource type="Texture2D" uid="uid://dgmcdtf71iu1s" path="res://eny scene/Skeleton/Take Hit.png" id="4_63rp8"]
+[ext_resource type="Script" path="res://eny script/progresseny.gd" id="5_ny86a"]
 [ext_resource type="Texture2D" uid="uid://b2pd8j778plm2" path="res://eny scene/Skeleton/Walk.png" id="5_x23ci"]
 [ext_resource type="Texture2D" uid="uid://bdbbn2i4wskfr" path="res://uibtn/probase.tres" id="7_qrand"]
 [ext_resource type="Texture2D" uid="uid://bfey0hscp0qvc" path="res://uibtn/proover.tres" id="8_lp22q"]
 [ext_resource type="Texture2D" uid="uid://djpd25pwallw8" path="res://char scene/shadow.png" id="9_581r8"]
+[ext_resource type="AudioStream" uid="uid://c85g2sc5bkray" path="res://sfx/character/slash.wav" id="11_uxf6m"]
+[ext_resource type="AudioStream" uid="uid://csrayi77gohv0" path="res://sfx/death/death.wav" id="12_42kih"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o0006"]
 
@@ -158,7 +161,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"death",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -261,11 +264,24 @@ texture_under = ExtResource("7_qrand")
 texture_progress = ExtResource("8_lp22q")
 tint_under = Color(0.67069, 0.67069, 0.67069, 1)
 tint_progress = Color(0, 1, 0, 1)
+script = ExtResource("5_ny86a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3.5, -17.5)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_vn4ik")
+animation = &"death"
+frame = 3
+frame_progress = 1.0
+
+[node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-4.76837e-07, -1.90735e-06)
+scale = Vector2(1, 1)
+stream = ExtResource("11_uxf6m")
+volume_db = -5.0
+
+[node name="deathsfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_42kih")
 
 [connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]

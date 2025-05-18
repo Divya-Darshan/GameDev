@@ -6,6 +6,20 @@ var is_player_in_range: bool = false
 var is_player_in_hitbox: bool = false
 var is_attacking: bool = false
 var touch_controls: Node = null
+var _health := 100  # Internal storage
+
+var health:
+	get:
+		return _health
+	set(value):
+		_health = clamp(value, 0, 100)
+
+var is_dead: bool = false 
+@export var cur_heath := _health
+@onready var slashsfx: AudioStreamPlayer2D = $slashsfx
+@onready var deathsfx: AudioStreamPlayer2D = $deathsfx
+
+signal progresseny 
 
 @onready var sprite := $AnimatedSprite2D
 @onready var hitbox := $hitbox
@@ -17,6 +31,9 @@ var fade_duration := 0.3
 func _ready():
 	probar.visible = false
 	touch_controls = get_node('/root/Touchcontrols') # Corrected path!
+	if health == 0:
+		queue_free()
+		
 	if touch_controls != null:
 		touch_controls.button_pressed.connect(_on_touch_controls_button_pressed)
 	else:
@@ -26,11 +43,28 @@ func _on_touch_controls_button_pressed(action_name: String) -> void:
 	if is_player_in_hitbox:
 		match action_name:
 			"attack1":
-				print("Enemy: Attack 1 button pressed while player in hitbox!")
+				enytake_damage(5)
+			"attack2":
+				enytake_damage(5)
 			_:
 				print("Enemy: Unknown button pressed:", action_name)
 
+func enytake_damage(amount: int) -> void:	
+	print("Took damage, health:", health)
+	if is_dead:
+		return  # Skip if already dead
 
+	health -= amount
+	progresseny.emit()
+	print(health)
+
+	if health == 0:
+		
+		is_dead = true  # Mark as dead
+		sprite.play("death")
+		deathsfx.play()
+		await sprite.animation_finished
+		queue_free()
 
 
 
@@ -73,7 +107,10 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 				body.take_damage(4)
 				body.play_hit_animation()
 				sprite.play("ack1")
+				slashsfx.pitch_scale = randf_range(0.9, 1.2)
+				slashsfx.play()
 				await get_tree().create_timer(2.0).timeout
+
 
 
 

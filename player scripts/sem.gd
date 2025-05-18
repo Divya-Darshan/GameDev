@@ -81,6 +81,8 @@ func play_hit_animation():
 func attack2() -> void:
 	is_attacking1 = true
 	animated_sprite.play("ack1")
+	slashsfx.pitch_scale = randf_range(0.9, 1.2)
+	slashsfx.play()
 	for target in players_in_range:
 		if target and target.has_method("take_damage"):
 			target.take_damage(10)
