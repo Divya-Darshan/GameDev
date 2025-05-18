@@ -29,6 +29,9 @@ texture = ExtResource("3_s5hro")
 [node name="ski" parent="." instance=ExtResource("4_c0t7d")]
 position = Vector2(596, 443)
 
+[node name="ski2" parent="." instance=ExtResource("4_c0t7d")]
+position = Vector2(437, 451)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]

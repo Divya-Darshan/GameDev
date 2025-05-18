@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bfey0hscp0qvc" path="res://uibtn/proover.tres" id="8_lp22q"]
 [ext_resource type="Texture2D" uid="uid://djpd25pwallw8" path="res://char scene/shadow.png" id="9_581r8"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kr1ao"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_o0006"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dtnvt"]
 
@@ -227,9 +227,9 @@ scale = Vector2(0.116194, 0.0446955)
 texture = ExtResource("9_581r8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -4.5)
-scale = Vector2(0.438067, 0.438067)
-shape = SubResource("CircleShape2D_kr1ao")
+position = Vector2(-0.5, -4)
+scale = Vector2(0.540995, 0.540995)
+shape = SubResource("CircleShape2D_o0006")
 
 [node name="range" type="Area2D" parent="."]
 position = Vector2(-0.5, 0.5)
@@ -256,7 +256,7 @@ offset_top = -43.0
 offset_right = 44.0
 offset_bottom = -3.0
 scale = Vector2(0.637786, 0.637786)
-value = 50.0
+value = 100.0
 texture_under = ExtResource("7_qrand")
 texture_progress = ExtResource("8_lp22q")
 tint_under = Color(0.67069, 0.67069, 0.67069, 1)
