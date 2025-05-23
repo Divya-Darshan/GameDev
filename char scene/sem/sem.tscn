@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dpqv2okc6ggr5"]
+[gd_scene load_steps=55 format=3 uid="uid://dpqv2okc6ggr5"]
 
 [ext_resource type="Script" path="res://player scripts/sem.gd" id="1_0qdvd"]
 [ext_resource type="Texture2D" uid="uid://c732fixpbkk8j" path="res://char scene/sem/ATTACK 1.png" id="1_xmgxq"]
@@ -98,6 +98,22 @@ region = Rect2(768, 0, 96, 96)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3jhwq"]
 atlas = ExtResource("3_bcbd3")
 region = Rect2(864, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swmwr"]
+atlas = ExtResource("2_4mrib")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gj8w"]
+atlas = ExtResource("2_4mrib")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1aadw"]
+atlas = ExtResource("2_4mrib")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpg43"]
+atlas = ExtResource("2_4mrib")
+region = Rect2(288, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v18rk"]
 atlas = ExtResource("4_6ewbw")
@@ -245,26 +261,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u26au")
+"texture": SubResource("AtlasTexture_swmwr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dav3h")
+"texture": SubResource("AtlasTexture_7gj8w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1npqy")
+"texture": SubResource("AtlasTexture_1aadw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u26au")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dav3h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0tgvf")
+"texture": SubResource("AtlasTexture_bpg43")
 }],
 "loop": false,
 "name": &"hit",
-"speed": 7.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -353,7 +363,7 @@ shape = SubResource("CircleShape2D_koqaw")
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_fh5tc")
 animation = &"hit"
-frame = 5
+frame = 3
 frame_progress = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

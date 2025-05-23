@@ -68,7 +68,7 @@ func attack1() -> void:
 	is_attacking1 = false
 	
 func play_hit_animation():
-	animated_sprite.play("hit")
+	pass
 
 
 	

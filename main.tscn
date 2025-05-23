@@ -19,7 +19,7 @@ position = Vector2(525, 559)
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(4, -13)
 ignore_rotation = false
-zoom = Vector2(6, 6)
+zoom = Vector2(5, 5)
 position_smoothing_speed = 9.0
 
 [node name="Icon" type="Sprite2D" parent="."]

@@ -31,7 +31,7 @@ var fade_duration := 0.3
 func _ready():
 	probar.visible = false
 	touch_controls = get_node('/root/Touchcontrols') # Corrected path!
-	if health == 0:
+	if not is_dead and health <= 0:
 		queue_free()
 		
 	if touch_controls != null:
@@ -43,8 +43,10 @@ func _on_touch_controls_button_pressed(action_name: String) -> void:
 	if is_player_in_hitbox:
 		match action_name:
 			"attack1":
+				sprite.play('hit')
 				enytake_damage(5)
 			"attack2":
+				sprite.play('hit')
 				enytake_damage(5)
 			_:
 				print("Enemy: Unknown button pressed:", action_name)

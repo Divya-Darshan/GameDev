@@ -195,7 +195,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -270,13 +270,12 @@ script = ExtResource("5_ny86a")
 position = Vector2(-3.5, -17.5)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_vn4ik")
-animation = &"death"
+animation = &"hit"
 frame = 3
 frame_progress = 1.0
 
 [node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-4.76837e-07, -1.90735e-06)
-scale = Vector2(1, 1)
 stream = ExtResource("11_uxf6m")
 volume_db = -5.0
 
