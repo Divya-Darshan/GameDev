@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED := 30.0
+const SPEED := 10.0
 var player: CharacterBody2D = null
 var is_player_in_range: bool = false
 var is_player_in_hitbox: bool = false
