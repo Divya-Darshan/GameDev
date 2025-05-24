@@ -236,13 +236,11 @@ scale = Vector2(0.540995, 0.540995)
 shape = SubResource("CircleShape2D_o0006")
 
 [node name="range" type="Area2D" parent="."]
-visible = false
 position = Vector2(-0.5, 0.5)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
-visible = false
 position = Vector2(0, -17)
 scale = Vector2(10.8351, 10.8351)
 shape = SubResource("CircleShape2D_dtnvt")
@@ -285,6 +283,7 @@ volume_db = -5.0
 
 [node name="deathsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_42kih")
+volume_db = 24.0
 
 [connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]
