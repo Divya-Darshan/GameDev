@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c7i3w627hjbum"]
+[gd_scene load_steps=21 format=3 uid="uid://c7i3w627hjbum"]
 
 [ext_resource type="Script" path="res://control/touchcontrols.gd" id="1_owfuy"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_bdc5w"]
@@ -6,6 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://6bupn7knf3nf" path="res://uibtn/psbase.png" id="3_nedgk"]
 [ext_resource type="Texture2D" uid="uid://iraflu25kaf6" path="res://uibtn/psp.png" id="4_lw2pp"]
 [ext_resource type="Texture2D" uid="uid://rti1qclo74us" path="res://uibtn/psx.png" id="5_pvhbl"]
+[ext_resource type="Texture2D" uid="uid://c8p880ms3aiod" path="res://phone/IBrick_13/2B.png" id="7_yrb24"]
+[ext_resource type="Texture2D" uid="uid://di16fptvvt76r" path="res://phone/icons/Small (24x24) PNG/Amazon Shopping.png" id="8_xrsdh"]
+[ext_resource type="Texture2D" uid="uid://b6fqyl2fc3u1o" path="res://phone/icons/Small (24x24) PNG/Google Chrome.png" id="9_8r6rg"]
+[ext_resource type="Texture2D" uid="uid://xv7ujadjg7ob" path="res://phone/icons/Small (24x24) PNG/Youtube.png" id="10_nah7v"]
+[ext_resource type="Texture2D" uid="uid://brkd8vr1sx66p" path="res://phone/icons/Small (24x24) PNG/Whatsapp.png" id="11_sdihj"]
+[ext_resource type="Texture2D" uid="uid://c3486weo6iu8t" path="res://phone/icons/Small (24x24) PNG/Twitter.png" id="12_4ogvr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pkmkh"]
 atlas = ExtResource("2_kn3v7")
@@ -116,6 +122,36 @@ visible = false
 position = Vector2(11.25, 11.5)
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("5_pvhbl")
+
+[node name="2b" type="Sprite2D" parent="."]
+position = Vector2(393.834, 802.351)
+scale = Vector2(1.71042, 1.71042)
+texture = ExtResource("7_yrb24")
+
+[node name="Discord" type="Sprite2D" parent="."]
+position = Vector2(303.834, 611.351)
+scale = Vector2(1.33419, 1.33419)
+texture = ExtResource("8_xrsdh")
+
+[node name="GoogleChrome" type="Sprite2D" parent="."]
+position = Vector2(357.834, 610.351)
+scale = Vector2(1.22244, 1.22244)
+texture = ExtResource("9_8r6rg")
+
+[node name="GoogleChrome2" type="Sprite2D" parent="."]
+position = Vector2(404.834, 610.351)
+scale = Vector2(1.22244, 1.22244)
+texture = ExtResource("10_nah7v")
+
+[node name="GoogleChrome3" type="Sprite2D" parent="."]
+position = Vector2(446.834, 610.351)
+scale = Vector2(1.22244, 1.22244)
+texture = ExtResource("11_sdihj")
+
+[node name="GoogleChrome4" type="Sprite2D" parent="."]
+position = Vector2(485.834, 610.351)
+scale = Vector2(1.22244, 1.22244)
+texture = ExtResource("12_4ogvr")
 
 [node name="Virtual Joystick" parent="." instance=ExtResource("2_bdc5w")]
 offset_left = -12.0

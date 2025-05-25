@@ -13,7 +13,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_efksp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgr4b"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vargi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_truqk"]
 atlas = ExtResource("1_xmgxq")
@@ -327,7 +327,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 18.0
+"speed": 19.0
 }]
 
 [node name="sem" type="CharacterBody2D"]
@@ -357,14 +357,12 @@ texture = ExtResource("2_dt36a")
 position = Vector2(-5.96046e-08, -0.999999)
 rotation = 1.57079
 scale = Vector2(0.631421, 0.631421)
-shape = SubResource("RectangleShape2D_cgr4b")
+shape = SubResource("CircleShape2D_vargi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_fh5tc")
-animation = &"hit"
-frame = 3
-frame_progress = 1.0
+animation = &"run"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

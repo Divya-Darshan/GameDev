@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://c85g2sc5bkray" path="res://sfx/character/slash.wav" id="11_uxf6m"]
 [ext_resource type="AudioStream" uid="uid://csrayi77gohv0" path="res://sfx/death/death.wav" id="12_42kih"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_o0006"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_eyut2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dtnvt"]
 
@@ -230,10 +230,9 @@ scale = Vector2(0.0811124, 0.0312009)
 texture = ExtResource("9_581r8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-0.5, -4)
+position = Vector2(0, -5)
 scale = Vector2(0.540995, 0.540995)
-shape = SubResource("CircleShape2D_o0006")
+shape = SubResource("CircleShape2D_eyut2")
 
 [node name="range" type="Area2D" parent="."]
 position = Vector2(-0.5, 0.5)
@@ -246,7 +245,6 @@ scale = Vector2(10.8351, 10.8351)
 shape = SubResource("CircleShape2D_dtnvt")
 
 [node name="hitbox" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 2
 
