@@ -43,6 +43,9 @@ region = Rect2(64.9682, 241.927, 14.07, 14.1363)
 [node name="Touchcontrols" type="CanvasLayer"]
 script = ExtResource("1_owfuy")
 
+[node name="phone" parent="." instance=ExtResource("7_ppwfx")]
+position = Vector2(544, 758)
+
 [node name="HBoxbtn" type="HBoxContainer" parent="."]
 anchors_preset = 3
 anchor_left = 1.0
@@ -123,8 +126,6 @@ offset_left = 2.0
 offset_top = -303.0
 offset_right = 302.0
 offset_bottom = -3.0
-
-[node name="phone" parent="." instance=ExtResource("7_ppwfx")]
 
 [connection signal="pressed" from="HBoxbtn/t" to="." method="_on_t_pressed"]
 [connection signal="pressed" from="HBoxbtn/o" to="." method="_on_o_pressed"]
