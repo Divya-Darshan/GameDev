@@ -32,6 +32,8 @@ func _ready():
 	probar.visible = false
 	touch_controls = get_node('/root/Touchcontrols') # Corrected path!
 	if not is_dead and health <= 0:
+		sprite.play("death")
+		await sprite.animation_finished
 		queue_free()
 		
 	if touch_controls != null:
@@ -63,6 +65,7 @@ func enytake_damage(amount: int) -> void:
 	if health == 0:
 		
 		is_dead = true  # Mark as dead
+		velocity = Vector2.ZERO
 		sprite.play("death")
 		deathsfx.play()
 		await sprite.animation_finished
@@ -126,7 +129,7 @@ func _on_hitbox_body_exited(body: Node2D) -> void:
 
 func _show_probar():
 	if not probar.visible:
-		probar.visible = true
+		probar.visible = !probar.visible
 		probar.modulate.a = 0.0
 		tween = create_tween()
 		tween.tween_property(probar, "modulate:a", 1.0, fade_duration)
@@ -135,4 +138,4 @@ func _hide_probar():
 	tween = create_tween()
 	tween.tween_property(probar, "modulate:a", 0.0, fade_duration)
 	await tween.finished
-	probar.visible = false
+	probar.visible = !probar.visible

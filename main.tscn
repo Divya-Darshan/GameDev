@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=9 format=4 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="PackedScene" uid="uid://dpqv2okc6ggr5" path="res://char scene/sem/sem.tscn" id="1_in2r8"]
 [ext_resource type="Script" path="res://manager/manage_game.gd" id="1_iwro6"]
@@ -269,8 +269,6 @@ texture = ExtResource("5_juwwe")
 [sub_resource type="TileSet" id="TileSet_0u08f"]
 sources/0 = SubResource("TileSetAtlasSource_qv6wp")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynce2"]
-
 [node name="MAIN" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(-11, -109)
@@ -302,9 +300,3 @@ position = Vector2(596, 443)
 
 [node name="ski2" parent="." instance=ExtResource("4_c0t7d")]
 position = Vector2(437, 451)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(368, 566)
-shape = SubResource("RectangleShape2D_ynce2")

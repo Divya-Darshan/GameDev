@@ -17,7 +17,8 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dtnvt"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_657ut"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34ddi"]
+size = Vector2(22.0488, 21.4146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vleol"]
 atlas = ExtResource("1_m3mv1")
@@ -144,7 +145,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"ack1",
-"speed": 10.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -158,10 +159,37 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g1ou0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1ou0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1ou0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1ou0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1ou0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1ou0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1ou0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1ou0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1ou0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1ou0")
 }],
 "loop": false,
 "name": &"death",
-"speed": 6.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -192,10 +220,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_duqoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pg1w")
 }],
 "loop": false,
 "name": &"hit",
-"speed": 8.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -212,7 +243,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 6.0
+"speed": 7.0
 }]
 
 [node name="ski" type="CharacterBody2D"]
@@ -249,9 +280,9 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(0, -20)
-scale = Vector2(4.67146, 4.52961)
-shape = SubResource("CircleShape2D_657ut")
+position = Vector2(-1, -19)
+scale = Vector2(3.8602, 3.74298)
+shape = SubResource("RectangleShape2D_34ddi")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 offset_left = -23.0
@@ -271,8 +302,6 @@ position = Vector2(-3.5, -17.5)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_vn4ik")
 animation = &"hit"
-frame = 3
-frame_progress = 1.0
 
 [node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-4.76837e-07, -1.90735e-06)

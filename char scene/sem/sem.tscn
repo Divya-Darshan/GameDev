@@ -368,11 +368,11 @@ animation = &"run"
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
 self_modulate = Color(1, 0.98, 0.980333, 1)
-offset_left = 186.0
-offset_top = 138.0
-offset_right = 253.0
-offset_bottom = 151.0
-scale = Vector2(7, 7)
+offset_left = 158.0
+offset_top = 112.0
+offset_right = 225.0
+offset_bottom = 125.0
+scale = Vector2(6.07231, 6.07231)
 pivot_offset = Vector2(30.88, 20.585)
 value = 100.0
 texture_under = ExtResource("7_8ioto")
