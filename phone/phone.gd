@@ -4,10 +4,10 @@ var dragging := false
 var drag_offset := Vector2.ZERO
 var target_position := Vector2.ZERO
 
-const SCALE_FACTOR_X := 5.0
-const SCALE_FACTOR_Y := 8.83
-const DRAG_SMOOTHNESS := 0.1  # Lower = smoother
-const SNAP_DURATION := 0.1
+const SCALE_FACTOR_X := 7.0
+const SCALE_FACTOR_Y := 9.83
+const DRAG_SMOOTHNESS := 0.5  # Lower = smoother
+const SNAP_DURATION := 0.5
 
 @onready var tween := create_tween()
 
