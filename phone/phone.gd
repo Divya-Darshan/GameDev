@@ -2,52 +2,46 @@ extends Node2D
 
 var dragging := false
 var drag_offset := Vector2.ZERO
+var target_position := Vector2.ZERO
 
 const SCALE_FACTOR_X := 5.0
 const SCALE_FACTOR_Y := 8.83
+const DRAG_SMOOTHNESS := 0.1  # Lower = smoother
+const SNAP_DURATION := 0.1
 
-var tap_count := 0
-var double_tap_timer := Timer.new()
-var last_double_tap_pos := Vector2.ZERO
-const DOUBLE_TAP_TIME := 0.3
+@onready var tween := create_tween()
 
 func _ready() -> void:
-	double_tap_timer.wait_time = DOUBLE_TAP_TIME
-	double_tap_timer.one_shot = true
-	double_tap_timer.connect("timeout", Callable(self, "_on_double_tap_timeout"))
-	add_child(double_tap_timer)
+	target_position = position
+
+func _process(delta: float) -> void:
+	if dragging:
+		# Smoothly interpolate toward the drag position
+		position = position.lerp(target_position, DRAG_SMOOTHNESS)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch or event is InputEventScreenDrag:
 		var touch_pos = event.position
 
 		if event is InputEventScreenTouch and event.pressed:
-			tap_count += 1
-			if tap_count == 1:
-				double_tap_timer.start()
-				last_double_tap_pos = touch_pos
-			elif tap_count == 2:
-				teleport_to_position(touch_pos)
-				double_tap_timer.stop()
-				tap_count = 0
-				dragging = false
-				return
-
 			if get_global_rect().has_point(touch_pos):
 				dragging = true
 				drag_offset = position - touch_pos
 
 		elif event is InputEventScreenTouch and not event.pressed:
+			if dragging:
+				snap_to_position(position)  # Animate snap
 			dragging = false
 
 		elif dragging and event is InputEventScreenDrag:
-			position = touch_pos + drag_offset
+			target_position = touch_pos + drag_offset  # Update target for smooth interpolation
 
-func _on_double_tap_timeout() -> void:
-	tap_count = 0
-
-func teleport_to_position(target_pos: Vector2) -> void:
-	position = target_pos
+func snap_to_position(pos: Vector2) -> void:
+	tween.kill()  # Stop existing tweens to avoid overlap
+	tween = create_tween()
+	tween.tween_property(self, "position", pos, SNAP_DURATION)\
+		.set_trans(Tween.TRANS_CUBIC)\
+		.set_ease(Tween.EASE_OUT)
 
 func get_global_rect() -> Rect2:
 	var sprite = get_node_or_null("Sprite")
