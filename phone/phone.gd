@@ -13,7 +13,7 @@ const SNAP_DURATION := 0.5
 @onready var tween := create_tween()
 
 func _ready() -> void:
-	free_look = true
+	free_look = false
 	target_position = position
 
 func _process(delta: float) -> void:
