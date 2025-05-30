@@ -3,6 +3,7 @@ extends Node2D
 var dragging := false
 var drag_offset := Vector2.ZERO
 var target_position := Vector2.ZERO
+var free_look := false  # 🔹 Set this to true to allow full XY movement
 
 const SCALE_FACTOR_X := 7.0
 const SCALE_FACTOR_Y := 9.83
@@ -12,11 +13,15 @@ const SNAP_DURATION := 0.5
 @onready var tween := create_tween()
 
 func _ready() -> void:
+	free_look = true
 	target_position = position
 
 func _process(delta: float) -> void:
 	if dragging:
-		position = position.lerp(target_position, DRAG_SMOOTHNESS)
+		if free_look:
+			position = position.lerp(target_position, DRAG_SMOOTHNESS)
+		else:
+			position.y = lerp(position.y, target_position.y, DRAG_SMOOTHNESS)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch or event is InputEventScreenDrag:
@@ -29,19 +34,27 @@ func _input(event: InputEvent) -> void:
 
 		elif event is InputEventScreenTouch and not event.pressed:
 			if dragging:
-				snap_to_position(position)  # Animate snap
+				snap_to_position(position)
 			dragging = false
 
 		elif dragging and event is InputEventScreenDrag:
-			# Allow only Y movement by keeping the original X
-			target_position = Vector2(position.x, touch_pos.y + drag_offset.y)
+			if free_look:
+				target_position = touch_pos + drag_offset
+			else:
+				target_position.y = touch_pos.y + drag_offset.y
+				target_position.x = position.x
 
 func snap_to_position(pos: Vector2) -> void:
 	tween.kill()
 	tween = create_tween()
-	tween.tween_property(self, "position", pos, SNAP_DURATION)\
-		.set_trans(Tween.TRANS_CUBIC)\
-		.set_ease(Tween.EASE_OUT)
+	if free_look:
+		tween.tween_property(self, "position", pos, SNAP_DURATION)\
+			.set_trans(Tween.TRANS_CUBIC)\
+			.set_ease(Tween.EASE_OUT)
+	else:
+		tween.tween_property(self, "position:y", pos.y, SNAP_DURATION)\
+			.set_trans(Tween.TRANS_CUBIC)\
+			.set_ease(Tween.EASE_OUT)
 
 func get_global_rect() -> Rect2:
 	var sprite = get_node_or_null("Sprite")
