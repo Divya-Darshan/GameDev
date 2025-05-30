@@ -16,7 +16,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if dragging:
-		# Smoothly interpolate toward the drag position
 		position = position.lerp(target_position, DRAG_SMOOTHNESS)
 
 func _input(event: InputEvent) -> void:
@@ -34,10 +33,11 @@ func _input(event: InputEvent) -> void:
 			dragging = false
 
 		elif dragging and event is InputEventScreenDrag:
-			target_position = touch_pos + drag_offset  # Update target for smooth interpolation
+			# Allow only Y movement by keeping the original X
+			target_position = Vector2(position.x, touch_pos.y + drag_offset.y)
 
 func snap_to_position(pos: Vector2) -> void:
-	tween.kill()  # Stop existing tweens to avoid overlap
+	tween.kill()
 	tween = create_tween()
 	tween.tween_property(self, "position", pos, SNAP_DURATION)\
 		.set_trans(Tween.TRANS_CUBIC)\

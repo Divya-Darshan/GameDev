@@ -44,7 +44,7 @@ region = Rect2(64.9682, 241.927, 14.07, 14.1363)
 script = ExtResource("1_owfuy")
 
 [node name="phone" parent="." instance=ExtResource("7_ppwfx")]
-position = Vector2(544, 758)
+position = Vector2(453, 902)
 
 [node name="HBoxbtn" type="HBoxContainer" parent="."]
 anchors_preset = 3
