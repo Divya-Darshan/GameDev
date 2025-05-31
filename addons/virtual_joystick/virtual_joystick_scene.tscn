@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmr0fcamx7t56"]
+
+[ext_resource type="Script" path="res://addons/virtual_joystick/virtual_joystick.gd" id="1_8x4dy"]
+[ext_resource type="Texture2D" uid="uid://dqc3ore6pkv8h" path="res://uibtn/gdb-playstation-2.png" id="2_wmkyi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6wb8"]
+atlas = ExtResource("2_wmkyi")
+region = Rect2(112.955, 352.828, 14.0965, 14.2087)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yn2k"]
+atlas = ExtResource("2_wmkyi")
+region = Rect2(119.958, 311.976, 16.0594, 16.2534)
+
+[node name="Virtual Joystick" type="Control"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -308.0
+offset_right = 297.0
+offset_bottom = -8.0
+grow_vertical = 0
+script = ExtResource("1_8x4dy")
+pressed_color = Color(1, 1, 1, 1)
+
+[node name="Base" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 100)
+mouse_force_pass_scroll_events = false
+texture = SubResource("AtlasTexture_a6wb8")
+stretch_mode = 5
+
+[node name="Tip" type="TextureRect" parent="Base"]
+self_modulate = Color(1, 1, 1, 0.898039)
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.25
+offset_top = -65.0
+offset_right = 61.75
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2074, 1.24694)
+pivot_offset = Vector2(50, 50)
+texture = SubResource("AtlasTexture_4yn2k")
+stretch_mode = 5
