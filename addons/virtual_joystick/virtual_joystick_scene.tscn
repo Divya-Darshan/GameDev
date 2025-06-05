@@ -22,7 +22,6 @@ offset_right = 297.0
 offset_bottom = -8.0
 grow_vertical = 0
 script = ExtResource("1_8x4dy")
-pressed_color = Color(1, 1, 1, 1)
 
 [node name="Base" type="TextureRect" parent="."]
 layout_mode = 1

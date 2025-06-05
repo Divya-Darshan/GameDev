@@ -368,10 +368,10 @@ animation = &"run"
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
 self_modulate = Color(1, 0.98, 0.980333, 1)
-offset_left = 158.0
-offset_top = 112.0
-offset_right = 225.0
-offset_bottom = 125.0
+offset_left = 189.0
+offset_top = 137.0
+offset_right = 256.0
+offset_bottom = 150.0
 scale = Vector2(6.07231, 6.07231)
 pivot_offset = Vector2(30.88, 20.585)
 value = 100.0
@@ -384,6 +384,12 @@ metadata/_edit_use_anchors_ = true
 [node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_8q5of")
 volume_db = -1.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(4, -13)
+ignore_rotation = false
+zoom = Vector2(5, 5)
+position_smoothing_speed = 9.0
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]

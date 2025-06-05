@@ -6,7 +6,7 @@ var target_position := Vector2.ZERO
 var free_look := false  # 🔹 Set this to true to allow full XY movement
 
 const SCALE_FACTOR_X := 7.0
-const SCALE_FACTOR_Y := 9.83
+const SCALE_FACTOR_Y := 10.0
 const DRAG_SMOOTHNESS := 0.5  # Lower = smoother
 const SNAP_DURATION := 0.5
 

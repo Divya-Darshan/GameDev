@@ -7,7 +7,7 @@ signal button_pressed(action_name)
 @onready var o = $HBoxbtn/o
 @onready var x = $HBoxbtn/x
 @onready var b = $HBoxbtn/b
-@onready var ps = $HBoxps/ps/ColorRect
+@onready var ps = $ColorRect
 @onready var hboxbtn = $HBoxbtn
 @onready var play = $HBoxps/ps/play
 @onready var close = $HBoxps/ps/close

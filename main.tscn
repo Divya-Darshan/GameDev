@@ -285,12 +285,6 @@ tile_set = SubResource("TileSet_0u08f")
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_in2r8")]
 position = Vector2(525, 559)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(4, -13)
-ignore_rotation = false
-zoom = Vector2(5, 5)
-position_smoothing_speed = 9.0
-
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(291, 348)
 texture = ExtResource("3_s5hro")

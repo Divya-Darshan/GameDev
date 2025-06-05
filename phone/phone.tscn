@@ -1,44 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://m475603kr452"]
+[gd_scene load_steps=3 format=3 uid="uid://m475603kr452"]
 
 [ext_resource type="Script" path="res://phone/phone.gd" id="1_20kl2"]
 [ext_resource type="Texture2D" uid="uid://c8p880ms3aiod" path="res://phone/IBrick_13/2B.png" id="1_umuwb"]
-[ext_resource type="Texture2D" uid="uid://di16fptvvt76r" path="res://phone/icons/Small (24x24) PNG/Amazon Shopping.png" id="2_mmkod"]
-[ext_resource type="Texture2D" uid="uid://b6fqyl2fc3u1o" path="res://phone/icons/Small (24x24) PNG/Google Chrome.png" id="3_q30f4"]
-[ext_resource type="Texture2D" uid="uid://xv7ujadjg7ob" path="res://phone/icons/Small (24x24) PNG/Youtube.png" id="4_okryc"]
-[ext_resource type="Texture2D" uid="uid://brkd8vr1sx66p" path="res://phone/icons/Small (24x24) PNG/Whatsapp.png" id="5_bjlov"]
-[ext_resource type="Texture2D" uid="uid://c3486weo6iu8t" path="res://phone/icons/Small (24x24) PNG/Twitter.png" id="6_pbwrk"]
 
 [node name="phone" type="Node2D"]
-position = Vector2(576, 320)
+modulate = Color(1, 0.882353, 1, 1)
+position = Vector2(984, 320)
 script = ExtResource("1_20kl2")
 
 [node name="2b" type="Sprite2D" parent="."]
-position = Vector2(-2, 3)
+position = Vector2(-55, 3)
 scale = Vector2(1.82973, 1.82973)
 texture = ExtResource("1_umuwb")
 offset = Vector2(-0.33, 0)
-
-[node name="Discord" type="Sprite2D" parent="2b"]
-position = Vector2(-52.6187, -111.668)
-scale = Vector2(0.780036, 0.780036)
-texture = ExtResource("2_mmkod")
-
-[node name="GoogleChrome" type="Sprite2D" parent="2b"]
-position = Vector2(-21.0475, -112.253)
-scale = Vector2(0.714702, 0.714702)
-texture = ExtResource("3_q30f4")
-
-[node name="GoogleChrome2" type="Sprite2D" parent="2b"]
-position = Vector2(6.43117, -111.16)
-scale = Vector2(0.714702, 0.714702)
-texture = ExtResource("4_okryc")
-
-[node name="GoogleChrome3" type="Sprite2D" parent="2b"]
-position = Vector2(30.9865, -112.253)
-scale = Vector2(0.714702, 0.714702)
-texture = ExtResource("5_bjlov")
-
-[node name="GoogleChrome4" type="Sprite2D" parent="2b"]
-position = Vector2(53.788, -112.253)
-scale = Vector2(0.714702, 0.714702)
-texture = ExtResource("6_pbwrk")
