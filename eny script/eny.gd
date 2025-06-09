@@ -29,6 +29,7 @@ signal progresseny
 var fade_duration := 0.3
 
 func _ready():
+	print('hello world!')
 	probar.visible = false
 	touch_controls = get_node('/root/Touchcontrols') # Corrected path!
 	if not is_dead and health <= 0:

@@ -72,7 +72,7 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="phone" parent="vBoxphon" instance=ExtResource("7_ppwfx")]
-position = Vector2(-153, 851)
+position = Vector2(-153, 1063)
 
 [node name="HBoxbtn" type="HBoxContainer" parent="."]
 anchors_preset = 3
