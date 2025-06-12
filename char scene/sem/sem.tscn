@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dpqv2okc6ggr5"]
+[gd_scene load_steps=59 format=3 uid="uid://dpqv2okc6ggr5"]
 
 [ext_resource type="Script" path="res://player scripts/sem.gd" id="1_0qdvd"]
 [ext_resource type="Texture2D" uid="uid://c732fixpbkk8j" path="res://char scene/sem/ATTACK 1.png" id="1_xmgxq"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" path="res://player scripts/progressbar/progressbar.gd" id="8_6cr0n"]
 [ext_resource type="Texture2D" uid="uid://bfey0hscp0qvc" path="res://uibtn/proover.tres" id="8_pc23k"]
 [ext_resource type="AudioStream" uid="uid://c85g2sc5bkray" path="res://sfx/character/slash.wav" id="10_8q5of"]
+[ext_resource type="Texture2D" uid="uid://begt7h836uh8o" path="res://uibtn/GUI.png" id="10_w42ff"]
+[ext_resource type="FontFile" uid="uid://b07xmv84cnmcm" path="res://fonts/m6x11.ttf" id="11_h4hvg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_efksp"]
 
@@ -330,6 +332,14 @@ animations = [{
 "speed": 19.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_je7n3"]
+atlas = ExtResource("10_w42ff")
+region = Rect2(144.906, 81.1251, 46.1627, 13.9238)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwoqy"]
+atlas = ExtResource("10_w42ff")
+region = Rect2(144.898, 97.9193, 46.1961, 13.306)
+
 [node name="sem" type="CharacterBody2D"]
 position = Vector2(0, 1)
 collision_layer = 3
@@ -355,7 +365,7 @@ texture = ExtResource("2_dt36a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5.96046e-08, -0.999999)
-rotation = 1.57079
+rotation = -6.28319
 scale = Vector2(0.631421, 0.631421)
 shape = SubResource("CircleShape2D_vargi")
 
@@ -380,15 +390,41 @@ tint_under = Color(0.589096, 0.589096, 0.589096, 1)
 script = ExtResource("8_6cr0n")
 metadata/_edit_use_anchors_ = true
 
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+scale = Vector2(1.28388, 1.28388)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer"]
+position = Vector2(37.3868, -146.432)
+scale = Vector2(6.36082, 6.36082)
+texture_normal = SubResource("AtlasTexture_je7n3")
+texture_pressed = SubResource("AtlasTexture_uwoqy")
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/TouchScreenButton"]
+offset_left = 3.79599
+offset_top = 0.489804
+offset_right = 78.796
+offset_bottom = 23.4898
+scale = Vector2(0.663589, 0.663589)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.243137)
+theme_override_fonts/font = ExtResource("11_h4hvg")
+text = "respawns"
+
 [node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_8q5of")
 volume_db = -1.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(4, -13)
+position = Vector2(5, -12)
 ignore_rotation = false
 zoom = Vector2(5, 5)
-position_smoothing_speed = 9.0
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

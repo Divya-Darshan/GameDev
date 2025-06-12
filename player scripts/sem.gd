@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health := 100
+var health := 40
 signal progressbar
 @export var cur_heath := health
 const SPEED = 200.0
@@ -10,6 +10,11 @@ const FULL_DAMAGE_DELAY := 0.5  # seconds
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var touch_controls = $"../Touchcontrols"
 @onready var slashsfx: AudioStreamPlayer2D = $slashsfx
+@onready var endscr: HBoxContainer = $CanvasLayer/HBoxContainer
+
+@onready var col2d: CollisionShape2D = $CollisionShape2D
+@onready var shadow: Sprite2D = $Shadow
+@onready var touchcontrols: CanvasLayer = %Touchcontrols
 
 
 var last_attack_time := 0.0
@@ -26,14 +31,13 @@ var ack_in = false
 
 
 
-
-
-
 func _ready():
 	if touch_controls:
 		touch_controls.button_pressed.connect(_on_touch_button_pressed)
-		animated_sprite.speed_scale = 1.0
-	
+
+#func _process(delta: float) -> void:
+	#if health == 0:
+		#ply.visible = false
 	
 
 func _on_touch_button_pressed(action_name: String) -> void:
@@ -50,8 +54,17 @@ func take_damage(amount: int) -> void:
 	health -= amount
 	progressbar.emit()
 	print("Took damage, health:", health)
+	
 	if health <= 0:
-		queue_free()
+		col2d.disabled = true
+		animated_sprite.visible = false
+		endscr.visible = true
+		shadow.visible = false
+		touchcontrols.visible = false
+		
+
+			
+		
 
 func attack1() -> void:
 	is_attacking1 = true
@@ -94,9 +107,8 @@ func attack2() -> void:
 
 func inter() -> void:
 	is_inter = true
-	animated_sprite.play("hit")  # Play the first special animation
-	await animated_sprite.animation_finished
-	animated_sprite.play("default")
+	health = 100
+	progressbar.emit()
 	is_inter = false
 
 func inter2() -> void:
@@ -160,5 +172,13 @@ func _on_hitbox_body_exited(body: Node2D) -> void:
 
 
 
-	
+func _on_touch_screen_button_pressed() -> void:
+
+		col2d.disabled = false
+		animated_sprite.visible = true
+		endscr.visible = false
+		shadow.visible = true
+		touchcontrols.visible = true
+		health = 100
+		progressbar.emit()
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://rs6ol2hy57td"]
+[gd_scene load_steps=40 format=3 uid="uid://rs6ol2hy57td"]
 
 [ext_resource type="Texture2D" uid="uid://dhin45b6fl8hh" path="res://eny scene/Skeleton/Attack.png" id="1_m3mv1"]
 [ext_resource type="Script" path="res://eny script/eny.gd" id="1_obcnn"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://bfey0hscp0qvc" path="res://uibtn/proover.tres" id="8_lp22q"]
 [ext_resource type="Texture2D" uid="uid://djpd25pwallw8" path="res://char scene/shadow.png" id="9_581r8"]
 [ext_resource type="AudioStream" uid="uid://c85g2sc5bkray" path="res://sfx/character/slash.wav" id="11_uxf6m"]
-[ext_resource type="AudioStream" uid="uid://csrayi77gohv0" path="res://sfx/death/death.wav" id="12_42kih"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eyut2"]
 
@@ -84,19 +83,19 @@ region = Rect2(300, 0, 150, 150)
 atlas = ExtResource("3_6k8xb")
 region = Rect2(450, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_veruf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v04s"]
 atlas = ExtResource("4_63rp8")
 region = Rect2(0, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bx8of"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_thoqt"]
 atlas = ExtResource("4_63rp8")
 region = Rect2(150, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2hq5n"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gkis"]
 atlas = ExtResource("4_63rp8")
 region = Rect2(300, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_duqoh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp5km"]
 atlas = ExtResource("4_63rp8")
 region = Rect2(450, 0, 150, 150)
 
@@ -162,30 +161,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g1ou0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g1ou0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g1ou0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g1ou0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g1ou0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g1ou0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g1ou0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g1ou0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g1ou0")
 }],
 "loop": false,
 "name": &"death",
@@ -210,56 +185,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_veruf")
+"texture": SubResource("AtlasTexture_1v04s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bx8of")
+"texture": SubResource("AtlasTexture_thoqt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2hq5n")
+"texture": SubResource("AtlasTexture_4gkis")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_duqoh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5pg1w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nrpji")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1lfwm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g1ou0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g1ou0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g1ou0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g1ou0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g1ou0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g1ou0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1lfwm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nrpji")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5pg1w")
+"texture": SubResource("AtlasTexture_xp5km")
 }],
 "loop": false,
 "name": &"hit",
-"speed": 14.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -335,15 +274,12 @@ position = Vector2(-3.5, -17.5)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_vn4ik")
 animation = &"hit"
+frame_progress = 1.0
 
 [node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-4.76837e-07, -1.90735e-06)
 stream = ExtResource("11_uxf6m")
 volume_db = -5.0
-
-[node name="deathsfx" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_42kih")
-volume_db = 24.0
 
 [connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]

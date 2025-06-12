@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=11 format=4 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="PackedScene" uid="uid://dpqv2okc6ggr5" path="res://char scene/sem/sem.tscn" id="1_in2r8"]
 [ext_resource type="Script" path="res://manager/manage_game.gd" id="1_iwro6"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://by86u7tig0d70" path="res://icon.svg" id="3_s5hro"]
 [ext_resource type="PackedScene" uid="uid://rs6ol2hy57td" path="res://eny scene/Skeleton/ski.tscn" id="4_c0t7d"]
 [ext_resource type="Texture2D" uid="uid://hvdxl1v3u0n3" path="res://map/TX Tileset Grass.png" id="5_juwwe"]
+[ext_resource type="PackedScene" uid="uid://dslqpyxjoyav2" path="res://eny scene/flyeye/eyefly.tscn" id="7_8u3kr"]
+[ext_resource type="PackedScene" uid="uid://cqmou4vv11s08" path="res://eny scene/slime/slime.tscn" id="8_0cw8a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qv6wp"]
 texture = ExtResource("5_juwwe")
@@ -281,9 +283,7 @@ tile_map_data = PackedByteArray("AAABAAcAAAALAAIAAAABAAgAAAAFAAEAAAACAAgAAAAOAAk
 tile_set = SubResource("TileSet_0u08f")
 
 [node name="Touchcontrols" parent="." instance=ExtResource("3_h8082")]
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_in2r8")]
-position = Vector2(525, 559)
+unique_name_in_owner = true
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(291, 348)
@@ -294,3 +294,12 @@ position = Vector2(596, 443)
 
 [node name="ski2" parent="." instance=ExtResource("4_c0t7d")]
 position = Vector2(437, 451)
+
+[node name="sem" parent="." instance=ExtResource("1_in2r8")]
+position = Vector2(587, 466)
+
+[node name="eyefly" parent="." instance=ExtResource("7_8u3kr")]
+position = Vector2(353, 530)
+
+[node name="slimered" parent="." instance=ExtResource("8_0cw8a")]
+position = Vector2(526, 595)

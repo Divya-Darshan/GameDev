@@ -8,6 +8,7 @@ var is_attacking: bool = false
 var touch_controls: Node = null
 var _health := 100  # Internal storage
 
+
 var health:
 	get:
 		return _health
@@ -17,7 +18,6 @@ var health:
 var is_dead: bool = false 
 @export var cur_heath := _health
 @onready var slashsfx: AudioStreamPlayer2D = $slashsfx
-@onready var deathsfx: AudioStreamPlayer2D = $deathsfx
 
 signal progresseny 
 
@@ -29,18 +29,25 @@ signal progresseny
 var fade_duration := 0.3
 
 func _ready():
-	print('hello world!')
 	probar.visible = false
 	touch_controls = get_node('/root/Touchcontrols') # Corrected path!
-	if not is_dead and health <= 0:
-		sprite.play("death")
-		await sprite.animation_finished
-		queue_free()
-		
+	#if not is_dead and health == 0:
+		#sprite.play("death")
+		#await sprite.animation_finished
+		#queue_free()
+
 	if touch_controls != null:
 		touch_controls.button_pressed.connect(_on_touch_controls_button_pressed)
 	else:
 		printerr("TouchControls autoload not found! Check the autoload list in Project Settings.")
+
+
+func _process(delta: float) -> void: #remove the eny after the helth = 0
+
+	if health == 0:
+		sprite.play("death")
+		await get_tree().create_timer(0.5).timeout
+		queue_free()
 
 func _on_touch_controls_button_pressed(action_name: String) -> void:
 	if is_player_in_hitbox:
@@ -62,15 +69,6 @@ func enytake_damage(amount: int) -> void:
 	health -= amount
 	progresseny.emit()
 	print(health)
-
-	if health == 0:
-		
-		is_dead = true  # Mark as dead
-		velocity = Vector2.ZERO
-		sprite.play("death")
-		deathsfx.play()
-		await sprite.animation_finished
-		queue_free()
 
 
 
