@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var health := 40
+
 signal progressbar
 @export var cur_heath := health
 const SPEED = 200.0
@@ -11,7 +12,6 @@ const FULL_DAMAGE_DELAY := 0.5  # seconds
 @onready var touch_controls = $"../Touchcontrols"
 @onready var slashsfx: AudioStreamPlayer2D = $slashsfx
 @onready var endscr: HBoxContainer = $CanvasLayer/HBoxContainer
-
 @onready var col2d: CollisionShape2D = $CollisionShape2D
 @onready var shadow: Sprite2D = $Shadow
 @onready var touchcontrols: CanvasLayer = %Touchcontrols
@@ -55,10 +55,12 @@ func take_damage(amount: int) -> void:
 	progressbar.emit()
 	print("Took damage, health:", health)
 	
-	if health <= 0:
+	if health == 0:
 		col2d.disabled = true
 		animated_sprite.visible = false
 		endscr.visible = true
+		var tween = create_tween()
+		tween.tween_property(endscr, "position", Vector2(13, 324), 0.3) #btn animaction
 		shadow.visible = false
 		touchcontrols.visible = false
 		
@@ -177,6 +179,7 @@ func _on_touch_screen_button_pressed() -> void:
 		col2d.disabled = false
 		animated_sprite.visible = true
 		endscr.visible = false
+		endscr.position = Vector2(-440, 324) 
 		shadow.visible = true
 		touchcontrols.visible = true
 		health = 100

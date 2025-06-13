@@ -391,10 +391,11 @@ script = ExtResource("8_6cr0n")
 metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
-visible = false
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
+offset_left = -440.0
+offset_right = -440.0
 grow_vertical = 2
 scale = Vector2(1.28388, 1.28388)
 
