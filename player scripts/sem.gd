@@ -178,10 +178,12 @@ func _on_touch_screen_button_pressed() -> void:
 
 		col2d.disabled = false
 		animated_sprite.visible = true
-		endscr.visible = false
-		endscr.position = Vector2(-440, 324) 
 		shadow.visible = true
 		touchcontrols.visible = true
 		health = 100
 		progressbar.emit()
+		var tween = create_tween()
+		tween.tween_property(endscr, "position", Vector2(-440, 324), 0.3) 
+		await get_tree().create_timer(0.4).timeout
+		endscr.visible = false
 	

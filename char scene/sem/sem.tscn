@@ -400,18 +400,19 @@ grow_vertical = 2
 scale = Vector2(1.28388, 1.28388)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer"]
-position = Vector2(37.3868, -146.432)
-scale = Vector2(6.36082, 6.36082)
+position = Vector2(24.1456, -161.23)
+scale = Vector2(3.161, 3.161)
 texture_normal = SubResource("AtlasTexture_je7n3")
 texture_pressed = SubResource("AtlasTexture_uwoqy")
 
 [node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/TouchScreenButton"]
-offset_left = 3.79599
-offset_top = 0.489804
-offset_right = 78.796
-offset_bottom = 23.4898
-scale = Vector2(0.663589, 0.663589)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.243137)
+offset_left = 6.40656
+offset_top = 1.47843
+offset_right = 81.4066
+offset_bottom = 24.4784
+scale = Vector2(0.598934, 0.598934)
+theme_override_colors/font_color = Color(0.815857, 0.773463, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.176471)
 theme_override_fonts/font = ExtResource("11_h4hvg")
 text = "respawns"
 
