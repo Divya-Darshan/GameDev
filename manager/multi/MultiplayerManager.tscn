@@ -16,4 +16,10 @@ texture_normal = ExtResource("2_c62lm")
 texture_pressed = ExtResource("3_g6c6e")
 action = "send_msg"
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 81.0
+offset_top = 215.0
+offset_right = 982.0
+offset_bottom = 535.0
+
 [connection signal="pressed" from="CanvasLayer/SendTouchButton" to="." method="_on_send_touch_button_pressed"]

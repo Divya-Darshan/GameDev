@@ -3,6 +3,9 @@ extends Node
 var websocket := WebSocketPeer.new()
 var url := "wss://gamedev-ws.onrender.com"
 var _connected := false
+@onready var label: Label = $CanvasLayer/Label
+
+
 
 func _ready():
 	print("🔌 Connecting to WebSocket server...")
@@ -26,6 +29,7 @@ func _process(_delta):
 				var packet := websocket.get_packet()
 				var msg := packet.get_string_from_utf8()
 				print("📨 Server says:", msg)
+				label.text =  msg
 		WebSocketPeer.STATE_CLOSING:
 			print("⚠️ Connection is closing...")
 		WebSocketPeer.STATE_CLOSED:
@@ -40,6 +44,11 @@ func send_message(message: String):
 	if websocket.get_ready_state() == WebSocketPeer.STATE_OPEN:
 		websocket.send_text(message)
 		print("📤 Sent:", message)
+		label.text = message
+		await get_tree().create_timer(2.0).timeout
+		
+
+
 	else:
 		print("⚠️ Cannot send: Not connected")
 
