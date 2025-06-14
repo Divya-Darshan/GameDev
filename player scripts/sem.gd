@@ -4,7 +4,7 @@ var health := 40
 
 signal progressbar
 @export var cur_heath := health
-const SPEED = 200.0
+var SPEED = 200.0
 const DEADZONE = 0.1
 const FULL_DAMAGE_DELAY := 0.5  # seconds
 
@@ -15,6 +15,7 @@ const FULL_DAMAGE_DELAY := 0.5  # seconds
 @onready var col2d: CollisionShape2D = $CollisionShape2D
 @onready var shadow: Sprite2D = $Shadow
 @onready var touchcontrols: CanvasLayer = %Touchcontrols
+@onready var progress_bar: TextureProgressBar = $CanvasLayer/TextureProgressBar
 
 
 var last_attack_time := 0.0
@@ -56,11 +57,13 @@ func take_damage(amount: int) -> void:
 	print("Took damage, health:", health)
 	
 	if health == 0:
+		SPEED = 300.0
 		col2d.disabled = true
 		animated_sprite.visible = false
 		endscr.visible = true
 		var tween = create_tween()
-		tween.tween_property(endscr, "position", Vector2(13, 324), 0.3) #btn animaction
+		tween.tween_property(endscr, "position", Vector2(94, 324), 0.3) #btn animaction
+		tween.tween_property(progress_bar, "position", Vector2(189, 24), 0.1)
 		shadow.visible = false
 		touchcontrols.visible = false
 		
@@ -175,7 +178,7 @@ func _on_hitbox_body_exited(body: Node2D) -> void:
 
 
 func _on_touch_screen_button_pressed() -> void:
-
+		SPEED = 200.0
 		col2d.disabled = false
 		animated_sprite.visible = true
 		shadow.visible = true
@@ -183,7 +186,9 @@ func _on_touch_screen_button_pressed() -> void:
 		health = 100
 		progressbar.emit()
 		var tween = create_tween()
-		tween.tween_property(endscr, "position", Vector2(-440, 324), 0.3) 
+		tween.tween_property(progress_bar, "position", Vector2(189, 137), 0.1)
+		tween.tween_property(endscr, "position", Vector2(-440, 324), 0.3)
+
 		await get_tree().create_timer(0.4).timeout
 		endscr.visible = false
 	

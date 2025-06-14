@@ -401,7 +401,7 @@ scale = Vector2(1.28388, 1.28388)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer"]
 position = Vector2(24.1456, -161.23)
-scale = Vector2(3.161, 3.161)
+scale = Vector2(3.82173, 3.82173)
 texture_normal = SubResource("AtlasTexture_je7n3")
 texture_pressed = SubResource("AtlasTexture_uwoqy")
 

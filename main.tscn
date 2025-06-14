@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=12 format=4 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="PackedScene" uid="uid://dpqv2okc6ggr5" path="res://char scene/sem/sem.tscn" id="1_in2r8"]
 [ext_resource type="Script" path="res://manager/manage_game.gd" id="1_iwro6"]
@@ -271,6 +271,8 @@ texture = ExtResource("2_fvtbc")
 [sub_resource type="TileSet" id="TileSet_0u08f"]
 sources/1 = SubResource("TileSetAtlasSource_ag6bu")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hb31w"]
+
 [node name="MAIN" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(-11, -109)
@@ -303,3 +305,10 @@ position = Vector2(353, 530)
 
 [node name="slimered" parent="." instance=ExtResource("8_0cw8a")]
 position = Vector2(526, 595)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1011, 388)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_hb31w")
