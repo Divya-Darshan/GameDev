@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://clry4naiqhp74"]
+
+[ext_resource type="Script" path="res://manager/multiplayer.gd" id="1_eyl7v"]
+[ext_resource type="Texture2D" uid="uid://by86u7tig0d70" path="res://icon.svg" id="2_c62lm"]
+[ext_resource type="Texture2D" uid="uid://di16fptvvt76r" path="res://phone/icons/Small (24x24) PNG/Amazon Shopping.png" id="3_g6c6e"]
+
+[node name="Multiplayer manager" type="Node"]
+script = ExtResource("1_eyl7v")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SendTouchButton" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(66, 102)
+scale = Vector2(2.16406, 0.8125)
+texture_normal = ExtResource("2_c62lm")
+texture_pressed = ExtResource("3_g6c6e")
+action = "send_msg"
+
+[connection signal="pressed" from="CanvasLayer/SendTouchButton" to="." method="_on_send_touch_button_pressed"]

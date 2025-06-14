@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://dpqv2okc6ggr5" path="res://char scene/sem/sem.tscn" id="1_in2r8"]
 [ext_resource type="Script" path="res://manager/manage_game.gd" id="1_iwro6"]
+[ext_resource type="PackedScene" uid="uid://clry4naiqhp74" path="res://manager/multi/MultiplayerManager.tscn" id="1_xiuni"]
 [ext_resource type="Texture2D" uid="uid://xft0hopoxrok" path="res://map/nature/TX Tileset Grass.png" id="2_fvtbc"]
 [ext_resource type="PackedScene" uid="uid://c7i3w627hjbum" path="res://control/touchcontrols.tscn" id="3_h8082"]
 [ext_resource type="Texture2D" uid="uid://by86u7tig0d70" path="res://icon.svg" id="3_s5hro"]
 [ext_resource type="PackedScene" uid="uid://rs6ol2hy57td" path="res://eny scene/Skeleton/ski.tscn" id="4_c0t7d"]
 [ext_resource type="PackedScene" uid="uid://dslqpyxjoyav2" path="res://eny scene/flyeye/eyefly.tscn" id="7_8u3kr"]
-[ext_resource type="PackedScene" uid="uid://cqmou4vv11s08" path="res://eny scene/slime/slime.tscn" id="8_0cw8a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ag6bu"]
 texture = ExtResource("2_fvtbc")
@@ -277,6 +277,8 @@ sources/1 = SubResource("TileSetAtlasSource_ag6bu")
 y_sort_enabled = true
 position = Vector2(-11, -109)
 
+[node name="Multiplayer manager" parent="." instance=ExtResource("1_xiuni")]
+
 [node name="manager" type="Node" parent="."]
 script = ExtResource("1_iwro6")
 
@@ -298,13 +300,10 @@ position = Vector2(596, 443)
 position = Vector2(437, 451)
 
 [node name="sem" parent="." instance=ExtResource("1_in2r8")]
-position = Vector2(587, 466)
+position = Vector2(594, 606)
 
 [node name="eyefly" parent="." instance=ExtResource("7_8u3kr")]
 position = Vector2(353, 530)
-
-[node name="slimered" parent="." instance=ExtResource("8_0cw8a")]
-position = Vector2(526, 595)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
