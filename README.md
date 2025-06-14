@@ -7,8 +7,8 @@
   <img src="https://img.shields.io/badge/engine-godot_4-blue?logo=godot-engine&style=flat-square" alt="Engine">
   <img src="https://img.shields.io/badge/platform-mobile--first-green?style=flat-square" alt="Platform">
   <img src="https://img.shields.io/badge/status-in--development-yellow?style=flat-square" alt="Status">
+  <img src="https://img.shields.io/badge/multiplayer-online--ready-purple?style=flat-square" alt="Multiplayer">
 </p>
-
 
 ---
 
@@ -32,6 +32,21 @@
 
 ---
 
+
+## 🚀 Stack
+
+| Component         | Purpose                                     | Tool / Technology                |
+|------------------|---------------------------------------------|----------------------------------|
+| Game Engine       | Core engine for game development             | [Godot 4.3](https://godotengine.org/) |
+| Networking Layer  | Real-time multiplayer communication          | `WebSocketPeer` (Godot)          |
+| Server Hosting    | Hosts WebSocket server for all players       | [Render.com](https://render.com/) |
+| Backend Server    | Handles WebSocket connections & sync         | `Node.js` + `ws` library         |
+| Multiplayer Type  | Peer-to-server model                         | Client ↔ Server (Authoritative)  |
+
+---
+
+
+
 ## 🚧 Status
 
 Currently in **alpha** — new features, UI updates, and bug fixes are added frequently!  
@@ -42,7 +57,6 @@ Currently in **alpha** — new features, UI updates, and bug fixes are added fre
 ## 🙌 Credits
 
 Built by [Divya Darshan](https://github.com/Divya-Darshan)  
-
 
 ---
 
@@ -58,4 +72,5 @@ Clone the Repo:
 ```bash
 git clone https://github.com/Divya-Darshan/GameDev.git
 ```
+
 ⭐ Star the repo if you're excited for the full release! 🌟
