@@ -7,7 +7,6 @@
   <img src="https://img.shields.io/badge/engine-godot_4-blue?logo=godot-engine&style=flat-square" alt="Engine">
   <img src="https://img.shields.io/badge/platform-mobile--first-green?style=flat-square" alt="Platform">
   <img src="https://img.shields.io/badge/status-in--development-yellow?style=flat-square" alt="Status">
-  <img src="https://img.shields.io/badge/multiplayer-online--ready-purple?style=flat-square" alt="Multiplayer">
 </p>
 
 ---
@@ -56,7 +55,7 @@ Currently in **alpha** — new features, UI updates, and bug fixes are added fre
 
 ## 🙌 Credits
 
-Built by [Divya Darshan](https://github.com/Divya-Darshan)  
+Built by [Divya Darshan](https://github.com/Divya-Darshan)-(me😅)
 
 ---
 
