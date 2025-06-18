@@ -28,7 +28,6 @@ func _process(_delta):
 			while websocket.get_available_packet_count() > 0:
 				var packet := websocket.get_packet()
 				var msg := packet.get_string_from_utf8()
-				print("📨 Server says:", msg)
 				label.text =  msg
 		WebSocketPeer.STATE_CLOSING:
 			print("⚠️ Connection is closing...")

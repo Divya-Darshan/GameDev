@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=11 format=4 uid="uid://xdwundx3x7v2"]
 
-[ext_resource type="PackedScene" uid="uid://dpqv2okc6ggr5" path="res://char scene/sem/sem.tscn" id="1_in2r8"]
+[ext_resource type="PackedScene" uid="uid://baktrdqwow7br" path="res://world/world.tscn" id="1_arpgk"]
 [ext_resource type="Script" path="res://manager/manage_game.gd" id="1_iwro6"]
 [ext_resource type="PackedScene" uid="uid://clry4naiqhp74" path="res://manager/multi/MultiplayerManager.tscn" id="1_xiuni"]
 [ext_resource type="Texture2D" uid="uid://xft0hopoxrok" path="res://map/nature/TX Tileset Grass.png" id="2_fvtbc"]
@@ -271,11 +271,12 @@ texture = ExtResource("2_fvtbc")
 [sub_resource type="TileSet" id="TileSet_0u08f"]
 sources/1 = SubResource("TileSetAtlasSource_ag6bu")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hb31w"]
-
 [node name="MAIN" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(-11, -109)
+
+[node name="world" parent="." instance=ExtResource("1_arpgk")]
+position = Vector2(775, 2083)
 
 [node name="Multiplayer manager" parent="." instance=ExtResource("1_xiuni")]
 
@@ -299,15 +300,5 @@ position = Vector2(596, 443)
 [node name="ski2" parent="." instance=ExtResource("4_c0t7d")]
 position = Vector2(437, 451)
 
-[node name="sem" parent="." instance=ExtResource("1_in2r8")]
-position = Vector2(594, 606)
-
 [node name="eyefly" parent="." instance=ExtResource("7_8u3kr")]
 position = Vector2(353, 530)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1011, 388)
-rotation = -1.5708
-shape = SubResource("WorldBoundaryShape2D_hb31w")
