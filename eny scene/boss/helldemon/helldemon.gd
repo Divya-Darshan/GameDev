@@ -36,6 +36,12 @@ func _ready():
 		printerr("TouchControls autoload not found! Check the autoload list in Project Settings.")
 
 func _process(delta: float) -> void:
+	if is_dead:
+		sprite.visible = false
+		queue_free()
+		queue_free()
+
+	
 	if health == 0 and not is_dead:
 		shadow.visible = false
 		is_dead = true
@@ -43,11 +49,14 @@ func _process(delta: float) -> void:
 		sprite.play("death")
 		await sprite.animation_finished
 		col2d.disabled = true
-		col2d.disabled = true
 		queue_free()
 		queue_free()
 		queue_free()
-
+		if is_dead:
+			sprite.visible = false
+			queue_free()
+			queue_free()
+		
 
 
 func _on_touch_controls_button_pressed(action_name: String) -> void:
@@ -76,15 +85,8 @@ func _physics_process(delta: float) -> void:
 		return
 
 	if is_player_in_range and player:
-		var direction = (player.global_position - global_position).normalized()
-		
-		# Avoid push overlap glitch
-		if global_position.distance_to(player.global_position) > 20:
-			velocity = direction * SPEED
-		else:
-			velocity = Vector2.ZERO
-
-		sprite.flip_h = direction.x > 0
+		velocity = (player.global_position - global_position).normalized() * SPEED if global_position.distance_to(player.global_position) > 40 else Vector2.ZERO
+		sprite.flip_h = (player.global_position - global_position).x > 0
 	else:
 		velocity = Vector2.ZERO
 
@@ -109,8 +111,6 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("is_player"):
 		is_player_in_hitbox = true
 		_show_probar()
-
-		# Play attack animation only once per entry (like a slash loop)
 		await _play_attack_sequence(body)
 
 func _on_hitbox_body_exited(body: Node2D) -> void:

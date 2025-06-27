@@ -518,28 +518,31 @@ script = ExtResource("1_ysmm3")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.435294)
-position = Vector2(-0.0545387, -17.1328)
+position = Vector2(-1.05454, 11.8672)
 rotation = -3.14035
 scale = Vector2(0.271199, 0.05)
 texture = ExtResource("2_qytny")
 offset = Vector2(-3.95776, -302.63)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -17)
+position = Vector2(-1, 12)
 scale = Vector2(1.64412, 1.64412)
 shape = SubResource("CircleShape2D_eyut2")
 
 [node name="range" type="Area2D" parent="."]
-position = Vector2(-0.5, 0.5)
+position = Vector2(-1.5, 29.5)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
+visible = false
 position = Vector2(0.5, -39.5)
 scale = Vector2(31.7939, 31.7939)
 shape = SubResource("CircleShape2D_dtnvt")
 
 [node name="hitbox" type="Area2D" parent="."]
+visible = false
+position = Vector2(-1, 29)
 collision_layer = 2
 collision_mask = 2
 
@@ -549,11 +552,11 @@ scale = Vector2(3.8602, 4.58298)
 shape = SubResource("RectangleShape2D_34ddi")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_left = -44.0
-offset_top = -106.0
-offset_right = 23.0
-offset_bottom = -66.0
-scale = Vector2(1.27662, 1.27662)
+offset_left = -46.0
+offset_top = 26.0
+offset_right = 21.0
+offset_bottom = 66.0
+scale = Vector2(1.35092, 1.35092)
 value = 100.0
 texture_under = ExtResource("3_7aodn")
 texture_progress = ExtResource("4_t4nwf")
@@ -562,15 +565,12 @@ tint_progress = Color(1, 1, 0, 1)
 script = ExtResource("5_kpk5g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -17)
+position = Vector2(-1, 12)
 sprite_frames = SubResource("SpriteFrames_vn4ik")
-animation = &"death"
-frame = 34
-frame_progress = 1.0
 offset = Vector2(-6, -64)
 
 [node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(-4.76837e-07, -1.90735e-06)
+position = Vector2(-1, 29)
 stream = ExtResource("11_oy0hf")
 volume_db = -5.0
 

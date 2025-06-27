@@ -1,13 +1,12 @@
 extends CharacterBody2D
 
-const SPEED := 10.0
+const SPEED := 30.0
 var player: CharacterBody2D = null
 var is_player_in_range: bool = false
 var is_player_in_hitbox: bool = false
 var is_attacking: bool = false
 var touch_controls: Node = null
 var _health := 100  # Internal storage
-
 
 var health:
 	get:
@@ -30,24 +29,38 @@ var fade_duration := 0.3
 
 func _ready():
 	probar.visible = false
-	touch_controls = get_node('/root/Touchcontrols') # Corrected path!
-	#if not is_dead and health == 0:
-		#sprite.play("death")
-		#await sprite.animation_finished
-		#queue_free()
+	touch_controls = get_node('/root/Touchcontrols')
 
 	if touch_controls != null:
 		touch_controls.button_pressed.connect(_on_touch_controls_button_pressed)
 	else:
 		printerr("TouchControls autoload not found! Check the autoload list in Project Settings.")
 
+# Removed _process(), as death logic is now handled properly in take_damage
 
-func _process(delta: float) -> void: #remove the eny after the helth = 0
 
-	if health == 0:
+func _process(delta: float) -> void:
+	if is_dead:
 		sprite.play("death")
-		await get_tree().create_timer(0.5).timeout
+		await sprite.animation_finished
+		sprite.visible = false
 		queue_free()
+		queue_free()
+		
+	if health == 0:
+		is_dead = true
+		probar.visible = false
+		sprite.play("death")
+		await sprite.animation_finished
+		await get_tree().create_timer(5.0).timeout
+		queue_free()
+		queue_free()
+		queue_free()
+		if is_dead:
+			sprite.visible = false
+			await get_tree().create_timer(5.0).timeout
+			queue_free()
+			queue_free()
 
 func _on_touch_controls_button_pressed(action_name: String) -> void:
 	if is_player_in_hitbox:
@@ -62,29 +75,35 @@ func _on_touch_controls_button_pressed(action_name: String) -> void:
 				print("Enemy: Unknown button pressed:", action_name)
 
 func enytake_damage(amount: int) -> void:	
-	print("Took damage, health:", health)
 	if is_dead:
 		return  # Skip if already dead
 
 	health -= amount
 	progresseny.emit()
-	print(health)
+	print("Took damage, healtheny:", health)
 
+	if health <= 0:
+		is_dead = true
+		await _play_death_animation_and_remove()
+
+func _play_death_animation_and_remove() -> void:
+	sprite.play("death")
+	await sprite.animation_finished
+	queue_free()
 
 
 func _physics_process(delta: float) -> void:
-	if is_player_in_range and player:
-		var direction = (player.global_position - global_position).normalized()
-		velocity = direction * SPEED
-		move_and_slide()
-		
+	if is_dead:
+		velocity = Vector2.ZERO
+		return
 
-		sprite.flip_h = direction.x < 0
+	if is_player_in_range and player:
+		velocity = (player.global_position - global_position).normalized() * SPEED if global_position.distance_to(player.global_position) > 25 else Vector2.ZERO
+		sprite.flip_h = (player.global_position - global_position).x < 0
 	else:
 		velocity = Vector2.ZERO
-	move_and_slide()
-	
 
+	move_and_slide()
 
 func _on_range_body_entered(body: Node2D) -> void:
 	if body.has_method('is_player'):
@@ -93,7 +112,6 @@ func _on_range_body_entered(body: Node2D) -> void:
 		sprite.play("run")
 
 func _on_range_body_exited(body: Node2D) -> void:
-	
 	if body.has_method('is_player') and body == player:
 		is_player_in_range = false
 		player = null
@@ -106,7 +124,7 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		if is_player_in_hitbox:
 			for i in range(25):
 				if not is_player_in_hitbox:
-					break  # Exit the loop if player leaves the hitbox
+					break
 				body.take_damage(4)
 				body.play_hit_animation()
 				sprite.play("ack1")
@@ -114,21 +132,15 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 				slashsfx.play()
 				await get_tree().create_timer(2.0).timeout
 
-
-
-
 func _on_hitbox_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		is_player_in_hitbox = false
 		_hide_probar()
 		sprite.play("run")
 
-
-
-
 func _show_probar():
 	if not probar.visible:
-		probar.visible = !probar.visible
+		probar.visible = true
 		probar.modulate.a = 0.0
 		tween = create_tween()
 		tween.tween_property(probar, "modulate:a", 1.0, fade_duration)
@@ -137,4 +149,4 @@ func _hide_probar():
 	tween = create_tween()
 	tween.tween_property(probar, "modulate:a", 0.0, fade_duration)
 	await tween.finished
-	probar.visible = !probar.visible
+	probar.visible = false

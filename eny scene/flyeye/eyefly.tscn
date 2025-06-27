@@ -236,7 +236,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bcmcy")
 }],
-"loop": false,
+"loop": true,
 "name": &"hit",
 "speed": 9.0
 }, {
@@ -325,7 +325,7 @@ script = ExtResource("5_l13cf")
 position = Vector2(-4, -18)
 scale = Vector2(0.844818, 0.844818)
 sprite_frames = SubResource("SpriteFrames_vn4ik")
-animation = &"run"
+animation = &"hit"
 
 [node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-4.76837e-07, -1.90735e-06)

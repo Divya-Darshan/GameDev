@@ -1,9 +1,15 @@
 extends CharacterBody2D
 
-var health := 40
+var _health := 40 # Internal storage
+
+var health:
+	get:
+		return _health
+	set(value):
+		_health = clamp(value, 0, 100)
 
 signal progressbar
-@export var cur_heath := health
+@export var cur_heath := _health
 var SPEED = 200.0
 const DEADZONE = 0.1
 const FULL_DAMAGE_DELAY := 0.5  # seconds
@@ -54,7 +60,7 @@ func _on_touch_button_pressed(action_name: String) -> void:
 func take_damage(amount: int) -> void:
 	health -= amount
 	progressbar.emit()
-	print("Took damage, health:", health)
+	#print("Took damage, health:", health)
 	
 	if health == 0:
 		SPEED = 300.0

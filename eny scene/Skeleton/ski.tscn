@@ -196,9 +196,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xp5km")
 }],
-"loop": false,
+"loop": true,
 "name": &"hit",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -274,6 +274,7 @@ position = Vector2(-3.5, -17.5)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_vn4ik")
 animation = &"hit"
+frame = 3
 frame_progress = 1.0
 
 [node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
