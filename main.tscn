@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=19 format=4 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="Script" path="res://manager/manage_game.gd" id="1_iwro6"]
 [ext_resource type="Texture2D" uid="uid://xft0hopoxrok" path="res://map/nature/TX Tileset Grass.png" id="2_fvtbc"]
@@ -8,7 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://dslqpyxjoyav2" path="res://eny scene/flyeye/eyefly.tscn" id="7_8u3kr"]
 [ext_resource type="PackedScene" uid="uid://cqmou4vv11s08" path="res://eny scene/slime/slime.tscn" id="8_0cw8a"]
 [ext_resource type="PackedScene" uid="uid://bhsfjwbkodxm6" path="res://eny scene/boss/helldemon/helldemon.tscn" id="8_seclw"]
-[ext_resource type="PackedScene" uid="uid://mbwpg58xrxx2" path="res://char scene/sword/sword.tscn" id="9_0s6aa"]
+[ext_resource type="PackedScene" uid="uid://dpqv2okc6ggr5" path="res://char scene/sem/sem.tscn" id="9_vcfp3"]
+[ext_resource type="Texture2D" uid="uid://h2hv7rmvpj6j" path="res://phone/icons/Small (24x24) PNG/AirBnB.png" id="10_lm8b1"]
+[ext_resource type="Texture2D" uid="uid://cxqg086cn4a3m" path="res://phone/icons/Small (24x24) PNG/Amazon Prime.png" id="11_3t1w0"]
+[ext_resource type="Texture2D" uid="uid://di16fptvvt76r" path="res://phone/icons/Small (24x24) PNG/Amazon Shopping.png" id="12_wqtll"]
+[ext_resource type="Texture2D" uid="uid://6742uggsvm2l" path="res://phone/icons/Small (24x24) PNG/Amazon.png" id="13_eb78v"]
+[ext_resource type="Script" path="res://manager/multiplayer_spawner.gd" id="14_3kl6j"]
+[ext_resource type="Texture2D" uid="uid://cjt25yiybra3r" path="res://untitled.png" id="15_ib1bg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ag6bu"]
 texture = ExtResource("2_fvtbc")
@@ -312,5 +318,39 @@ slide_on_ceiling = false
 [node name="ski" parent="." instance=ExtResource("4_c0t7d")]
 position = Vector2(472, 373)
 
-[node name="sword" parent="." instance=ExtResource("9_0s6aa")]
-position = Vector2(698, 457)
+[node name="spawnpoint" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="pt1" type="Marker2D" parent="spawnpoint"]
+position = Vector2(140, 114)
+
+[node name="pt2" type="Marker2D" parent="spawnpoint"]
+position = Vector2(264, 115)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ButtonJoinP1" type="TouchScreenButton" parent="CanvasLayer"]
+scale = Vector2(2, 2)
+texture_normal = ExtResource("10_lm8b1")
+texture_pressed = ExtResource("11_3t1w0")
+
+[node name="ButtonJoinP2" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(0, 68)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("12_wqtll")
+texture_pressed = ExtResource("13_eb78v")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+spawn_path = NodePath("../sem")
+spawn_limit = 2
+script = ExtResource("14_3kl6j")
+
+[node name="sem" parent="." instance=ExtResource("9_vcfp3")]
+position = Vector2(680, 413)
+
+[node name="Untitled" type="Sprite2D" parent="."]
+position = Vector2(715, 399)
+texture = ExtResource("15_ib1bg")
+
+[connection signal="pressed" from="CanvasLayer/ButtonJoinP1" to="manager" method="host_game"]
+[connection signal="pressed" from="CanvasLayer/ButtonJoinP2" to="manager" method="join_game"]
