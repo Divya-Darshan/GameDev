@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=13 format=4 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="Script" path="res://manager/manage_game.gd" id="1_iwro6"]
 [ext_resource type="Texture2D" uid="uid://xft0hopoxrok" path="res://map/nature/TX Tileset Grass.png" id="2_fvtbc"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://rs6ol2hy57td" path="res://eny scene/Skeleton/ski.tscn" id="4_c0t7d"]
 [ext_resource type="PackedScene" uid="uid://dslqpyxjoyav2" path="res://eny scene/flyeye/eyefly.tscn" id="7_8u3kr"]
 [ext_resource type="PackedScene" uid="uid://cqmou4vv11s08" path="res://eny scene/slime/slime.tscn" id="8_0cw8a"]
+[ext_resource type="PackedScene" uid="uid://bhsfjwbkodxm6" path="res://eny scene/boss/helldemon/helldemon.tscn" id="8_seclw"]
 [ext_resource type="PackedScene" uid="uid://dpqv2okc6ggr5" path="res://char scene/sem/sem.tscn" id="9_jengu"]
 [ext_resource type="PackedScene" uid="uid://c0prijgr1rv2l" path="res://veh/car blue/carblue.tscn" id="10_u1kr3"]
 
@@ -291,16 +292,19 @@ position = Vector2(291, 348)
 texture = ExtResource("3_s5hro")
 
 [node name="eyefly" parent="." instance=ExtResource("7_8u3kr")]
-position = Vector2(353, 530)
+position = Vector2(829, 327)
 
 [node name="slimered" parent="." instance=ExtResource("8_0cw8a")]
-position = Vector2(526, 595)
+position = Vector2(816, 441)
 
 [node name="ski" parent="." instance=ExtResource("4_c0t7d")]
-position = Vector2(736, 243)
+position = Vector2(910, 264)
 
 [node name="sem" parent="." instance=ExtResource("9_jengu")]
 position = Vector2(778, 115)
 
 [node name="carblue" parent="." instance=ExtResource("10_u1kr3")]
 position = Vector2(795, 54)
+
+[node name="helldemo" parent="." instance=ExtResource("8_seclw")]
+position = Vector2(921, 388)
