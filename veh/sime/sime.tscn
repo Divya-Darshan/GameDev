@@ -1,0 +1,234 @@
+[gd_scene load_steps=25 format=3 uid="uid://bypqcf8nfijha"]
+
+[ext_resource type="Script" path="res://veh/script/sime.gd" id="1_ixw82"]
+[ext_resource type="Texture2D" uid="uid://begt7h836uh8o" path="res://uibtn/GUI.png" id="2_eh08f"]
+[ext_resource type="FontFile" uid="uid://b07xmv84cnmcm" path="res://fonts/m6x11.ttf" id="3_ymxb4"]
+[ext_resource type="Texture2D" uid="uid://c7d2el827w264" path="res://veh/sime/down/down.png" id="4_d6m6v"]
+[ext_resource type="Texture2D" uid="uid://cj73gbtunxqwn" path="res://veh/sime/boom/0001.png" id="4_dgq7y"]
+[ext_resource type="Texture2D" uid="uid://d3sso015pu7rv" path="res://veh/sime/up/up.png" id="10_oyd8g"]
+[ext_resource type="Texture2D" uid="uid://o6fo383tirdg" path="res://veh/boom/biggerboom1.png" id="13_28h25"]
+[ext_resource type="Texture2D" uid="uid://b3yjgl46unh6u" path="res://veh/sime/move/0001.png" id="13_wox2s"]
+[ext_resource type="Texture2D" uid="uid://dk8f3piohgrgj" path="res://veh/sime/move/0002.png" id="14_swjcq"]
+[ext_resource type="Texture2D" uid="uid://bajlqkf760ktc" path="res://veh/boom/biggerboom2.png" id="14_tis37"]
+[ext_resource type="Texture2D" uid="uid://bhvqh32x7iebb" path="res://veh/boom/biggerboom3.png" id="15_2yx76"]
+[ext_resource type="Texture2D" uid="uid://k768lnpxafxv" path="res://veh/sime/move/0003.png" id="15_lnkey"]
+[ext_resource type="Texture2D" uid="uid://ceaddcqhka8ox" path="res://veh/sime/move/0004.png" id="16_4gmgv"]
+[ext_resource type="Texture2D" uid="uid://d0j4vwgrpr222" path="res://veh/boom/biggerboom4.png" id="16_rq44h"]
+[ext_resource type="Texture2D" uid="uid://bkskf6bqm1n4n" path="res://veh/sime/move/0005.png" id="17_ajm3t"]
+[ext_resource type="Texture2D" uid="uid://djpd25pwallw8" path="res://char scene/shadow.png" id="29_5jyda"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s867d"]
+size = Vector2(123, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3hbk"]
+atlas = ExtResource("2_eh08f")
+region = Rect2(112.754, 80.9464, 30.3863, 14.1342)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0l12"]
+atlas = ExtResource("2_eh08f")
+region = Rect2(112.987, 97.9401, 30.0222, 13.1178)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k87m4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_d6m6v")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_wox2s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_wox2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_swjcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_lnkey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4gmgv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ajm3t")
+}],
+"loop": true,
+"name": &"move",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_oyd8g")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_osunm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_28h25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_tis37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2yx76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_rq44h")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yj3a4"]
+size = Vector2(96, 27.6788)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6j1hi"]
+radius = 14.0357
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dinu4"]
+size = Vector2(183, 70)
+
+[node name="sime" type="CharacterBody2D"]
+collision_layer = 128
+script = ExtResource("1_ixw82")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(6, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 1)
+scale = Vector2(1.12901, 1.17707)
+shape = SubResource("RectangleShape2D_s867d")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+visible = false
+position = Vector2(-12, -7)
+scale = Vector2(1.08691, 0.98641)
+texture_normal = SubResource("AtlasTexture_t3hbk")
+texture_pressed = SubResource("AtlasTexture_y0l12")
+
+[node name="enterlab" type="Label" parent="TouchScreenButton"]
+offset_left = 4.60019
+offset_top = 2.02756
+offset_right = 79.6002
+offset_bottom = 25.0276
+scale = Vector2(0.598934, 0.598934)
+theme_override_colors/font_color = Color(0.815857, 0.773463, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.176471)
+theme_override_fonts/font = ExtResource("3_ymxb4")
+text = "Enter"
+
+[node name="exitlab" type="Label" parent="TouchScreenButton"]
+visible = false
+offset_left = 8.28035
+offset_top = 2.02755
+offset_right = 83.2804
+offset_bottom = 25.0276
+scale = Vector2(0.598934, 0.598934)
+theme_override_colors/font_color = Color(0.815857, 0.773463, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.176471)
+theme_override_fonts/font = ExtResource("3_ymxb4")
+text = "Exit"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, -4)
+scale = Vector2(1.12025, 1.12025)
+sprite_frames = SubResource("SpriteFrames_k87m4")
+animation = &"idle"
+
+[node name="Shadowrl" type="Sprite2D" parent="AnimatedSprite2D"]
+self_modulate = Color(1, 1, 1, 0.611765)
+show_behind_parent = true
+position = Vector2(1, 12)
+scale = Vector2(-0.624862, 0.251494)
+texture = ExtResource("29_5jyda")
+
+[node name="Shadowud" type="Sprite2D" parent="AnimatedSprite2D"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.611765)
+show_behind_parent = true
+position = Vector2(2, 5)
+rotation = 1.5708
+scale = Vector2(0.560952, 0.421618)
+texture = ExtResource("29_5jyda")
+
+[node name="boom" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-26, -22)
+scale = Vector2(2.14709, 2.14709)
+sprite_frames = SubResource("SpriteFrames_osunm")
+animation = &"idle"
+
+[node name="boom2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(50, 6)
+scale = Vector2(2.34445, 2.34445)
+sprite_frames = SubResource("SpriteFrames_osunm")
+animation = &"idle"
+frame_progress = 0.649059
+
+[node name="boom3" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-73, -6)
+scale = Vector2(1.25291, 1.25291)
+sprite_frames = SubResource("SpriteFrames_osunm")
+animation = &"idle"
+frame_progress = 0.488147
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, 3)
+rotation = -3.14159
+scale = Vector2(1.17872, 1.17872)
+shape = SubResource("RectangleShape2D_yj3a4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 3)
+rotation = -3.14159
+scale = Vector2(1.17872, 1.17872)
+shape = SubResource("RectangleShape2D_yj3a4")
+
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-42, 2)
+scale = Vector2(1.16024, 1.16024)
+shape = SubResource("CircleShape2D_6j1hi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(4, -2)
+scale = Vector2(1.07916, 1.09207)
+texture = ExtResource("4_dgq7y")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="boomcol" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-0.5, -3)
+shape = SubResource("RectangleShape2D_dinu4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="body_entered" from="Area2D2" to="." method="boom"]
