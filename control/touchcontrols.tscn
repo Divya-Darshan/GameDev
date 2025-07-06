@@ -88,6 +88,7 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="t" type="TouchScreenButton" parent="HBoxbtn"]
+visible = false
 position = Vector2(902, 314)
 scale = Vector2(8, 8)
 texture_normal = SubResource("AtlasTexture_pkmkh")

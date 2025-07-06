@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dslqpyxjoyav2" path="res://eny scene/flyeye/eyefly.tscn" id="7_8u3kr"]
 [ext_resource type="PackedScene" uid="uid://cqmou4vv11s08" path="res://eny scene/slime/slime.tscn" id="8_0cw8a"]
 [ext_resource type="PackedScene" uid="uid://bhsfjwbkodxm6" path="res://eny scene/boss/helldemon/helldemon.tscn" id="8_seclw"]
-[ext_resource type="PackedScene" uid="uid://dpqv2okc6ggr5" path="res://char scene/sem/sem.tscn" id="9_jengu"]
 [ext_resource type="PackedScene" uid="uid://c0prijgr1rv2l" path="res://veh/car blue/carblue.tscn" id="10_u1kr3"]
 [ext_resource type="PackedScene" uid="uid://bypqcf8nfijha" path="res://veh/sime/sime.tscn" id="11_eir2i"]
+[ext_resource type="PackedScene" uid="uid://b7vwo6tfn06f" path="res://char scene/burger_spritesheet/Cheeseburger .tscn" id="11_ln51o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ag6bu"]
 texture = ExtResource("2_fvtbc")
@@ -301,14 +301,14 @@ position = Vector2(816, 441)
 [node name="ski" parent="." instance=ExtResource("4_c0t7d")]
 position = Vector2(910, 264)
 
-[node name="sem" parent="." instance=ExtResource("9_jengu")]
-position = Vector2(177, 182)
-
 [node name="helldemo" parent="." instance=ExtResource("8_seclw")]
 position = Vector2(921, 388)
 
 [node name="carblue" parent="." instance=ExtResource("10_u1kr3")]
-position = Vector2(771, 46)
+position = Vector2(351, 68)
 
 [node name="sime" parent="." instance=ExtResource("11_eir2i")]
 position = Vector2(179, 56)
+
+[node name="cheese" parent="." instance=ExtResource("11_ln51o")]
+position = Vector2(204, 268)
