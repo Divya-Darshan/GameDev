@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bhsfjwbkodxm6" path="res://eny scene/boss/helldemon/helldemon.tscn" id="8_seclw"]
 [ext_resource type="PackedScene" uid="uid://c0prijgr1rv2l" path="res://veh/car blue/carblue.tscn" id="10_u1kr3"]
 [ext_resource type="PackedScene" uid="uid://bypqcf8nfijha" path="res://veh/sime/sime.tscn" id="11_eir2i"]
-[ext_resource type="PackedScene" uid="uid://b7vwo6tfn06f" path="res://char scene/burger_spritesheet/Cheeseburger .tscn" id="11_ln51o"]
+[ext_resource type="PackedScene" uid="uid://cfqms6425vvkr" path="res://char scene/gojo/gojo.tscn" id="12_cqc0e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ag6bu"]
 texture = ExtResource("2_fvtbc")
@@ -310,5 +310,5 @@ position = Vector2(351, 68)
 [node name="sime" parent="." instance=ExtResource("11_eir2i")]
 position = Vector2(179, 56)
 
-[node name="cheese" parent="." instance=ExtResource("11_ln51o")]
-position = Vector2(204, 268)
+[node name="gojo" parent="." instance=ExtResource("12_cqc0e")]
+position = Vector2(397, 445)
