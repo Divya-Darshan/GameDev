@@ -52,7 +52,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"ack1",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -148,6 +148,7 @@ shape = SubResource("CircleShape2D_vargi")
 position = Vector2(0, -20)
 scale = Vector2(0.5614, 0.5614)
 sprite_frames = SubResource("SpriteFrames_fh5tc")
+animation = &"ack1"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -194,7 +195,7 @@ text = "respawns"
 
 [node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_ggjy0")
-volume_db = -1.0
+volume_db = -80.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(5, -12)
