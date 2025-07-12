@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://ws8nxxmgno5b"]
+
+[ext_resource type="Texture2D" uid="uid://begt7h836uh8o" path="res://uibtn/GUI.png" id="1_vtknk"]
+[ext_resource type="FontFile" uid="uid://b07xmv84cnmcm" path="res://fonts/m6x11.ttf" id="2_r2r5p"]
+
+[node name="Node" type="Node"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_right = 52.525
+offset_bottom = 40.0
+texture = ExtResource("1_vtknk")
+region_rect = Rect2(1.59976, 32.8911, 44.8012, 45.9457)
+patch_margin_left = 15
+patch_margin_top = 25
+patch_margin_right = 15
+patch_margin_bottom = 15
+
+[node name="talk" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.000879577
+anchor_top = 0.166282
+anchor_right = -0.00087965
+anchor_bottom = 0.166282
+offset_left = 7.0462
+offset_top = 2.34873
+offset_right = 82.0462
+offset_bottom = 25.3487
+scale = Vector2(0.598934, 0.598934)
+theme_override_colors/font_color = Color(0.815857, 0.773463, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.176471)
+theme_override_fonts/font = ExtResource("2_r2r5p")
+text = "TALK"
+metadata/_edit_use_anchors_ = true

@@ -10,6 +10,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_i3wuq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x0fuu"]
+radius = 11.8281
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ejqtd"]
 atlas = ExtResource("1_wcn2c")
@@ -197,6 +198,12 @@ region = Rect2(112.9, 97.9422, 30.2266, 13.2239)
 position = Vector2(471, 285)
 script = ExtResource("1_fxv6k")
 
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.435294)
+rotation = -3.14035
+scale = Vector2(0.082935, 0.0475844)
+texture = ExtResource("2_xhr6k")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.356988, 0.356988)
 shape = SubResource("CircleShape2D_i3wuq")
@@ -233,22 +240,63 @@ metadata/_edit_use_anchors_ = true
 
 [node name="skip" type="Label" parent="TouchScreenButton"]
 visible = false
-offset_left = 7.0462
-offset_top = 2.34873
-offset_right = 82.0462
-offset_bottom = 25.3487
+offset_left = 9.58698
+offset_top = 3.19566
+offset_right = 84.587
+offset_bottom = 26.1957
 scale = Vector2(0.598934, 0.598934)
 theme_override_colors/font_color = Color(0.815857, 0.773463, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.176471)
 theme_override_fonts/font = ExtResource("4_ni3a7")
-text = "SKIP"
+text = "OK!"
 metadata/_edit_use_anchors_ = true
 
-[node name="Shadow" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0.435294)
-rotation = -3.14035
-scale = Vector2(0.082935, 0.0475844)
-texture = ExtResource("2_xhr6k")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 68.0
+offset_top = 424.0
+offset_right = 177.515
+offset_bottom = 464.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+pivot_offset = Vector2(99, 20.6)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_bxcdv")
+region_rect = Rect2(1.59976, 32.8911, 44.8012, 45.9457)
+patch_margin_left = 15
+patch_margin_top = 25
+patch_margin_right = 15
+patch_margin_bottom = 15
+
+[node name="talk" type="Label" parent="CanvasLayer/VBoxContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0509523
+anchor_top = 0.178282
+anchor_right = 1.3904
+anchor_bottom = 1.02828
+offset_left = 7.0462
+offset_top = 2.34873
+offset_right = 82.0462
+offset_bottom = 25.3487
+scale = Vector2(0.365783, 0.364537)
+theme_override_colors/font_color = Color(0.815857, 0.773463, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.176471)
+theme_override_fonts/font = ExtResource("4_ni3a7")
+text = "Oh, hey there, traveler!
+I’ve been searching for my dog...
+he ran off chasing something shiny."
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

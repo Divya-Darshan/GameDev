@@ -258,6 +258,8 @@ tile_map_data = PackedByteArray("AAD+//z/AAATAAUAAAD+//3/AAATAAYAAAD+//7/AAATAAc
 tile_set = SubResource("TileSet_64sqi")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 64
+collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("CircleShape2D_jgnhn")

@@ -94,7 +94,6 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	
 	if body == car:
 		car.visible = true
-		car.SPEED = 200.0
 		car = null
 		car_entered = false
 		var tween = create_tween()

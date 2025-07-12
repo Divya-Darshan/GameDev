@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=18 format=4 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="Script" path="res://manager/manage_game.gd" id="1_iwro6"]
 [ext_resource type="Texture2D" uid="uid://xft0hopoxrok" path="res://map/nature/TX Tileset Grass.png" id="2_fvtbc"]
@@ -11,7 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://bypqcf8nfijha" path="res://veh/sime/sime.tscn" id="11_eir2i"]
 [ext_resource type="PackedScene" uid="uid://b5fwl3frus87o" path="res://npc/frog/frognpc.tscn" id="12_6fiib"]
 [ext_resource type="PackedScene" uid="uid://cfqms6425vvkr" path="res://char scene/gojo/gojo.tscn" id="12_cqc0e"]
+[ext_resource type="PackedScene" uid="uid://dkmdabvgkpad5" path="res://env/large _tree.tscn" id="12_t4hu5"]
+[ext_resource type="PackedScene" uid="uid://bhb0o73260q5w" path="res://env/mid_tree.tscn" id="13_3tune"]
 [ext_resource type="PackedScene" uid="uid://d06hlrs2p8m2m" path="res://env/small_tree.tscn" id="13_dnm8c"]
+[ext_resource type="PackedScene" uid="uid://dxy7pbaaf0u2p" path="res://npc/frog/1 Dog/dog.tscn" id="15_2rqn8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ag6bu"]
 texture = ExtResource("2_fvtbc")
@@ -290,31 +293,37 @@ tile_set = SubResource("TileSet_0u08f")
 unique_name_in_owner = true
 
 [node name="eyefly" parent="." instance=ExtResource("7_8u3kr")]
-position = Vector2(898, 824)
+position = Vector2(1479, 1262)
 
 [node name="slimered" parent="." instance=ExtResource("8_0cw8a")]
-position = Vector2(558, 240)
+position = Vector2(1139, 678)
 
 [node name="ski" parent="." instance=ExtResource("4_c0t7d")]
-position = Vector2(845, 328)
+position = Vector2(1426, 766)
 
 [node name="helldemo" parent="." instance=ExtResource("8_seclw")]
-position = Vector2(1276, 486)
+position = Vector2(1857, 924)
 
 [node name="carblue" parent="." instance=ExtResource("10_u1kr3")]
-position = Vector2(351, 68)
+position = Vector2(1243, 831)
 
 [node name="sime" parent="." instance=ExtResource("11_eir2i")]
-position = Vector2(179, 56)
+position = Vector2(1071, 861)
 
 [node name="gojo" parent="." instance=ExtResource("12_cqc0e")]
-position = Vector2(397, 445)
+position = Vector2(1200, 1007)
 
 [node name="frognpc" parent="." instance=ExtResource("12_6fiib")]
-position = Vector2(492, 437)
+position = Vector2(1261, 945)
 
-[node name="small_tree" parent="." instance=ExtResource("13_dnm8c")]
-position = Vector2(388, 367)
+[node name="mid_tree" parent="." instance=ExtResource("12_t4hu5")]
+position = Vector2(889, 799)
+
+[node name="small_tree" parent="." instance=ExtResource("13_3tune")]
+position = Vector2(689, 917)
 
 [node name="small_tree2" parent="." instance=ExtResource("13_dnm8c")]
-position = Vector2(246, 510)
+position = Vector2(948, 958)
+
+[node name="dog" parent="." instance=ExtResource("15_2rqn8")]
+position = Vector2(1066, 1063)
