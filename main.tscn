@@ -302,7 +302,7 @@ position = Vector2(1139, 678)
 position = Vector2(1426, 766)
 
 [node name="helldemo" parent="." instance=ExtResource("8_seclw")]
-position = Vector2(1857, 924)
+position = Vector2(2439, 166)
 
 [node name="carblue" parent="." instance=ExtResource("10_u1kr3")]
 position = Vector2(1243, 831)
@@ -314,7 +314,7 @@ position = Vector2(1071, 861)
 position = Vector2(1200, 1007)
 
 [node name="frognpc" parent="." instance=ExtResource("12_6fiib")]
-position = Vector2(1261, 945)
+position = Vector2(934, 1401)
 
 [node name="mid_tree" parent="." instance=ExtResource("12_t4hu5")]
 position = Vector2(889, 799)
@@ -326,4 +326,4 @@ position = Vector2(689, 917)
 position = Vector2(948, 958)
 
 [node name="dog" parent="." instance=ExtResource("15_2rqn8")]
-position = Vector2(1066, 1063)
+position = Vector2(1198, 1395)

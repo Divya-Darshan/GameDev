@@ -63,6 +63,7 @@ size_flags_vertical = 3
 color = Color(0, 0, 0, 0.329412)
 
 [node name="vBoxphon" type="VBoxContainer" parent="."]
+visible = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
