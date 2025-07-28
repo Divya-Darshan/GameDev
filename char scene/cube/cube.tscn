@@ -1,0 +1,216 @@
+[gd_scene load_steps=16 format=3 uid="uid://bw5pd5wq6tgi4"]
+
+[ext_resource type="Script" path="res://player scripts/sem.gd" id="1_k7pgh"]
+[ext_resource type="Texture2D" uid="uid://dyhghrmikkt6m" path="res://char scene/cube/cube.png" id="9_ngyxk"]
+[ext_resource type="Texture2D" uid="uid://bdbbn2i4wskfr" path="res://uibtn/probase.tres" id="18_u2he7"]
+[ext_resource type="Texture2D" uid="uid://bfey0hscp0qvc" path="res://uibtn/proover.tres" id="19_ufwvk"]
+[ext_resource type="Script" path="res://player scripts/progressbar/progressbar.gd" id="20_luisi"]
+[ext_resource type="Texture2D" uid="uid://begt7h836uh8o" path="res://uibtn/GUI.png" id="21_pi6fr"]
+[ext_resource type="FontFile" uid="uid://b07xmv84cnmcm" path="res://fonts/m6x11.ttf" id="22_80pph"]
+[ext_resource type="AudioStream" uid="uid://c85g2sc5bkray" path="res://sfx/character/slash.wav" id="23_t1t6f"]
+[ext_resource type="Texture2D" uid="uid://djpd25pwallw8" path="res://char scene/shadow.png" id="24_a3dl7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_efksp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vargi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fh5tc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ngyxk")
+}],
+"loop": false,
+"name": &"ack1",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ngyxk")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ngyxk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ngyxk")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ngyxk")
+}],
+"loop": true,
+"name": &"run",
+"speed": 7.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je7n3"]
+atlas = ExtResource("21_pi6fr")
+region = Rect2(144.906, 81.1251, 46.1627, 13.9238)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwoqy"]
+atlas = ExtResource("21_pi6fr")
+region = Rect2(144.898, 97.9193, 46.1961, 13.306)
+
+[sub_resource type="Environment" id="Environment_y2pki"]
+glow_enabled = true
+glow_intensity = 1.39
+glow_hdr_luminance_cap = 83.53
+
+[node name="cube" type="CharacterBody2D"]
+position = Vector2(0, 1)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_k7pgh")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.435294)
+position = Vector2(0, 1)
+rotation = -3.14035
+scale = Vector2(0.119566, 0.0174984)
+texture = ExtResource("24_a3dl7")
+
+[node name="hitbox" type="Area2D" parent="."]
+position = Vector2(0, 1)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(2, -16)
+scale = Vector2(4.62168, 4.62168)
+shape = SubResource("CircleShape2D_efksp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.96046e-08, -0.999999)
+rotation = -6.28319
+scale = Vector2(0.631421, 0.631421)
+shape = SubResource("CircleShape2D_vargi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(11.892, 1, 1, 1)
+position = Vector2(0, -11)
+scale = Vector2(0.131416, 0.131416)
+sprite_frames = SubResource("SpriteFrames_fh5tc")
+animation = &"ack1"
+
+[node name="ColorRect5" type="ColorRect" parent="AnimatedSprite2D"]
+offset_left = -45.6567
+offset_top = -38.0472
+offset_right = -5.65667
+offset_bottom = 1.95278
+scale = Vector2(0.460869, 0.466509)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="AnimatedSprite2D"]
+offset_left = 30.4378
+offset_top = -38.0472
+offset_right = 70.4378
+offset_bottom = 1.95278
+scale = Vector2(0.460869, 0.466509)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D"]
+offset_left = -45.6567
+offset_top = -38.0472
+offset_right = -5.65666
+offset_bottom = 1.95278
+scale = Vector2(0.433154, 0.433154)
+color = Color(0, 0.815686, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="AnimatedSprite2D"]
+offset_left = 30.4378
+offset_top = -38.0472
+offset_right = 70.4378
+offset_bottom = 1.95278
+scale = Vector2(0.433154, 0.433154)
+color = Color(0, 0.815686, 1, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="AnimatedSprite2D"]
+offset_left = -45.6567
+offset_top = 15.2189
+offset_right = -5.65666
+offset_bottom = 55.2189
+scale = Vector2(2.35807, 0.491265)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="AnimatedSprite2D"]
+offset_left = -45.6567
+offset_top = 15.2189
+offset_right = -5.65666
+offset_bottom = 55.2189
+scale = Vector2(2.31606, 0.431827)
+color = Color(0, 0.815686, 1, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+self_modulate = Color(1, 0.98, 0.980333, 1)
+offset_left = 189.0
+offset_top = 137.0
+offset_right = 256.0
+offset_bottom = 150.0
+scale = Vector2(6.07231, 6.07231)
+pivot_offset = Vector2(30.88, 20.585)
+value = 100.0
+texture_under = ExtResource("18_u2he7")
+texture_progress = ExtResource("19_ufwvk")
+tint_under = Color(0.589096, 0.589096, 0.589096, 1)
+script = ExtResource("20_luisi")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -440.0
+offset_right = -440.0
+grow_vertical = 2
+scale = Vector2(1.28388, 1.28388)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer"]
+position = Vector2(24.1456, -161.23)
+scale = Vector2(3.82173, 3.82173)
+texture_normal = SubResource("AtlasTexture_je7n3")
+texture_pressed = SubResource("AtlasTexture_uwoqy")
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/TouchScreenButton"]
+offset_left = 6.40656
+offset_top = 1.47843
+offset_right = 81.4066
+offset_bottom = 24.4784
+scale = Vector2(0.598934, 0.598934)
+theme_override_colors/font_color = Color(0.815857, 0.773463, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.176471)
+theme_override_fonts/font = ExtResource("22_80pph")
+text = "respawns"
+
+[node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_t1t6f")
+volume_db = -80.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(5, -12)
+ignore_rotation = false
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_y2pki")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
