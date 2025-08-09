@@ -26,7 +26,7 @@
 📱 Download the latest **alpha build** from the [`/app`](./app) folder:
   
 <h2 align="center">
-  👉👉<a href="https://raw.githubusercontent.com/Divya-Darshan/GameDev/main/app/app.apk"><b>CLICK HERE TO DOWNLOAD APK</b></a>🟢
+  👉<a href="https://raw.githubusercontent.com/Divya-Darshan/GameDev/main/app/app.apk"><b>CLICK HERE TO DOWNLOAD APK</b></a>🟢
 </h2>
 
 ---
@@ -67,9 +67,9 @@ Wanna try it right away on pc?
 curl -L -o app.apk https://raw.githubusercontent.com/Divya-Darshan/GameDev/main/app/app.apk
 ```
 
-Clone the Repo:
+Clone the Repo and to install instantly (USB debugging enabled)::
 ```bash
-git clone https://github.com/Divya-Darshan/GameDev.git
+git clone https://github.com/Divya-Darshan/GameDev.git && i
 ```
 
 ⭐ Star the repo if you're excited for the full release! 🌟
