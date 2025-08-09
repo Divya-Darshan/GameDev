@@ -2,6 +2,8 @@ extends CanvasLayer
 
 signal button_pressed(action_name)
 
+@onready var select = preload("res://select/select.tscn")
+
 @onready var joystick = $"Virtual Joystick"
 @onready var t = $HBoxbtn/t
 @onready var o = $HBoxbtn/o
@@ -56,3 +58,7 @@ func _on_ps_pressed() -> void:
 	hboxbtn.visible = !hboxbtn.visible
 	close.visible = !close.visible
 	play.visible = !play.visible
+
+
+func _on_touch_screen_button_pressed() -> void:
+	get_tree().change_scene_to_packed(select)

@@ -1,5 +1,6 @@
 [gd_scene load_steps=18 format=4 uid="uid://xdwundx3x7v2"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_a618g"]
 [ext_resource type="Script" path="res://manager/manage_game.gd" id="1_iwro6"]
 [ext_resource type="Texture2D" uid="uid://xft0hopoxrok" path="res://map/nature/TX Tileset Grass.png" id="2_fvtbc"]
 [ext_resource type="PackedScene" uid="uid://c7i3w627hjbum" path="res://control/touchcontrols.tscn" id="3_h8082"]
@@ -13,8 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bhb0o73260q5w" path="res://env/mid_tree.tscn" id="13_3tune"]
 [ext_resource type="PackedScene" uid="uid://d06hlrs2p8m2m" path="res://env/small_tree.tscn" id="13_dnm8c"]
 [ext_resource type="PackedScene" uid="uid://dxy7pbaaf0u2p" path="res://npc/frog/1 Dog/dog.tscn" id="15_2rqn8"]
-[ext_resource type="PackedScene" uid="uid://bw5pd5wq6tgi4" path="res://char scene/cube/cube.tscn" id="15_ail8i"]
-[ext_resource type="PackedScene" uid="uid://b23yeenr14ri1" path="res://veh/ship/ship.tscn" id="16_m0khw"]
+[ext_resource type="PackedScene" uid="uid://c0prijgr1rv2l" path="res://veh/car blue/carblue.tscn" id="15_yq6mv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ag6bu"]
 texture = ExtResource("2_fvtbc")
@@ -281,6 +281,7 @@ sources/1 = SubResource("TileSetAtlasSource_ag6bu")
 [node name="MAIN" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(-11, -109)
+script = ExtResource("1_a618g")
 
 [node name="manager" type="Node" parent="."]
 script = ExtResource("1_iwro6")
@@ -322,8 +323,5 @@ position = Vector2(948, 958)
 [node name="dog" parent="." instance=ExtResource("15_2rqn8")]
 position = Vector2(1198, 1395)
 
-[node name="cube" parent="." instance=ExtResource("15_ail8i")]
-position = Vector2(1202, 951)
-
-[node name="ship" parent="." instance=ExtResource("16_m0khw")]
-position = Vector2(1318, 957)
+[node name="carblue" parent="." instance=ExtResource("15_yq6mv")]
+position = Vector2(1267, 968)

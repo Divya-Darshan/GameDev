@@ -1,12 +1,22 @@
-[gd_scene load_steps=16 format=3 uid="uid://c7i3w627hjbum"]
+[gd_scene load_steps=20 format=3 uid="uid://c7i3w627hjbum"]
 
 [ext_resource type="Script" path="res://control/touchcontrols.gd" id="1_owfuy"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_bdc5w"]
 [ext_resource type="Texture2D" uid="uid://dqc3ore6pkv8h" path="res://uibtn/gdb-playstation-2.png" id="2_kn3v7"]
+[ext_resource type="Texture2D" uid="uid://begt7h836uh8o" path="res://uibtn/GUI.png" id="2_u25es"]
+[ext_resource type="FontFile" uid="uid://b07xmv84cnmcm" path="res://fonts/m6x11.ttf" id="3_inywk"]
 [ext_resource type="Texture2D" uid="uid://6bupn7knf3nf" path="res://uibtn/psbase.png" id="3_nedgk"]
 [ext_resource type="Texture2D" uid="uid://iraflu25kaf6" path="res://uibtn/psp.png" id="4_lw2pp"]
 [ext_resource type="Texture2D" uid="uid://rti1qclo74us" path="res://uibtn/psx.png" id="5_pvhbl"]
 [ext_resource type="PackedScene" uid="uid://m475603kr452" path="res://phone/phone.tscn" id="7_ppwfx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4pbn"]
+atlas = ExtResource("2_u25es")
+region = Rect2(112.893, 80.6598, 30.1397, 14.417)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlmer"]
+atlas = ExtResource("2_u25es")
+region = Rect2(112.845, 97.9995, 30.3949, 13.4482)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pkmkh"]
 atlas = ExtResource("2_kn3v7")
@@ -52,15 +62,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -18.0
 offset_top = -16.0
-offset_right = -18.0
-offset_bottom = -16.0
+offset_right = -13.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.95, 0.95)
 pivot_offset = Vector2(943.158, 606.316)
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 0.329412)
+color = Color(0, 0, 0, 0.519)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ColorRect"]
+position = Vector2(105.097, 67.036)
+scale = Vector2(9.15599, 9.15599)
+texture_normal = SubResource("AtlasTexture_v4pbn")
+texture_pressed = SubResource("AtlasTexture_qlmer")
+
+[node name="Label" type="Label" parent="ColorRect/TouchScreenButton"]
+offset_left = 2.0694
+offset_top = 3.79389
+offset_right = 77.0694
+offset_bottom = 26.7939
+scale = Vector2(0.348233, 0.348233)
+theme_override_colors/font_color = Color(0.815857, 0.773463, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.176471)
+theme_override_fonts/font = ExtResource("3_inywk")
+text = "Select Menu"
 
 [node name="vBoxphon" type="VBoxContainer" parent="."]
 visible = false
@@ -151,6 +178,7 @@ offset_right = 302.0
 offset_bottom = -3.0
 pressed_color = Color(0.745098, 0.745098, 0.745098, 1)
 
+[connection signal="pressed" from="ColorRect/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="HBoxbtn/t" to="." method="_on_t_pressed"]
 [connection signal="pressed" from="HBoxbtn/o" to="." method="_on_o_pressed"]
 [connection signal="pressed" from="HBoxbtn/x" to="." method="_on_x_pressed"]

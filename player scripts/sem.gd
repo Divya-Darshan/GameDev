@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var _health := 40 # Internal storage
+var _health := 100 # Internal storage
 
 var health:
 	get:

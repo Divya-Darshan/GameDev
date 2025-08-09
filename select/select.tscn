@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://dac4x2m0270tm"]
+
+[ext_resource type="Script" path="res://select/select.gd" id="1_pt46x"]
+[ext_resource type="Texture2D" uid="uid://bkxbhwum6xd22" path="res://select/Background.png" id="2_xy88l"]
+[ext_resource type="Texture2D" uid="uid://begt7h836uh8o" path="res://uibtn/GUI.png" id="3_j38tp"]
+[ext_resource type="FontFile" uid="uid://b07xmv84cnmcm" path="res://fonts/m6x11.ttf" id="4_7s3m3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfxak"]
+atlas = ExtResource("3_j38tp")
+region = Rect2(112.893, 80.6598, 30.1397, 14.417)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyonq"]
+atlas = ExtResource("3_j38tp")
+region = Rect2(112.845, 97.9995, 30.3949, 13.4482)
+
+[node name="select" type="Node2D"]
+script = ExtResource("1_pt46x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(571, 382)
+scale = Vector2(0.646905, 0.646905)
+texture = ExtResource("2_xy88l")
+
+[node name="CharacterHolder" type="Node2D" parent="."]
+position = Vector2(555, 549)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="HBoxContainer"]
+position = Vector2(677, 613)
+texture_normal = SubResource("AtlasTexture_sfxak")
+texture_pressed = SubResource("AtlasTexture_tyonq")
+
+[node name="Label" type="Label" parent="HBoxContainer/TouchScreenButton"]
+offset_left = 6.0
+offset_top = 2.99998
+offset_right = 81.0
+offset_bottom = 26.0
+scale = Vector2(0.598934, 0.598934)
+theme_override_colors/font_color = Color(0.815857, 0.773463, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.176471)
+theme_override_fonts/font = ExtResource("4_7s3m3")
+text = "Next"

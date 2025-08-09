@@ -12,7 +12,7 @@ config_version=5
 
 config/name="GAME"
 config/version="0.0.0"
-run/main_scene="res://main.tscn"
+run/main_scene="res://select/select.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://icon/slashlogo.png"
@@ -22,6 +22,7 @@ config/icon="res://icon/flash.png"
 [autoload]
 
 Touchcontrols="*res://control/touchcontrols.tscn"
+Global="*res://select/global.gd"
 
 [display]
 
