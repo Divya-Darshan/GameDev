@@ -67,7 +67,12 @@ Wanna try it right away on pc?
 curl -L -o app.apk https://raw.githubusercontent.com/Divya-Darshan/GameDev/main/app/app.apk
 ```
 
-Clone the Repo and to install instantly (USB debugging enabled)::
+ to install instantly (USB debugging enabled):
+ ```bash
+ i #this command won't work in Power Shell
+```
+
+Clone the Repo and to install instantly (USB debugging enabled):
 ```bash
 git clone https://github.com/Divya-Darshan/GameDev.git && i
 ```
