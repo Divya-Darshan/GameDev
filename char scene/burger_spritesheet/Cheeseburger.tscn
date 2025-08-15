@@ -274,7 +274,6 @@ volume_db = -1.0
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(5, -12)
 ignore_rotation = false
-zoom = Vector2(5, 5)
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
 

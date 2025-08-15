@@ -71,7 +71,7 @@ func take_damage(amount: int) -> void:
 		tween.tween_property(endscr, "position", Vector2(94, 324), 0.3) #btn animaction
 		tween.tween_property(progress_bar, "position", Vector2(189, 24), 0.1)
 		shadow.visible = false
-		touchcontrols.visible = false
+		Touchcontrols.visible = false
 		
 
 			
@@ -188,7 +188,7 @@ func _on_touch_screen_button_pressed() -> void:
 		col2d.disabled = false
 		animated_sprite.visible = true
 		shadow.visible = true
-		touchcontrols.visible = true
+		Touchcontrols.visible = true
 		health = 100
 		progressbar.emit()
 		var tween = create_tween()

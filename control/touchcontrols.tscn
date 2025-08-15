@@ -73,7 +73,7 @@ size_flags_vertical = 3
 color = Color(0, 0, 0, 0.519)
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="ColorRect"]
-position = Vector2(105.097, 67.036)
+position = Vector2(752.465, 67.036)
 scale = Vector2(9.15599, 9.15599)
 texture_normal = SubResource("AtlasTexture_v4pbn")
 texture_pressed = SubResource("AtlasTexture_qlmer")

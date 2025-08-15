@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://dxy7pbaaf0u2p"]
+[gd_scene load_steps=33 format=3 uid="uid://dxy7pbaaf0u2p"]
 
 [ext_resource type="Script" path="res://npc/frog/1 Dog/dog.gd" id="1_m7fv2"]
 [ext_resource type="Texture2D" uid="uid://djpd25pwallw8" path="res://char scene/shadow.png" id="2_iv12b"]
 [ext_resource type="Texture2D" uid="uid://bpnsd6441phtf" path="res://npc/frog/1 Dog/Idle.png" id="2_jnafw"]
 [ext_resource type="Texture2D" uid="uid://dve35fwe6dug1" path="res://npc/frog/1 Dog/Walk.png" id="3_fb4am"]
+[ext_resource type="Texture2D" uid="uid://b0xcm75d5cuvd" path="res://eny scene/exp/explosion-b.png" id="5_0wd2s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kxkqq"]
 
@@ -93,6 +94,105 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_r23w2"]
 radius = 14.9749
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hrel"]
+atlas = ExtResource("5_0wd2s")
+region = Rect2(0, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irb38"]
+atlas = ExtResource("5_0wd2s")
+region = Rect2(80, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2qgl"]
+atlas = ExtResource("5_0wd2s")
+region = Rect2(160, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bp2v"]
+atlas = ExtResource("5_0wd2s")
+region = Rect2(240, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20q5c"]
+atlas = ExtResource("5_0wd2s")
+region = Rect2(320, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4ful"]
+atlas = ExtResource("5_0wd2s")
+region = Rect2(400, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_113eb"]
+atlas = ExtResource("5_0wd2s")
+region = Rect2(480, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7jdr"]
+atlas = ExtResource("5_0wd2s")
+region = Rect2(560, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyhx1"]
+atlas = ExtResource("5_0wd2s")
+region = Rect2(640, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e8pw"]
+atlas = ExtResource("5_0wd2s")
+region = Rect2(720, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih6yg"]
+atlas = ExtResource("5_0wd2s")
+region = Rect2(800, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uk8h"]
+atlas = ExtResource("5_0wd2s")
+region = Rect2(880, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdwky"]
+atlas = ExtResource("5_0wd2s")
+region = Rect2(960, 0, 80, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_76jom"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hrel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irb38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2qgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bp2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20q5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4ful")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_113eb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7jdr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyhx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e8pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih6yg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uk8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdwky")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 10.0
+}]
+
 [node name="dog" type="CharacterBody2D"]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_m7fv2")
@@ -119,6 +219,12 @@ frame_progress = 0.481763
 position = Vector2(0, -1.25)
 scale = Vector2(8.28445, 8.28445)
 shape = SubResource("CircleShape2D_r23w2")
+
+[node name="expo" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.25, -22.5)
+scale = Vector2(1.66044, 1.66044)
+sprite_frames = SubResource("SpriteFrames_76jom")
+animation = &"idle"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

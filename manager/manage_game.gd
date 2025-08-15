@@ -9,7 +9,7 @@ var spawn_max = Vector2(800, 500)
 
 func _ready() -> void:
 	while true:
-		await get_tree().create_timer(60.0).timeout
+		await get_tree().create_timer(10.0).timeout
 		spawn_random_npc(dog_scene, 1)  # spawn 3 dogs
 		spawn_random_npc(frog_scene, 1) # spawn 2 frogs
 
