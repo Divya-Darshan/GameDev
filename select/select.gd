@@ -9,7 +9,8 @@ var characters = [
 	preload("res://char scene/cube/cube.tscn"),
 	preload("res://char scene/sem/sem.tscn"),
 	preload("res://char scene/Vegeta/Vegeta.tscn"),
-	preload("res://char scene/gojo/gojo.tscn")
+	preload("res://char scene/gojo/gojo.tscn"),
+	preload("res://char scene/Kirby/Kirby.tscn")
 ]
 
 
