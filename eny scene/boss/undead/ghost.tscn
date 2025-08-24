@@ -483,7 +483,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(0, -42)
-scale = Vector2(3.8602, 4.58298)
+scale = Vector2(5.03951, 5.98311)
 shape = SubResource("RectangleShape2D_34ddi")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]

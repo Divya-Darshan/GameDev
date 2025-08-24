@@ -1,7 +1,8 @@
 extends Node2D
 
 var characters = [
-
+	preload("res://char scene/sonic/sonic.tscn"),
+	preload("res://char scene/Kirby/Kirby.tscn"),
 	preload("res://char scene/burger_spritesheet/Cheeseburger.tscn"),
 	preload("res://char scene/cube/cube.tscn"),
 	preload("res://char scene/sem/sem.tscn"),
