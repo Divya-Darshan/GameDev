@@ -14,6 +14,10 @@ func _ready() -> void:
 	randomize()
 	_set_new_state()
 
+
+func cow():
+	pass
+
 func _process(delta: float) -> void:
 	state_time += delta
 

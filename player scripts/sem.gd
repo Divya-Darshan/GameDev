@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 var _health := 100 # Internal storage
 
+var is_cow = false
+
 var health:
 	get:
 		return _health
@@ -13,6 +15,9 @@ signal progressbar
 var SPEED = 200.0
 const DEADZONE = 0.1
 const FULL_DAMAGE_DELAY := 0.5  # seconds
+@onready var bucket: Sprite2D = $bucket
+@onready var bucketmilk: Sprite2D = $bucketmilk
+
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var touch_controls = $"../Touchcontrols"
@@ -117,17 +122,14 @@ func attack2() -> void:
 	is_attacking1 = false
 
 func inter() -> void:
-	is_inter = true
-	health = 100
-	progressbar.emit()
-	is_inter = false
+	if is_cow == true:
+		print(is_cow)
+		bucketmilk.visible = true
+	else:
+		pass
 
 func inter2() -> void:
-	is_inter2 = true
-	animated_sprite.play("hit")  # Play the second special animation
-	await animated_sprite.animation_finished
-	animated_sprite.play("default")
-	is_inter2 = false
+	bucketmilk.visible = false
 
 func _physics_process(delta: float) -> void:
 	
@@ -198,3 +200,13 @@ func _on_touch_screen_button_pressed() -> void:
 		await get_tree().create_timer(0.4).timeout
 		endscr.visible = false
 	
+
+
+func _on_env_body_entered(body: Node2D) -> void:
+	if body.has_method('cow'):
+		is_cow = true
+
+
+func _on_env_body_exited(body: Node2D) -> void:
+	if body.has_method('cow'):
+		is_cow = false
