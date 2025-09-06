@@ -1,0 +1,206 @@
+[gd_scene load_steps=25 format=3 uid="uid://csgghvsyuriym"]
+
+[ext_resource type="Script" path="res://eny scene/boss/helldemon/helldemon.gd" id="1_5vru6"]
+[ext_resource type="Texture2D" uid="uid://djpd25pwallw8" path="res://char scene/shadow.png" id="2_yi6xn"]
+[ext_resource type="Texture2D" uid="uid://bdbbn2i4wskfr" path="res://uibtn/probase.tres" id="3_yesgq"]
+[ext_resource type="Texture2D" uid="uid://bfey0hscp0qvc" path="res://uibtn/proover.tres" id="4_xygxb"]
+[ext_resource type="Script" path="res://eny script/progresseny.gd" id="5_qqmh6"]
+[ext_resource type="Texture2D" uid="uid://dxgjt8il2s1wv" path="res://eny scene/boss/dragon/FireDragon.png" id="6_5mmho"]
+[ext_resource type="AudioStream" uid="uid://c85g2sc5bkray" path="res://sfx/character/slash.wav" id="7_x66sn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eyut2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dtnvt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34ddi"]
+size = Vector2(22.0488, 21.4146)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2vjl"]
+atlas = ExtResource("6_5mmho")
+region = Rect2(678, 64, 113, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dl0y"]
+atlas = ExtResource("6_5mmho")
+region = Rect2(791, 64, 113, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gekp8"]
+atlas = ExtResource("6_5mmho")
+region = Rect2(904, 64, 113, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gk570"]
+atlas = ExtResource("6_5mmho")
+region = Rect2(1130, 320, 113, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj07l"]
+atlas = ExtResource("6_5mmho")
+region = Rect2(1243, 320, 113, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25yy8"]
+atlas = ExtResource("6_5mmho")
+region = Rect2(1017, 320, 113, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t35ww"]
+atlas = ExtResource("6_5mmho")
+region = Rect2(1130, 320, 113, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mk53k"]
+atlas = ExtResource("6_5mmho")
+region = Rect2(1243, 320, 113, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uijmj"]
+atlas = ExtResource("6_5mmho")
+region = Rect2(339, 64, 113, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wmya"]
+atlas = ExtResource("6_5mmho")
+region = Rect2(452, 64, 113, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ff5ou"]
+atlas = ExtResource("6_5mmho")
+region = Rect2(0, 64, 113, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy1n0"]
+atlas = ExtResource("6_5mmho")
+region = Rect2(113, 64, 113, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7314"]
+atlas = ExtResource("6_5mmho")
+region = Rect2(226, 64, 113, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vn4ik"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2vjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dl0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gekp8")
+}],
+"loop": true,
+"name": &"ack1",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gk570")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj07l")
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25yy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t35ww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mk53k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uijmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wmya")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ff5ou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy1n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7314")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[node name="dragon" type="CharacterBody2D"]
+light_mask = 2
+visibility_layer = 2
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_5vru6")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.435294)
+position = Vector2(-1, -14)
+rotation = -3.14035
+scale = Vector2(0.271199, 0.05)
+texture = ExtResource("2_yi6xn")
+offset = Vector2(-3.95776, -302.63)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(1.64412, 1.64412)
+shape = SubResource("CircleShape2D_eyut2")
+
+[node name="range" type="Area2D" parent="."]
+position = Vector2(-1.5, 29.5)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
+position = Vector2(0.5, -39.5)
+scale = Vector2(31.7939, 31.7939)
+shape = SubResource("CircleShape2D_dtnvt")
+
+[node name="hitbox" type="Area2D" parent="."]
+position = Vector2(-1, 29)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -42)
+scale = Vector2(5.03951, 5.98311)
+shape = SubResource("RectangleShape2D_34ddi")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -44.0
+offset_top = -56.0
+offset_right = 23.0
+offset_bottom = -16.0
+scale = Vector2(0.859863, 0.859863)
+value = 100.0
+texture_under = ExtResource("3_yesgq")
+texture_progress = ExtResource("4_xygxb")
+tint_under = Color(0, 0, 0, 1)
+tint_progress = Color(1, 1, 0, 1)
+script = ExtResource("5_qqmh6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, 48)
+scale = Vector2(0.977758, 0.977758)
+sprite_frames = SubResource("SpriteFrames_vn4ik")
+animation = &"ack1"
+frame_progress = 0.307391
+offset = Vector2(-6, -64)
+
+[node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, 29)
+stream = ExtResource("7_x66sn")
+pitch_scale = 0.01
+
+[connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]

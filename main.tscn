@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=20 format=4 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_a618g"]
 [ext_resource type="Script" path="res://manager/manage_game.gd" id="1_iwro6"]
@@ -15,7 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://bcbrsjwkhmp3y" path="res://eny scene/boss/undead/ghost.tscn" id="14_bcpm0"]
 [ext_resource type="PackedScene" uid="uid://dxy7pbaaf0u2p" path="res://npc/frog/1 Dog/dog.tscn" id="15_2rqn8"]
 [ext_resource type="PackedScene" uid="uid://c0prijgr1rv2l" path="res://veh/car blue/carblue.tscn" id="15_yq6mv"]
-[ext_resource type="PackedScene" uid="uid://dpw2bdn8qwgr3" path="res://eny scene/boss/bluestone/bluestone.tscn" id="16_1ihnn"]
+[ext_resource type="PackedScene" uid="uid://flp3wyxfanvc" path="res://npc/cow/cow.tscn" id="17_idj8w"]
+[ext_resource type="PackedScene" uid="uid://csgghvsyuriym" path="res://eny scene/boss/dragon/dragon.tscn" id="17_yyajd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ag6bu"]
 texture = ExtResource("2_fvtbc")
@@ -328,5 +329,8 @@ position = Vector2(1764, 740)
 [node name="helldemo" parent="." instance=ExtResource("8_seclw")]
 position = Vector2(2249, 992)
 
-[node name="bluestone" parent="." instance=ExtResource("16_1ihnn")]
-position = Vector2(1707, 1055)
+[node name="cow" parent="." instance=ExtResource("17_idj8w")]
+position = Vector2(1231, 1094)
+
+[node name="bluestone" parent="cow" instance=ExtResource("17_yyajd")]
+position = Vector2(153.388, 23.6482)
