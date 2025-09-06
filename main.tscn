@@ -333,4 +333,4 @@ position = Vector2(2249, 992)
 position = Vector2(1231, 1094)
 
 [node name="bluestone" parent="cow" instance=ExtResource("17_yyajd")]
-position = Vector2(153.388, 23.6482)
+position = Vector2(655.111, 212.834)
