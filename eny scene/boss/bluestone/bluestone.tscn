@@ -447,11 +447,11 @@ tint_progress = Color(1, 1, 0, 1)
 script = ExtResource("5_lgop2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(9, 68)
+position = Vector2(8, 68)
 scale = Vector2(1.30249, 1.30249)
 sprite_frames = SubResource("SpriteFrames_vn4ik")
 animation = &"ack1"
-frame_progress = 0.423603
+frame_progress = 0.298628
 offset = Vector2(-6, -64)
 
 [node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
