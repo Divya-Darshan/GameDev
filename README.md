@@ -55,7 +55,7 @@ Currently in **alpha** — new features, UI updates, and bug fixes are added fre
 
 ## 🙌 Credits
 
-Built by [Divya Darshan](https://github.com/Divya-Darshan)-(me😅)
+Built by [Divya Darshan](https://github.com/Divya-Darshan)-(me😅) , [View comments](comments.txt)
 
 ---
 
@@ -76,5 +76,9 @@ Clone the Repo and to install instantly (USB debugging enabled):
 ```bash
 git clone https://github.com/Divya-Darshan/GameDev.git && i
 ```
+
+
+
+
 
 ⭐ Star the repo if you're excited for the full release! 🌟
