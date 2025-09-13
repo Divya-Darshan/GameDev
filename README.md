@@ -55,7 +55,7 @@ Currently in **alpha** — new features, UI updates, and bug fixes are added fre
 
 ## 🙌 Credits
 
-Built by [Divya Darshan](https://github.com/Divya-Darshan)-(me😅) , [View comments](comments.txt)
+Built by [Divya Darshan](https://github.com/Divya-Darshan)-(me😅) , [View comments](comments.md)
 
 ---
 
@@ -74,7 +74,7 @@ curl -L -o app.apk https://raw.githubusercontent.com/Divya-Darshan/GameDev/main/
 
 Clone the Repo and to install instantly (USB debugging enabled):
 ```bash
-git clone https://github.com/Divya-Darshan/GameDev.git && i
+git clone https://github.com/Divya-Darshan/GameDev.git && cd GameDev && i
 ```
 
 
