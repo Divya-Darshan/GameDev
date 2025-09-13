@@ -26,7 +26,7 @@
 📱 Download the latest **alpha build** from the [`/app`](./app) folder:
   
 <h2 align="center">
-  👉<a href="https://raw.githubusercontent.com/Divya-Darshan/GameDev/main/app/app.apk"><b>CLICK HERE TO DOWNLOAD APK</b></a>🟢
+  <a href="https://raw.githubusercontent.com/Divya-Darshan/GameDev/main/app/app.apk"><b>CLICK HERE TO DOWNLOAD APK</b></a>
 </h2>
 
 ---
