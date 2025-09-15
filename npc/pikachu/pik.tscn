@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://c54dx277yidad"]
+
+[ext_resource type="Script" path="res://npc/cow/cow.gd" id="1_sd2x4"]
+[ext_resource type="Texture2D" uid="uid://djpd25pwallw8" path="res://char scene/shadow.png" id="2_2ncku"]
+[ext_resource type="Texture2D" uid="uid://dgcfmw24rd28v" path="res://npc/pikachu/Pik.png" id="3_kh40g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0k06"]
+atlas = ExtResource("3_kh40g")
+region = Rect2(25, 13, 46, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4180m"]
+atlas = ExtResource("3_kh40g")
+region = Rect2(23, 13, 46, 47)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lksnn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0k06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4180m")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0k06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4180m")
+}],
+"loop": false,
+"name": &"eat",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0k06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4180m")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0k06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4180m")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1kphl"]
+
+[node name="pik" type="CharacterBody2D"]
+scale = Vector2(0.641732, 0.635642)
+script = ExtResource("1_sd2x4")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(-2.26683, 0)
+scale = Vector2(0.1544, 0.0180397)
+texture = ExtResource("2_2ncku")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.02243, -17.5455)
+sprite_frames = SubResource("SpriteFrames_lksnn")
+animation = &"eat"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.882455, 0.409485)
+shape = SubResource("CircleShape2D_1kphl")

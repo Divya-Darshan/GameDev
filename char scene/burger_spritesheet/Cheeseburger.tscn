@@ -267,6 +267,7 @@ offset_left = -440.0
 offset_right = -440.0
 grow_vertical = 2
 scale = Vector2(1.28388, 1.28388)
+metadata/_edit_use_anchors_ = true
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer"]
 position = Vector2(24.1456, -161.23)
@@ -284,6 +285,7 @@ theme_override_colors/font_color = Color(0.815857, 0.773463, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.176471)
 theme_override_fonts/font = ExtResource("11_ergg0")
 text = "respawns"
+metadata/_edit_use_anchors_ = true
 
 [node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_fwu4l")

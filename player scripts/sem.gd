@@ -216,8 +216,7 @@ func _on_env_body_entered(body: Node2D) -> void:
 	if body.has_method('cow'):
 		is_cow = true
 	if body.has_method('bed'):
-		body.bed()
-		is_bed = true
+		pass
 
 func _on_env_body_exited(body: Node2D) -> void:
 	if body.has_method('cow'):
