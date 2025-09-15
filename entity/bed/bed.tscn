@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyivmt3ufbgjy"]
+
+[ext_resource type="Texture2D" uid="uid://7dtoh0wxw6ki" path="res://entity/bed/beds_BR.png" id="1_0ii7y"]
+[ext_resource type="Script" path="res://entity/bed/bed.gd" id="1_aru6h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qfnk"]
+size = Vector2(48, 69)
+
+[node name="bed" type="CharacterBody2D"]
+script = ExtResource("1_aru6h")
+
+[node name="BedsBr" type="Sprite2D" parent="."]
+texture = ExtResource("1_0ii7y")
+region_enabled = true
+region_rect = Rect2(16, 24, 32, 56)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.10496, 1.10496)
+shape = SubResource("RectangleShape2D_7qfnk")
+
+[node name="Timer" type="Timer" parent="."]

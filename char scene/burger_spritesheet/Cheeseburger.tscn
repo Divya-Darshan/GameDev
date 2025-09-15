@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b7vwo6tfn06f"]
+[gd_scene load_steps=39 format=3 uid="uid://b7vwo6tfn06f"]
 
 [ext_resource type="Script" path="res://player scripts/sem.gd" id="1_tkkia"]
 [ext_resource type="Texture2D" uid="uid://djpd25pwallw8" path="res://char scene/shadow.png" id="2_oj8e8"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bka5bwuopv6ti" path="res://entity/bucket/empty.png" id="10_m4i5w"]
 [ext_resource type="FontFile" uid="uid://b07xmv84cnmcm" path="res://fonts/m6x11.ttf" id="11_ergg0"]
 [ext_resource type="Texture2D" uid="uid://dxpbwatbcbh7g" path="res://entity/bucket/milk.png" id="11_k50ld"]
+[ext_resource type="AudioStream" uid="uid://cq03f21sgt2mc" path="res://sfx/character/Minecraft-Drinking.mp3" id="12_cr1by"]
 [ext_resource type="AudioStream" uid="uid://c85g2sc5bkray" path="res://sfx/character/slash.wav" id="12_fwu4l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_efksp"]
@@ -302,8 +303,12 @@ position = Vector2(9.53674e-07, -13)
 scale = Vector2(2.3865, -0.934181)
 shape = SubResource("CircleShape2D_wm023")
 
+[node name="drink" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_cr1by")
+
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="body_entered" from="env" to="." method="_on_env_body_entered"]
 [connection signal="body_exited" from="env" to="." method="_on_env_body_exited"]
+[connection signal="finished" from="drink" to="." method="_on_drink_finished"]

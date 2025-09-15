@@ -3,6 +3,8 @@ extends CharacterBody2D
 var _health := 100 # Internal storage
 
 var is_cow = false
+var is_bed = false
+
 
 var health:
 	get:
@@ -17,6 +19,7 @@ const DEADZONE = 0.1
 const FULL_DAMAGE_DELAY := 0.5  # seconds
 @onready var bucket: Sprite2D = $bucket
 @onready var bucketmilk: Sprite2D = $bucketmilk
+@onready var drink: AudioStreamPlayer2D = $drink
 
 
 @onready var animated_sprite = $AnimatedSprite2D
@@ -122,14 +125,21 @@ func attack2() -> void:
 	is_attacking1 = false
 
 func inter() -> void:
-	if is_cow == true:
-		print(is_cow)
-		bucketmilk.visible = true
+	if is_cow:
+		if Input.is_action_pressed("inter") and Input.get_action_strength("inter") > 0:
+
+			bucketmilk.visible = false
+		else:
+			# Normal short press
+			bucketmilk.visible = true
 	else:
 		pass
 
+
 func inter2() -> void:
-	bucketmilk.visible = false
+
+	drink.play()
+
 
 func _physics_process(delta: float) -> void:
 	
@@ -205,8 +215,19 @@ func _on_touch_screen_button_pressed() -> void:
 func _on_env_body_entered(body: Node2D) -> void:
 	if body.has_method('cow'):
 		is_cow = true
-
+	if body.has_method('bed'):
+		body.bed()
+		is_bed = true
 
 func _on_env_body_exited(body: Node2D) -> void:
 	if body.has_method('cow'):
 		is_cow = false
+	if body.has_method('bed'):
+		is_bed = false
+
+
+func _on_drink_finished() -> void:
+	bucketmilk.visible = false
+	health += 20
+	progressbar.emit()
+	

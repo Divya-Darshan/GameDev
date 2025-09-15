@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=21 format=4 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_a618g"]
 [ext_resource type="Script" path="res://manager/manage_game.gd" id="1_iwro6"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c0prijgr1rv2l" path="res://veh/car blue/carblue.tscn" id="15_yq6mv"]
 [ext_resource type="PackedScene" uid="uid://flp3wyxfanvc" path="res://npc/cow/cow.tscn" id="17_idj8w"]
 [ext_resource type="PackedScene" uid="uid://csgghvsyuriym" path="res://eny scene/boss/dragon/dragon.tscn" id="17_yyajd"]
+[ext_resource type="PackedScene" uid="uid://cyivmt3ufbgjy" path="res://entity/bed/bed.tscn" id="18_7bajb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ag6bu"]
 texture = ExtResource("2_fvtbc")
@@ -334,3 +335,6 @@ position = Vector2(1231, 1094)
 
 [node name="bluestone" parent="cow" instance=ExtResource("17_yyajd")]
 position = Vector2(655.111, 212.834)
+
+[node name="Area2D" parent="." instance=ExtResource("18_7bajb")]
+position = Vector2(1309, 770)
