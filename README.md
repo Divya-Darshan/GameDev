@@ -55,7 +55,7 @@ Currently in **alpha** — new features, UI updates, and bug fixes are added fre
 
 ## 🙌 Credits
 
-Built by [Divya Darshan](https://github.com/Divya-Darshan)-(me😅) , [View comments](comments.md)
+Built by [Divya Darshan](https://github.com/Divya-Darshan)-(me😅) , [View comments](CONTRIBUTING.md)
 
 ---
 
