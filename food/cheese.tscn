@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx1nxi3r48atn"]
+
+[ext_resource type="Texture2D" uid="uid://421ep73o4s1q" path="res://food/parmassan_64x64.png" id="1_qcgw3"]
+[ext_resource type="Texture2D" uid="uid://djpd25pwallw8" path="res://char scene/shadow.png" id="2_w00ve"]
+
+[node name="cheese" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(0.228554, 0.228554)
+texture = ExtResource("1_qcgw3")
+region_enabled = true
+region_rect = Rect2(8, 14, 48, 45)
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 26.252)
+scale = Vector2(0.30937, -0.0513494)
+texture = ExtResource("2_w00ve")

@@ -1,11 +1,10 @@
-[gd_scene load_steps=21 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=22 format=4 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_a618g"]
 [ext_resource type="Script" path="res://manager/manage_game.gd" id="1_iwro6"]
 [ext_resource type="Texture2D" uid="uid://xft0hopoxrok" path="res://map/nature/TX Tileset Grass.png" id="2_fvtbc"]
 [ext_resource type="PackedScene" uid="uid://c7i3w627hjbum" path="res://control/touchcontrols.tscn" id="3_h8082"]
 [ext_resource type="PackedScene" uid="uid://dslqpyxjoyav2" path="res://eny scene/flyeye/eyefly.tscn" id="7_8u3kr"]
-[ext_resource type="PackedScene" uid="uid://cqmou4vv11s08" path="res://eny scene/slime/slime.tscn" id="8_0cw8a"]
 [ext_resource type="PackedScene" uid="uid://bhsfjwbkodxm6" path="res://eny scene/boss/helldemon/helldemon.tscn" id="8_seclw"]
 [ext_resource type="PackedScene" uid="uid://bypqcf8nfijha" path="res://veh/sime/sime.tscn" id="11_eir2i"]
 [ext_resource type="PackedScene" uid="uid://b5fwl3frus87o" path="res://npc/frog/frognpc.tscn" id="12_6fiib"]
@@ -18,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://flp3wyxfanvc" path="res://npc/cow/cow.tscn" id="17_idj8w"]
 [ext_resource type="PackedScene" uid="uid://csgghvsyuriym" path="res://eny scene/boss/dragon/dragon.tscn" id="17_yyajd"]
 [ext_resource type="PackedScene" uid="uid://cyivmt3ufbgjy" path="res://entity/bed/bed.tscn" id="18_7bajb"]
+[ext_resource type="PackedScene" uid="uid://iisrjuj5ds3f" path="res://eny scene/dragon/drogan.tscn" id="19_6tlep"]
+[ext_resource type="PackedScene" uid="uid://c54dx277yidad" path="res://npc/pikachu/pik.tscn" id="19_o6qmw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ag6bu"]
 texture = ExtResource("2_fvtbc")
@@ -300,9 +301,6 @@ unique_name_in_owner = true
 [node name="eyefly" parent="." instance=ExtResource("7_8u3kr")]
 position = Vector2(1479, 1262)
 
-[node name="slimered" parent="." instance=ExtResource("8_0cw8a")]
-position = Vector2(1139, 678)
-
 [node name="sime" parent="." instance=ExtResource("11_eir2i")]
 position = Vector2(1071, 861)
 
@@ -330,11 +328,19 @@ position = Vector2(1764, 740)
 [node name="helldemo" parent="." instance=ExtResource("8_seclw")]
 position = Vector2(2249, 992)
 
-[node name="cow" parent="." instance=ExtResource("17_idj8w")]
-position = Vector2(1231, 1094)
-
-[node name="bluestone" parent="cow" instance=ExtResource("17_yyajd")]
-position = Vector2(655.111, 212.834)
-
 [node name="Area2D" parent="." instance=ExtResource("18_7bajb")]
 position = Vector2(1309, 770)
+
+[node name="bluestone" parent="." instance=ExtResource("17_yyajd")]
+position = Vector2(2098, 1373)
+scale = Vector2(1.32344, 1.31088)
+
+[node name="cow" parent="." instance=ExtResource("17_idj8w")]
+position = Vector2(1152, 983)
+
+[node name="pik" parent="." instance=ExtResource("19_o6qmw")]
+position = Vector2(1129, 1032)
+scale = Vector2(0.680861, 0.667244)
+
+[node name="drogan" parent="." instance=ExtResource("19_6tlep")]
+position = Vector2(939, 1007)
