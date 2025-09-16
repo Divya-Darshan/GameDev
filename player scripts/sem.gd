@@ -32,6 +32,8 @@ const FULL_DAMAGE_DELAY := 0.5  # seconds
 @onready var progress_bar: TextureProgressBar = $CanvasLayer/TextureProgressBar
 
 
+const CHEESE = preload("res://food/cheese.tscn")
+
 var last_attack_time := 0.0
 var players_in_range := []
 var is_attacking1 = false
@@ -124,16 +126,28 @@ func attack2() -> void:
 	animated_sprite.play("default")
 	is_attacking1 = false
 
+
 func inter() -> void:
 	if is_cow:
-		if Input.is_action_pressed("inter") and Input.get_action_strength("inter") > 0:
+		bucketmilk.visible = true
+		# Wait 5 seconds
+		await get_tree().create_timer(5.0).timeout
 
+		# Instance the cheese
+		var cheese_instance = CHEESE.instantiate()
+
+		# Add it to the same parent (so it’s on the same level in the scene tree)
+		get_parent().add_child(cheese_instance)
+
+		# Place it where THIS node (the parent of the script) is right now
+		if cheese_instance is Node2D and self is Node2D:
+			cheese_instance.global_position = global_position
 			bucketmilk.visible = false
-		else:
-			# Normal short press
-			bucketmilk.visible = true
-	else:
-		pass
+		elif cheese_instance is Node2D and self is Node2D:
+			cheese_instance.global_transform.origin = global_transform.origin
+			bucketmilk.visible = false
+
+
 
 
 func inter2() -> void:
