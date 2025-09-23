@@ -34,10 +34,10 @@ Edit 1: can you make abilities like fireball?✅
 
 @taph-kaboom-n6l - Thank you if it was hard to make a pokeball its ok.🫂🫂
 
-@Tothendoforever - What about a cave?
+@Tothendoforever - What about a cave?❌
 
 @Tothendoforever - The hollow Knight? ✅
 
-@Tothendoforever - What if the cheese is bombs.
+@Tothendoforever - What if the cheese is bombs.✅
 
 ```
