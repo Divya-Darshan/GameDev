@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://yexusl53cndp"]
+
+[ext_resource type="Texture2D" uid="uid://cq4mtg0ov36i8" path="res://effect/fire ball/FB001.png" id="1_2if2i"]
+[ext_resource type="Texture2D" uid="uid://ctpcirgd8vob" path="res://effect/fire ball/FB002.png" id="2_13kra"]
+[ext_resource type="Texture2D" uid="uid://bvvypx2yf4rrh" path="res://effect/fire ball/FB003.png" id="3_42rbw"]
+[ext_resource type="Texture2D" uid="uid://c1hcv62tngspu" path="res://effect/fire ball/FB004.png" id="4_k0bpl"]
+[ext_resource type="Texture2D" uid="uid://bbw8ww3csp58l" path="res://effect/fire ball/FB005.png" id="5_4mbah"]
+[ext_resource type="Script" path="res://effect/fire ball/fireball.gd" id="6_odt52"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2s7t6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2if2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_13kra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_42rbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k0bpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4mbah")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[node name="fireball" type="AnimatedSprite2D"]
+scale = Vector2(0.469821, 0.469821)
+sprite_frames = SubResource("SpriteFrames_2s7t6")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.824444
+script = ExtResource("6_odt52")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-25.5416, 0)
+scale = Vector2(1.02685, 0.718299)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

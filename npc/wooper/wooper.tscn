@@ -154,7 +154,7 @@ texture = ExtResource("2_8mqqd")
 position = Vector2(-1.55828, -29.891)
 sprite_frames = SubResource("SpriteFrames_lksnn")
 animation = &"idle"
-frame_progress = 0.547621
+frame_progress = 0.136413
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.882455, 0.409485)

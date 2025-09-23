@@ -20,8 +20,8 @@ const FULL_DAMAGE_DELAY := 0.5  # seconds
 @onready var bucket: Sprite2D = $bucket
 @onready var bucketmilk: Sprite2D = $bucketmilk
 @onready var drink: AudioStreamPlayer2D = $drink
-
-
+@onready var marker_2d: Marker2D = $AnimatedSprite2D/Marker2D
+@onready var bullet_scene: PackedScene = preload("res://effect/fire ball/fireball.tscn")
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var touch_controls = $"../Touchcontrols"
 @onready var slashsfx: AudioStreamPlayer2D = $slashsfx
@@ -30,6 +30,9 @@ const FULL_DAMAGE_DELAY := 0.5  # seconds
 @onready var shadow: Sprite2D = $Shadow
 @onready var touchcontrols: CanvasLayer = %Touchcontrols
 @onready var progress_bar: TextureProgressBar = $CanvasLayer/TextureProgressBar
+@onready var virtual_joystick: VirtualJoystick = $"Virtual Joystick"
+
+
 
 
 const CHEESE = preload("res://food/cheese.tscn")
@@ -52,9 +55,35 @@ func _ready():
 	if touch_controls:
 		touch_controls.button_pressed.connect(_on_touch_button_pressed)
 
-#func _process(delta: float) -> void:
-	#if health == 0:
-		#ply.visible = false
+
+ # you can map "shoot" in Input Map
+
+func shoot_bullet() -> void:
+	if bullet_scene:
+		var bullet = bullet_scene.instantiate()
+		
+		# Spawn at marker's exact position
+		if bullet:
+			bullet.global_position = marker_2d.global_position
+			
+			# Set bullet rotation to match the marker
+			bullet.rotation = marker_2d.global_rotation
+			
+			get_tree().current_scene.add_child(bullet)
+		else :
+			pass
+	else :
+		pass
+
+
+
+
+
+
+
+
+
+
 	
 
 func _on_touch_button_pressed(action_name: String) -> void:
@@ -88,18 +117,7 @@ func take_damage(amount: int) -> void:
 		
 
 func attack1() -> void:
-	is_attacking1 = true
-	animated_sprite.play("ack1")
-	slashsfx.pitch_scale = randf_range(0.9, 1.2)
-	slashsfx.play()
-	for target in players_in_range:
-		if target and target.has_method("take_damage"):
-			target.take_damage(10)
-			await animated_sprite.animation_finished
-			animated_sprite.play("hit")
-	await animated_sprite.animation_finished
-	animated_sprite.play("default")
-	is_attacking1 = false
+	shoot_bullet()
 	
 func play_hit_animation():
 	pass
@@ -107,7 +125,6 @@ func play_hit_animation():
 
 	
 	 # Slows down animation to half speed
-
 
 
 
@@ -131,7 +148,7 @@ func inter() -> void:
 	if is_cow:
 		bucketmilk.visible = true
 		# Wait 5 seconds
-		await get_tree().create_timer(15.0).timeout
+		await get_tree().create_timer(0.10).timeout
 
 		# Instance the cheese
 		var cheese_instance = CHEESE.instantiate()
@@ -151,8 +168,9 @@ func inter() -> void:
 
 
 func inter2() -> void:
+	if drink:
+		drink.play()
 
-	drink.play()
 
 
 func _physics_process(delta: float) -> void:
