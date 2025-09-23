@@ -131,7 +131,7 @@ func inter() -> void:
 	if is_cow:
 		bucketmilk.visible = true
 		# Wait 5 seconds
-		await get_tree().create_timer(5.0).timeout
+		await get_tree().create_timer(15.0).timeout
 
 		# Instance the cheese
 		var cheese_instance = CHEESE.instantiate()
