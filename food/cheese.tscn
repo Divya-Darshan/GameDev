@@ -1,7 +1,109 @@
-[gd_scene load_steps=3 format=3 uid="uid://cx1nxi3r48atn"]
+[gd_scene load_steps=20 format=3 uid="uid://cx1nxi3r48atn"]
 
 [ext_resource type="Texture2D" uid="uid://421ep73o4s1q" path="res://food/parmassan_64x64.png" id="1_qcgw3"]
+[ext_resource type="Script" path="res://food/cheese.gd" id="2_dii1r"]
 [ext_resource type="Texture2D" uid="uid://djpd25pwallw8" path="res://char scene/shadow.png" id="2_w00ve"]
+[ext_resource type="Texture2D" uid="uid://gxqysj02713k" path="res://food/parmassan_green.png" id="4_ib0bs"]
+[ext_resource type="Texture2D" uid="uid://b0xcm75d5cuvd" path="res://eny scene/exp/explosion-b.png" id="5_kuk4f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hrel"]
+atlas = ExtResource("5_kuk4f")
+region = Rect2(0, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irb38"]
+atlas = ExtResource("5_kuk4f")
+region = Rect2(80, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2qgl"]
+atlas = ExtResource("5_kuk4f")
+region = Rect2(160, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bp2v"]
+atlas = ExtResource("5_kuk4f")
+region = Rect2(240, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20q5c"]
+atlas = ExtResource("5_kuk4f")
+region = Rect2(320, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4ful"]
+atlas = ExtResource("5_kuk4f")
+region = Rect2(400, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_113eb"]
+atlas = ExtResource("5_kuk4f")
+region = Rect2(480, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7jdr"]
+atlas = ExtResource("5_kuk4f")
+region = Rect2(560, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyhx1"]
+atlas = ExtResource("5_kuk4f")
+region = Rect2(640, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e8pw"]
+atlas = ExtResource("5_kuk4f")
+region = Rect2(720, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih6yg"]
+atlas = ExtResource("5_kuk4f")
+region = Rect2(800, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uk8h"]
+atlas = ExtResource("5_kuk4f")
+region = Rect2(880, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdwky"]
+atlas = ExtResource("5_kuk4f")
+region = Rect2(960, 0, 80, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wi8fp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hrel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irb38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2qgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bp2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20q5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4ful")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_113eb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7jdr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyhx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e8pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih6yg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uk8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdwky")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 10.0
+}]
 
 [node name="cheese" type="Sprite2D"]
 texture_filter = 1
@@ -9,8 +111,25 @@ scale = Vector2(0.228554, 0.228554)
 texture = ExtResource("1_qcgw3")
 region_enabled = true
 region_rect = Rect2(8, 14, 48, 45)
+script = ExtResource("2_dii1r")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 26.252)
 scale = Vector2(0.30937, -0.0513494)
 texture = ExtResource("2_w00ve")
+
+[node name="ParmassanGreen" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_ib0bs")
+region_enabled = true
+region_rect = Rect2(8, 14, 48, 45)
+
+[node name="expo" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -13.126)
+scale = Vector2(2.53363, 2.53363)
+sprite_frames = SubResource("SpriteFrames_wi8fp")
+animation = &"idle"
+frame = 12
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="expo" to="." method="_on_expo_animation_finished"]

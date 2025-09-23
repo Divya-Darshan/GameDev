@@ -110,13 +110,14 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1152.0
-offset_top = -648.0
+offset_left = -1142.0
+offset_top = -644.0
+offset_right = 10.0
+offset_bottom = 4.0
 grow_horizontal = 0
 grow_vertical = 0
 
 [node name="t" type="TouchScreenButton" parent="HBoxbtn"]
-visible = false
 position = Vector2(902, 314)
 scale = Vector2(8, 8)
 texture_normal = SubResource("AtlasTexture_pkmkh")
@@ -151,8 +152,10 @@ passby_press = true
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -1152.0
-offset_bottom = 648.0
+offset_left = -1142.0
+offset_top = 4.0
+offset_right = 10.0
+offset_bottom = 652.0
 grow_horizontal = 0
 
 [node name="ps" type="TouchScreenButton" parent="HBoxps"]
@@ -172,10 +175,10 @@ scale = Vector2(1.4, 1.4)
 texture = ExtResource("5_pvhbl")
 
 [node name="Virtual Joystick" parent="." instance=ExtResource("2_bdc5w")]
-offset_left = 2.0
-offset_top = -303.0
-offset_right = 302.0
-offset_bottom = -3.0
+offset_left = 12.0
+offset_top = -299.0
+offset_right = 312.0
+offset_bottom = 1.0
 pressed_color = Color(0.745098, 0.745098, 0.745098, 1)
 
 [connection signal="pressed" from="ColorRect/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

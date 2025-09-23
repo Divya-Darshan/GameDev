@@ -210,8 +210,7 @@ shape = SubResource("CircleShape2D_kxkqq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -24)
 sprite_frames = SubResource("SpriteFrames_61x25")
-animation = &"run"
-frame_progress = 0.481763
+animation = &"idle"
 
 [node name="Area2D" type="Area2D" parent="."]
 

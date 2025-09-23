@@ -291,13 +291,6 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("12_fwu4l")
 volume_db = -1.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(5, -12)
-ignore_rotation = false
-zoom = Vector2(5, 5)
-position_smoothing_enabled = true
-position_smoothing_speed = 6.0
-
 [node name="env" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="env"]
@@ -307,6 +300,13 @@ shape = SubResource("CircleShape2D_wm023")
 
 [node name="drink" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_cr1by")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(5, -12)
+ignore_rotation = false
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
