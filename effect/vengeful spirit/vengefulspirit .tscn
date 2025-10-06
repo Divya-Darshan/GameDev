@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://d0tiobpwmdykq"]
+
+[ext_resource type="Texture2D" uid="uid://dmbq6htytt8iy" path="res://effect/vengeful spirit/vengeful-spirit.png" id="1_2g3dt"]
+[ext_resource type="Texture2D" uid="uid://bw87i7swtxl1c" path="res://effect/vengeful spirit/path/FireballsNoline0000.png" id="3_d0gxh"]
+[ext_resource type="Texture2D" uid="uid://dhxo2s6lb4dcc" path="res://effect/vengeful spirit/path/FireballsNoline0001.png" id="4_aj5jd"]
+[ext_resource type="Texture2D" uid="uid://dfll7w2ogl53s" path="res://effect/vengeful spirit/path/FireballsNoline0002.png" id="5_uom54"]
+[ext_resource type="Texture2D" uid="uid://bs54i841ek0u8" path="res://effect/vengeful spirit/path/FireballsNoline0003.png" id="6_2pkxq"]
+[ext_resource type="Script" path="res://effect/fire ball/fireball.gd" id="6_td5kn"]
+[ext_resource type="Texture2D" uid="uid://lheiqnrbatiy" path="res://effect/vengeful spirit/path/FireballsNoline0004.png" id="7_83cwm"]
+[ext_resource type="Texture2D" uid="uid://c75x75hw5cg4i" path="res://effect/vengeful spirit/path/FireballsNoline0005.png" id="8_n6xx1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h0gie"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_d0gxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_aj5jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uom54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2pkxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_83cwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_n6xx1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qaq6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2g3dt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="vengeful spirit" type="Node2D"]
+scale = Vector2(0.0341536, 0.0341536)
+script = ExtResource("6_td5kn")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-409.912, 0)
+rotation = -3.14159
+scale = Vector2(9.72984, -8.47746)
+
+[node name="PATH" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.34518, 2.34518)
+sprite_frames = SubResource("SpriteFrames_h0gie")
+autoplay = "default"
+frame = 3
+frame_progress = 0.100386
+
+[node name="HEAD" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.61)
+position = Vector2(-29.2795, 0)
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_1qaq6")
+flip_h = true
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

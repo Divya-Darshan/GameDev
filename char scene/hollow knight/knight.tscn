@@ -136,6 +136,9 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_kns5y")
 
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(16, 99)
+
 [node name="hitbox" type="Area2D" parent="."]
 position = Vector2(0, 1)
 collision_layer = 3
@@ -163,9 +166,6 @@ shape = SubResource("CircleShape2D_vargi")
 position = Vector2(1, -12)
 sprite_frames = SubResource("SpriteFrames_fh5tc")
 animation = &"ack1"
-
-[node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D"]
-position = Vector2(15, 111)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -215,7 +215,7 @@ stream = ExtResource("12_hj8su")
 volume_db = -1.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(5, -12)
+position = Vector2(9, -11)
 ignore_rotation = false
 zoom = Vector2(5, 5)
 position_smoothing_enabled = true

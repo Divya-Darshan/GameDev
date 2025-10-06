@@ -58,3 +58,25 @@ Edit 1: can you make abilities like fireball?✅
 existing tree but when you get near it it wakes up and attacks you.
 It should also be quite rare if you can do that’
 ```
+
+<h2 style="text-transform: uppercase;">dev log 21</h2>
+
+```bash 
+
+@RandomToastEnthusiast commented: ‘Pls make the fire balls
+look like the vengeful spirit spell!’
+
+
+@Lilbloby commented: ‘make the fireballs the vengeful
+spirt form the game’
+
+@Pancakegod2023 commented: ‘Add spiderman with webswinging abilities’
+
+@bobandThegang commented: ‘Add hornet from hollow knight silksong’
+
+
+@SnoutWorks commented: ‘Add a tree enemy that looks like the
+already existing tree but when you get near it it wakes up
+and attacks you. It should also be quite rare if you can do that’
+
+```
