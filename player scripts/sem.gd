@@ -6,6 +6,7 @@ var is_cow = false
 var is_bed = false
 
 
+
 var health:
 	get:
 		return _health
@@ -20,8 +21,8 @@ const FULL_DAMAGE_DELAY := 0.5  # seconds
 @onready var bucket: Sprite2D = $bucket
 @onready var bucketmilk: Sprite2D = $bucketmilk
 @onready var drink: AudioStreamPlayer2D = $drink
-@onready var marker_2d: Marker2D = $AnimatedSprite2D/Marker2D
-@onready var bullet_scene: PackedScene = preload("res://effect/fire ball/fireball.tscn")
+@onready var marker_2d: Marker2D = $Marker2D
+@onready var bullet_scene: PackedScene = preload("res://effect/vengeful spirit/vengefulspirit .tscn")
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var touch_controls = $"../Touchcontrols"
 @onready var slashsfx: AudioStreamPlayer2D = $slashsfx
@@ -59,26 +60,25 @@ func _ready():
  # you can map "shoot" in Input Map
 
 func shoot_bullet() -> void:
-	if bullet_scene:
-		var bullet = bullet_scene.instantiate()
-		
-		# Spawn at marker's exact position
-		if bullet:
-			bullet.global_position = marker_2d.global_position
-			
-			# Set bullet rotation to match the marker
-			bullet.rotation = marker_2d.global_rotation
-			
-			get_tree().current_scene.add_child(bullet)
-		else :
-			pass
-	else :
-		pass
+	# guard: ensure the PackedScene loaded correctly
+	if not bullet_scene:
+		return
 
+	var bullet = bullet_scene.instantiate()
+	if not bullet:
+		return
 
+	# spawn exactly at the marker
+	bullet.global_position = marker_2d.global_position
 
+	# take the marker's world rotation, then flip 180° if the character is flipped
+	var rot := marker_2d.global_rotation
+	if animated_sprite.flip_h:
+		rot += PI
 
-
+	# apply world rotation to the bullet and add it to the scene
+	bullet.global_rotation = rot
+	get_tree().current_scene.add_child(bullet)
 
 
 
@@ -148,7 +148,7 @@ func inter() -> void:
 	if is_cow:
 		bucketmilk.visible = true
 		# Wait 5 seconds
-		await get_tree().create_timer(0.10).timeout
+		await get_tree().create_timer(10.0).timeout
 
 		# Instance the cheese
 		var cheese_instance = CHEESE.instantiate()
