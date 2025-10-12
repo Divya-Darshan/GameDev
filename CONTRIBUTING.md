@@ -1,3 +1,10 @@
+<h2 style="text-transform: uppercase;">dev log 1</h2>
+
+```
+@pravinakrishnan2578: Add some more enemiessssssss. 👿😈
+```
+
+
 <h2 style="text-transform: uppercase;">dev log 18</h2>
 
 ```bash 
