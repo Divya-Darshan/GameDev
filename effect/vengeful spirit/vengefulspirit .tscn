@@ -65,7 +65,6 @@ frame_progress = 0.100386
 [node name="HEAD" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.61)
 position = Vector2(-29.2795, 0)
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_1qaq6")
 flip_h = true
 
