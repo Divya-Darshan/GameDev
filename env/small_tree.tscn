@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://d06hlrs2p8m2m"]
+[gd_scene load_steps=6 format=4 uid="uid://d06hlrs2p8m2m"]
 
 [ext_resource type="Texture2D" uid="uid://bqu6xrreabu2r" path="res://map/nature/TX Plant.png" id="1_53pdf"]
+[ext_resource type="Script" path="res://env/collision_shape_2d.gd" id="2_3okru"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ubtew"]
 texture = ExtResource("1_53pdf")
@@ -263,3 +264,4 @@ collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("CircleShape2D_jgnhn")
+script = ExtResource("2_3okru")
