@@ -1,14 +1,26 @@
 <h2 style="text-transform: uppercase;">dev log 1</h2>
 
-```
+```bash
+
 @pravinakrishnan2578: Add some more enemiessssssss. 👿😈
+
 ```
 
 <h2 style="text-transform: uppercase;">dev log 2</h2>
 
-```
+```bash
+
 @SnoutWorks i sub
 @ItsTriphyophyllum “Orange cat simulator”
+
+```
+
+<h2 style="text-transform: uppercase;">dev log 3</h2>
+
+```bash
+
+@SnoutWorks add a boss
+
 ```
 
 
