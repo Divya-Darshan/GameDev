@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://blklxyxafs82k"]
+
+[ext_resource type="FontFile" uid="uid://b07xmv84cnmcm" path="res://fonts/m6x11.ttf" id="1_de7db"]
+[ext_resource type="Texture2D" uid="uid://cfti04vnnsnf7" path="res://entity/Nubert/Nubert.png" id="2_d1p72"]
+[ext_resource type="Texture2D" uid="uid://cdul2ytfe6bla" path="res://entity/Nubert/Nuberst.png" id="3_t3iuo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w0at4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d1p72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d1p72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t3iuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t3iuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d1p72")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Nubert" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -39.0
+offset_top = -9.0
+offset_right = 84.0
+offset_bottom = 14.0
+scale = Vector2(0.63589, 0.63589)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.444)
+theme_override_fonts/font = ExtResource("1_de7db")
+text = "Everybody loves me."
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w0at4")
+autoplay = "default"
+frame_progress = 0.912926

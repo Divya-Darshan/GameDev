@@ -303,7 +303,7 @@ script = ExtResource("5_pmx0q")
 position = Vector2(0, -13)
 scale = Vector2(0.970433, 0.970433)
 sprite_frames = SubResource("SpriteFrames_vn4ik")
-animation = &"hit"
+animation = &"ack1"
 
 [node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-4.76837e-07, -1.90735e-06)
