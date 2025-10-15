@@ -119,7 +119,7 @@ and attacks you. It should also be quite rare if you can do that’
 @loganplays42 commented: ‘Thanks for mentioning me, can you make a boss room with the boss from 
 Hollow Knight called "The Hollow Knight" in it where you can unlock the knight after beating it’ ✅
 
-@SnoutWorks Add a guy on a skate board as a character   
+@SnoutWorks Add a guy on a skate board as a character   ✅
 
 
 
