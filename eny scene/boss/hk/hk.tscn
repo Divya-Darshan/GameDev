@@ -1,0 +1,217 @@
+[gd_scene load_steps=37 format=3 uid="uid://bbwt3g6xut6s8"]
+
+[ext_resource type="Script" path="res://eny scene/boss/undead/ghost.gd" id="1_l7kp2"]
+[ext_resource type="Texture2D" uid="uid://djpd25pwallw8" path="res://char scene/shadow.png" id="2_q5qj5"]
+[ext_resource type="Texture2D" uid="uid://bdbbn2i4wskfr" path="res://uibtn/probase.tres" id="3_k1cou"]
+[ext_resource type="Texture2D" uid="uid://bfey0hscp0qvc" path="res://uibtn/proover.tres" id="4_avqeo"]
+[ext_resource type="Script" path="res://eny script/progresseny.gd" id="5_6a3qx"]
+[ext_resource type="Texture2D" uid="uid://g6cr2ei3hxhe" path="res://eny scene/boss/hk/idle/0001.png" id="6_7jkwy"]
+[ext_resource type="Texture2D" uid="uid://b4rfldtwaajxp" path="res://eny scene/boss/hk/ack/0001.png" id="6_ldbo4"]
+[ext_resource type="Texture2D" uid="uid://buxxa1knrm2py" path="res://eny scene/boss/hk/idle/0002.png" id="7_52gp1"]
+[ext_resource type="Texture2D" uid="uid://cd67fb874o2xr" path="res://eny scene/boss/hk/ack/0002.png" id="7_avw5k"]
+[ext_resource type="AudioStream" uid="uid://c85g2sc5bkray" path="res://sfx/character/slash.wav" id="7_pas7o"]
+[ext_resource type="Texture2D" uid="uid://bjs756ybl058t" path="res://eny scene/boss/hk/ack/0003.png" id="8_d5qku"]
+[ext_resource type="Texture2D" uid="uid://ctas5dfxqp3js" path="res://eny scene/boss/hk/idle/0003.png" id="8_p7a25"]
+[ext_resource type="Texture2D" uid="uid://cx1ijtp46nsnq" path="res://eny scene/boss/hk/ack/0004.png" id="9_qmyb8"]
+[ext_resource type="Texture2D" uid="uid://kuvef1j6ml26" path="res://eny scene/boss/hk/idle/0004.png" id="9_qs2da"]
+[ext_resource type="Texture2D" uid="uid://cbo140fhwq4uc" path="res://eny scene/boss/hk/idle/0005.png" id="10_moqn5"]
+[ext_resource type="Texture2D" uid="uid://hmjolgcth5mb" path="res://eny scene/boss/hk/ack/0005.png" id="10_nmxff"]
+[ext_resource type="Texture2D" uid="uid://chcpfirr8o6ec" path="res://eny scene/boss/hk/ack/0006.png" id="11_28jbm"]
+[ext_resource type="Texture2D" uid="uid://bbwpg3mh40th1" path="res://eny scene/boss/hk/idle/0006.png" id="11_l72pi"]
+[ext_resource type="Texture2D" uid="uid://c0af75e3qlk08" path="res://eny scene/boss/hk/idle/0007.png" id="12_psmpp"]
+[ext_resource type="Texture2D" uid="uid://dpv6s4xf4ieov" path="res://eny scene/boss/hk/idle/0008.png" id="13_3hn67"]
+[ext_resource type="Texture2D" uid="uid://cs426vixckju4" path="res://eny scene/boss/hk/idle/0009.png" id="14_2ob5t"]
+[ext_resource type="Texture2D" uid="uid://c1waaei7lff82" path="res://eny scene/boss/hk/idle/0010.png" id="15_sxfty"]
+[ext_resource type="Texture2D" uid="uid://dgfy2nfbhu6wv" path="res://eny scene/boss/hk/walk/0001.png" id="16_rjiag"]
+[ext_resource type="Texture2D" uid="uid://cgdqwm31f5u4h" path="res://eny scene/boss/hk/walk/0002.png" id="17_vbje4"]
+[ext_resource type="Texture2D" uid="uid://ox273boliwj1" path="res://eny scene/boss/hk/walk/0003.png" id="18_82yl7"]
+[ext_resource type="Texture2D" uid="uid://pj88auohywxf" path="res://eny scene/boss/hk/walk/0004.png" id="19_pfnfe"]
+[ext_resource type="Texture2D" uid="uid://cwdjhqihdvbr0" path="res://eny scene/boss/hk/walk/0005.png" id="20_l3qco"]
+[ext_resource type="Texture2D" uid="uid://cfpyqabwdl1yc" path="res://eny scene/boss/hk/walk/0006.png" id="21_nr3ey"]
+[ext_resource type="Texture2D" uid="uid://bjibs0ir8xogl" path="res://eny scene/boss/hk/walk/0007.png" id="22_4b5jk"]
+[ext_resource type="Texture2D" uid="uid://ra8tawvwh82x" path="res://eny scene/boss/hk/walk/0008.png" id="23_dlcmk"]
+[ext_resource type="Texture2D" uid="uid://d1a6tjvferasd" path="res://eny scene/boss/hk/walk/0009.png" id="24_qorl0"]
+[ext_resource type="Texture2D" uid="uid://3wbu4q0jy8q1" path="res://eny scene/boss/hk/walk/0010.png" id="25_7e78d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eyut2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dtnvt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34ddi"]
+size = Vector2(22.0488, 21.4146)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vn4ik"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ldbo4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_avw5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_d5qku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qmyb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nmxff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_28jbm")
+}],
+"loop": true,
+"name": &"ack1",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7jkwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_52gp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p7a25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qs2da")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_moqn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_l72pi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_psmpp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3hn67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2ob5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_sxfty")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"hit",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_rjiag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vbje4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_82yl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_pfnfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_l3qco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_nr3ey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_4b5jk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_dlcmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_qorl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_7e78d")
+}],
+"loop": false,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="bluestone" type="CharacterBody2D"]
+light_mask = 2
+visibility_layer = 2
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_l7kp2")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.435294)
+position = Vector2(-1.05454, 11.8672)
+rotation = -3.14035
+scale = Vector2(0.271199, 0.05)
+texture = ExtResource("2_q5qj5")
+offset = Vector2(-3.95776, -302.63)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 12)
+scale = Vector2(1.64412, 1.64412)
+shape = SubResource("CircleShape2D_eyut2")
+
+[node name="range" type="Area2D" parent="."]
+position = Vector2(-1.5, 29.5)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
+position = Vector2(0.5, -39.5)
+scale = Vector2(31.7939, 31.7939)
+shape = SubResource("CircleShape2D_dtnvt")
+
+[node name="hitbox" type="Area2D" parent="."]
+position = Vector2(-1, 29)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -42)
+scale = Vector2(5.03951, 5.98311)
+shape = SubResource("RectangleShape2D_34ddi")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -34.0
+offset_top = 26.0
+offset_right = 33.0
+offset_bottom = 66.0
+scale = Vector2(1.01613, 1.01613)
+value = 100.0
+texture_under = ExtResource("3_k1cou")
+texture_progress = ExtResource("4_avqeo")
+tint_under = Color(0, 0, 0, 1)
+tint_progress = Color(1, 1, 0, 1)
+script = ExtResource("5_6a3qx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, 28)
+scale = Vector2(0.605486, 0.605486)
+sprite_frames = SubResource("SpriteFrames_vn4ik")
+animation = &"ack1"
+offset = Vector2(-6, -64)
+
+[node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, 29)
+stream = ExtResource("7_pas7o")
+volume_db = -5.0
+
+[connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]

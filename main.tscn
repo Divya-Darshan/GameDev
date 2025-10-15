@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=27 format=4 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_a618g"]
 [ext_resource type="Script" path="res://manager/manage_game.gd" id="1_iwro6"]
@@ -20,6 +20,10 @@
 [ext_resource type="PackedScene" uid="uid://iisrjuj5ds3f" path="res://eny scene/dragon/drogan.tscn" id="19_6tlep"]
 [ext_resource type="PackedScene" uid="uid://c54dx277yidad" path="res://npc/pikachu/pik.tscn" id="19_o6qmw"]
 [ext_resource type="PackedScene" uid="uid://bt0fnmtw5codh" path="res://npc/wooper/wooper.tscn" id="20_ybs3n"]
+[ext_resource type="PackedScene" uid="uid://bbwt3g6xut6s8" path="res://eny scene/boss/hk/hk.tscn" id="21_cc133"]
+[ext_resource type="PackedScene" uid="uid://blklxyxafs82k" path="res://entity/Nubert/nubert.tscn" id="22_ceweu"]
+[ext_resource type="PackedScene" uid="uid://bovaklmxxunrw" path="res://eny scene/slime/watersilme.tscn" id="23_y751u"]
+[ext_resource type="PackedScene" uid="uid://cqmou4vv11s08" path="res://eny scene/slime/slime.tscn" id="24_douw1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ag6bu"]
 texture = ExtResource("2_fvtbc")
@@ -347,3 +351,15 @@ position = Vector2(1113, 1035)
 
 [node name="wooper" parent="." instance=ExtResource("20_ybs3n")]
 position = Vector2(1070, 1013)
+
+[node name="bluestone2" parent="." instance=ExtResource("21_cc133")]
+position = Vector2(1559, 1171)
+
+[node name="Nubert" parent="." instance=ExtResource("22_ceweu")]
+position = Vector2(868, 961)
+
+[node name="Node2D" parent="." instance=ExtResource("23_y751u")]
+position = Vector2(962, 1057)
+
+[node name="slimered" parent="." instance=ExtResource("24_douw1")]
+position = Vector2(1113, 1158)

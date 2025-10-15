@@ -1,3 +1,29 @@
+<h2 style="text-transform: uppercase;">dev log 1</h2>
+
+```bash
+
+@pravinakrishnan2578: Add some more enemiessssssss. 👿😈
+
+```
+
+<h2 style="text-transform: uppercase;">dev log 2</h2>
+
+```bash
+
+@SnoutWorks i sub
+@ItsTriphyophyllum “Orange cat simulator”
+
+```
+
+<h2 style="text-transform: uppercase;">dev log 3</h2>
+
+```bash
+
+@SnoutWorks add a boss
+
+```
+
+
 <h2 style="text-transform: uppercase;">dev log 18</h2>
 
 ```bash 
@@ -88,11 +114,13 @@ and attacks you. It should also be quite rare if you can do that’
 
 
 @Tothendoforever commented: ‘You should add attackible bubbles of infection (the infection from HK)
- that you can burst by attacking’
+ that you can burst by attacking’✅
 
 @loganplays42 commented: ‘Thanks for mentioning me, can you make a boss room with the boss from 
-Hollow Knight called "The Hollow Knight" in it where you can unlock the knight after beating it’
+Hollow Knight called "The Hollow Knight" in it where you can unlock the knight after beating it’ ✅
 
-@SnoutWorks Add a guy on a skate board as a character   
+@SnoutWorks Add a guy on a skate board as a character   ✅
+
+
 
 ```
