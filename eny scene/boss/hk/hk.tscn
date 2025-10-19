@@ -203,7 +203,6 @@ script = ExtResource("5_6a3qx")
 position = Vector2(5, 28)
 scale = Vector2(0.605486, 0.605486)
 sprite_frames = SubResource("SpriteFrames_vn4ik")
-animation = &"ack1"
 offset = Vector2(-6, -64)
 
 [node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
