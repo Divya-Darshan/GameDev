@@ -124,3 +124,18 @@ Hollow Knight called "The Hollow Knight" in it where you can unlock the knight a
 
 
 ```
+
+<h2 style="text-transform: uppercase;">dev log 23</h2>
+```bash 
+
+@Tothendoforever commented: ‘You should add hell’
+
+@CallmeKerosene commented: ‘Add Sherma from silk song’
+
+@SnoutWorks commented: ‘add a angry bird’
+
+@loganplays42 replied: ‘​@darshniDevI like it :) You should add the ability
+ to seal the Hollow knight when you beat him by gathering the 3 dreamers
+ before the boss fight and fight the Hollow knight
+
+```

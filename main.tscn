@@ -356,7 +356,7 @@ position = Vector2(1070, 1013)
 position = Vector2(1559, 1171)
 
 [node name="Nubert" parent="." instance=ExtResource("22_ceweu")]
-position = Vector2(868, 961)
+position = Vector2(560, 229)
 
 [node name="Node2D" parent="." instance=ExtResource("23_y751u")]
 position = Vector2(962, 1057)
