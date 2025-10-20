@@ -126,6 +126,7 @@ Hollow Knight called "The Hollow Knight" in it where you can unlock the knight a
 ```
 
 <h2 style="text-transform: uppercase;">dev log 23</h2>
+
 ```bash 
 
 @Tothendoforever commented: ‘You should add hell’
