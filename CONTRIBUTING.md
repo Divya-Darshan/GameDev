@@ -135,7 +135,7 @@ Hollow Knight called "The Hollow Knight" in it where you can unlock the knight a
 
 @SnoutWorks commented: ‘add a angry bird’
 
-@loganplays42 replied: ‘​@darshniDevI like it :) You should add the ability
+@loganplays42 replied: ‘​@darshniDevI like it :) for  You should add the ability
  to seal the Hollow knight when you beat him by gathering the 3 dreamers
  before the boss fight and fight the Hollow knight
 
