@@ -129,11 +129,11 @@ Hollow Knight called "The Hollow Knight" in it where you can unlock the knight a
 
 ```bash 
 
-@Tothendoforever commented: ‘You should add hell’
+@Tothendoforever commented: ‘You should add hell’✅
 
 @CallmeKerosene commented: ‘Add Sherma from silk song’
 
-@SnoutWorks commented: ‘add a angry bird’
+@SnoutWorks commented: ‘add a angry bird’✅
 
 @loganplays42 replied: ‘​@darshniDevI like it :) for  You should add the ability
  to seal the Hollow knight when you beat him by gathering the 3 dreamers
