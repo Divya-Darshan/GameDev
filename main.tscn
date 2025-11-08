@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=29 format=4 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_a618g"]
 [ext_resource type="Script" path="res://manager/manage_game.gd" id="1_iwro6"]
@@ -24,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://blklxyxafs82k" path="res://entity/Nubert/nubert.tscn" id="22_ceweu"]
 [ext_resource type="PackedScene" uid="uid://bovaklmxxunrw" path="res://eny scene/slime/watersilme.tscn" id="23_y751u"]
 [ext_resource type="PackedScene" uid="uid://cqmou4vv11s08" path="res://eny scene/slime/slime.tscn" id="24_douw1"]
+[ext_resource type="PackedScene" uid="uid://v0rshmcy8akb" path="res://npc/sh/shrema.tscn" id="25_gh4w3"]
+[ext_resource type="Texture2D" uid="uid://c6w48r4qgvr7y" path="res://npc/Shinchan_in_the_directors_seat.webp" id="26_uce5n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ag6bu"]
 texture = ExtResource("2_fvtbc")
@@ -369,3 +371,11 @@ position = Vector2(962, 1057)
 
 [node name="slimered" parent="." instance=ExtResource("24_douw1")]
 position = Vector2(1113, 1158)
+
+[node name="slimered2" parent="." instance=ExtResource("25_gh4w3")]
+position = Vector2(1211, 1046)
+
+[node name="ShinchanInTheDirectorsSeat" type="Sprite2D" parent="."]
+position = Vector2(1370, 752)
+scale = Vector2(0.163114, 0.163114)
+texture = ExtResource("26_uce5n")
