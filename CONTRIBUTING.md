@@ -140,3 +140,20 @@ Hollow Knight called "The Hollow Knight" in it where you can unlock the knight a
  before the boss fight and fight the Hollow knight
 
 ```
+<h2 style="text-transform: uppercase;">dev log 23</h2>
+
+```bash
+
+@JotSran-w6q commented: ‘Add shinchan’
+
+@Tothendoforever commented: ‘You should add hell’
+
+@JotSran-w6q Add Doreamon gadgets so basically u have to find
+them around the map hidden and they all do don't unique while using Doreamon character
+like u cant use those if not using Doreamon
+
+@ItsTriphyophyllum Add path of pain!
+
+@SnoutWorks add Freddy fazbear
+
+```
