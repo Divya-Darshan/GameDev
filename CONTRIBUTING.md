@@ -157,3 +157,19 @@ like u cant use those if not using Doreamon
 @SnoutWorks add Freddy fazbear
 
 ```
+<h2 style="text-transform: uppercase;">dev log 24</h2>
+
+```bash 
+
+@SnoutWorks commented: ‘Thanks for adding Freddy Fazbear.
+If possible could you make him jump scare you when he attacks you: 
+	just make a image of Freddy go on the screen for a second’
+	
+	
+@spectre-b2d commented: ‘Do noob from roblox’
+
+
+@spectre-b2d forgot to say make him drink a bloxy cola where it will give him speed
+
+
+```
