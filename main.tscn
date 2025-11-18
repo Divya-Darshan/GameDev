@@ -366,7 +366,7 @@ position = Vector2(1113, 1035)
 position = Vector2(1070, 1013)
 
 [node name="bluestone2" parent="." instance=ExtResource("21_cc133")]
-position = Vector2(1559, 1171)
+position = Vector2(1879, 1297)
 
 [node name="Nubert" parent="." instance=ExtResource("22_ceweu")]
 position = Vector2(560, 229)
