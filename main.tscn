@@ -407,3 +407,6 @@ texture = ExtResource("30_ylic1")
 
 [node name="colo" parent="." instance=ExtResource("31_0brs7")]
 position = Vector2(1409, 870)
+
+[node name="Nubert2" parent="." instance=ExtResource("22_ceweu")]
+position = Vector2(1461, 955)
