@@ -173,3 +173,18 @@ If possible could you make him jump scare you when he attacks you:
 
 
 ```
+
+<h2 style="text-transform: uppercase;">dev log 25</h2>
+
+```bash 
+
+@DivyaDarshan20 replied: ‘If he add starve i subscribe’
+
+@star_dust_kitty commented: ‘Its Roblox not woblox’ : my replay is ok 👍
+
+@SnoutWorks commented: ‘whats the new project going to be’
+
+@RedDevilOG commented: ‘Hi can you add Steve from minecraft’ 
+
+
+```
