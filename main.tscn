@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://xdwundx3x7v2"]
+[gd_scene load_steps=35 format=4 uid="uid://xdwundx3x7v2"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_a618g"]
 [ext_resource type="Script" path="res://manager/manage_game.gd" id="1_iwro6"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://dviuokr6lc5bs" path="res://icon/pain.png" id="29_okufl"]
 [ext_resource type="Texture2D" uid="uid://cavhqdra5arud" path="res://icon/TwoTimeWikiRenderV2.webp" id="30_ylic1"]
 [ext_resource type="PackedScene" uid="uid://ovmeijnqydcf" path="res://char scene/nood/colo.tscn" id="31_0brs7"]
+[ext_resource type="PackedScene" uid="uid://dpw2bdn8qwgr3" path="res://eny scene/boss/bluestone/bluestone.tscn" id="32_udfvf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ag6bu"]
 texture = ExtResource("2_fvtbc")
@@ -410,3 +411,6 @@ position = Vector2(1409, 870)
 
 [node name="Nubert2" parent="." instance=ExtResource("22_ceweu")]
 position = Vector2(1461, 955)
+
+[node name="bluestone3" parent="." instance=ExtResource("32_udfvf")]
+position = Vector2(2573, 1290)
