@@ -372,9 +372,7 @@ shape = SubResource("CircleShape2D_vargi")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_fh5tc")
-animation = &"hit"
-frame = 3
-frame_progress = 1.0
+animation = &"run"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
