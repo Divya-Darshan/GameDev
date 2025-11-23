@@ -186,5 +186,11 @@ If possible could you make him jump scare you when he attacks you:
 
 @RedDevilOG commented: ‘Hi can you add Steve from minecraft’ 
 
+```
+<h2 style="text-transform: uppercase;">dev log 26</h2>
+
+```bash  
+
+@JimbobDiddyjob: WAIT MAKE job application PLEASE
 
 ```
