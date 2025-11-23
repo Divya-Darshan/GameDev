@@ -26,7 +26,7 @@
 
 ### 🚀 **Download Android APK**
 
-<a href="https://github.com/Divya-Darshan/Eagle/raw/refs/heads/main/app/eagle.apk">
+<a href="https://raw.githubusercontent.com/Divya-Darshan/GameDev/main/app/app.apk">
   <img src="https://img.shields.io/badge/Download%20APK-1C7CFF?style=for-the-badge&logo=android&logoColor=white&labelColor=0A0A0A&color=1C7CFF" height="130"/>
 </a>
 
