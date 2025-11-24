@@ -32,6 +32,13 @@
 
 <br><br>
 
+<a href="https://gamedev-web.netlify.app/" target="_blank">
+  <img src="https://img.shields.io/badge/Play%20in%20Browser%20(Netlify)-00C7B7?style=for-the-badge&logo=netlify&logoColor=white&labelColor=0A0A0A&color=00C7B7" height="130"/>
+</a>
+
+
+<br><br>
+
 ### 🎮 **Play on Itch.io**
 
 <a href="#">
