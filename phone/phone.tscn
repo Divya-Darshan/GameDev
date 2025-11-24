@@ -1,7 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://m475603kr452"]
+[gd_scene load_steps=16 format=3 uid="uid://m475603kr452"]
 
 [ext_resource type="Script" path="res://phone/phone.gd" id="1_20kl2"]
 [ext_resource type="Texture2D" uid="uid://c8p880ms3aiod" path="res://phone/IBrick_13/2B.png" id="1_umuwb"]
+[ext_resource type="Texture2D" uid="uid://di16fptvvt76r" path="res://phone/icons/Small (24x24) PNG/Amazon Shopping.png" id="3_sp0oj"]
+[ext_resource type="Texture2D" uid="uid://cvy34vo7rrt05" path="res://phone/icons/Small (24x24) PNG/Discord.png" id="4_ipmcy"]
+[ext_resource type="Texture2D" uid="uid://ckj7wcbltjjdb" path="res://phone/icons/Small (24x24) PNG/Duolingo.png" id="5_fi22e"]
+[ext_resource type="Texture2D" uid="uid://cppske56iicby" path="res://phone/icons/Small (24x24) PNG/Facebook.png" id="6_hl20p"]
+[ext_resource type="Texture2D" uid="uid://c1j5joogxssq0" path="res://phone/icons/Small (24x24) PNG/Firefox.png" id="7_eudfm"]
+[ext_resource type="Texture2D" uid="uid://c5gk4mdjpw7dt" path="res://phone/icons/Small (24x24) PNG/Gmail.png" id="8_goa7o"]
+[ext_resource type="Texture2D" uid="uid://cgrrx8gqawv" path="res://phone/icons/Small (24x24) PNG/Google Calendar.png" id="9_i3j20"]
+[ext_resource type="Texture2D" uid="uid://b6fqyl2fc3u1o" path="res://phone/icons/Small (24x24) PNG/Google Chrome.png" id="10_mvmaj"]
+[ext_resource type="Texture2D" uid="uid://drr0xexe2uvvj" path="res://phone/icons/Small (24x24) PNG/Google Fit.png" id="11_fe7eu"]
+[ext_resource type="Texture2D" uid="uid://cei81tp0d565w" path="res://phone/icons/Small (24x24) PNG/Instagram.png" id="12_ni5bh"]
+[ext_resource type="Texture2D" uid="uid://cdut0qe115gi" path="res://phone/icons/Small (24x24) PNG/Itch io.png" id="13_g5s42"]
+[ext_resource type="Texture2D" uid="uid://d3a8045fh18b" path="res://phone/icons/Small (24x24) PNG/Ko Fi.png" id="14_vsl4g"]
+[ext_resource type="Texture2D" uid="uid://xv7ujadjg7ob" path="res://phone/icons/Small (24x24) PNG/Youtube.png" id="15_0pj4f"]
 
 [node name="phone" type="Node2D"]
 modulate = Color(1, 0.882353, 1, 1)
@@ -13,3 +26,88 @@ position = Vector2(-55, 3)
 scale = Vector2(1.82973, 1.82973)
 texture = ExtResource("1_umuwb")
 offset = Vector2(-0.33, 0)
+
+[node name="row1" type="Node2D" parent="2b"]
+position = Vector2(-0.546509, -124.062)
+scale = Vector2(0.550862, 0.550862)
+
+[node name="AmazonShopping" type="Sprite2D" parent="2b/row1"]
+position = Vector2(-87.349, 2.82825)
+scale = Vector2(1.82973, 1.82973)
+texture = ExtResource("3_sp0oj")
+
+[node name="Discord" type="Sprite2D" parent="2b/row1"]
+position = Vector2(0.650957, 2.82825)
+scale = Vector2(1.82973, 1.82973)
+texture = ExtResource("4_ipmcy")
+
+[node name="Duolingo" type="Sprite2D" parent="2b/row1"]
+position = Vector2(88.651, 2.82823)
+scale = Vector2(1.82973, 1.82973)
+texture = ExtResource("5_fi22e")
+
+[node name="row2" type="Node2D" parent="2b"]
+position = Vector2(-0.546509, -89.0842)
+scale = Vector2(0.550862, 0.550862)
+
+[node name="AmazonShopping" type="Sprite2D" parent="2b/row2"]
+position = Vector2(-87.349, 2.82825)
+scale = Vector2(1.82973, 1.82973)
+texture = ExtResource("6_hl20p")
+
+[node name="Discord" type="Sprite2D" parent="2b/row2"]
+position = Vector2(0.650957, 2.82825)
+scale = Vector2(1.82973, 1.82973)
+texture = ExtResource("7_eudfm")
+
+[node name="Duolingo" type="Sprite2D" parent="2b/row2"]
+position = Vector2(88.651, 2.82823)
+scale = Vector2(1.82973, 1.82973)
+texture = ExtResource("8_goa7o")
+
+[node name="row3" type="Node2D" parent="2b"]
+position = Vector2(-0.546509, -54.1063)
+scale = Vector2(0.550862, 0.550862)
+
+[node name="AmazonShopping" type="Sprite2D" parent="2b/row3"]
+position = Vector2(-87.349, 2.82825)
+scale = Vector2(1.82973, 1.82973)
+texture = ExtResource("9_i3j20")
+
+[node name="Discord" type="Sprite2D" parent="2b/row3"]
+position = Vector2(0.650957, 2.82825)
+scale = Vector2(1.82973, 1.82973)
+texture = ExtResource("10_mvmaj")
+
+[node name="Duolingo" type="Sprite2D" parent="2b/row3"]
+position = Vector2(88.651, 2.82823)
+scale = Vector2(1.82973, 1.82973)
+texture = ExtResource("11_fe7eu")
+
+[node name="row4" type="Node2D" parent="2b"]
+position = Vector2(-0.546509, -19.1285)
+scale = Vector2(0.550862, 0.550862)
+
+[node name="AmazonShopping" type="Sprite2D" parent="2b/row4"]
+position = Vector2(-87.349, 2.82825)
+scale = Vector2(1.82973, 1.82973)
+texture = ExtResource("12_ni5bh")
+
+[node name="Discord" type="Sprite2D" parent="2b/row4"]
+position = Vector2(0.650957, 2.82825)
+scale = Vector2(1.82973, 1.82973)
+texture = ExtResource("13_g5s42")
+
+[node name="Duolingo" type="Sprite2D" parent="2b/row4"]
+position = Vector2(88.651, 2.82823)
+scale = Vector2(1.82973, 1.82973)
+texture = ExtResource("14_vsl4g")
+
+[node name="row5" type="Node2D" parent="2b"]
+position = Vector2(-0.546509, 15.8493)
+scale = Vector2(0.550862, 0.550862)
+
+[node name="AmazonShopping" type="Sprite2D" parent="2b/row5"]
+position = Vector2(-87.349, 2.82825)
+scale = Vector2(1.82973, 1.82973)
+texture = ExtResource("15_0pj4f")
