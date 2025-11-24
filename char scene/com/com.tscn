@@ -114,7 +114,7 @@ position = Vector2(-9.83722, -25.0119)
 scale = Vector2(0.371576, 0.371576)
 sprite_frames = SubResource("SpriteFrames_fh5tc")
 animation = &"run"
-frame_progress = 0.959684
+frame_progress = 0.536127
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
