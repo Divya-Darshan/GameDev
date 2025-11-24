@@ -4,6 +4,7 @@ extends Node2D
 @onready var select_button = $HBoxContainer/TouchScreenButton
 
 var characters = [
+	preload("res://char scene/job/job.tscn"),
 	preload("res://char scene/Steve/Steve.tscn"),
 	preload("res://char scene/nood/noob.tscn"),
 	preload("res://char scene/bird/bird.tscn"),

@@ -191,11 +191,13 @@ If possible could you make him jump scare you when he attacks you:
 
 ```bash  
 
+@SnoutWorks commented: ‘why do you goon to Steve 😭🥀. Also the Google play store is really good.’ ✅
+
 @fishzzzzz Hi! do you think you could add Sancho from limbus company? maybe Captain ahab's ego too?
- great game btw this is looking peak
+ great game btw this is looking peak 
 
-@RedDevilOG commented: ‘🤔🤔💭💭 I wonder why he glazed Steve so much’
+@RedDevilOG commented: ‘🤔🤔💭💭 I wonder why he glazed Steve so much’  ✅
 
-@JimbobDiddyjob: WAIT MAKE job application PLEASE
+@JimbobDiddyjob: WAIT MAKE job application PLEASE ✅
 
 ```

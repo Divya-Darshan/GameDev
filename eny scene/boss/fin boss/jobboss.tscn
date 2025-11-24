@@ -1,0 +1,130 @@
+[gd_scene load_steps=12 format=3 uid="uid://cmfnscmorbvm3"]
+
+[ext_resource type="Script" path="res://eny scene/boss/helldemon/helldemon.gd" id="1_a7agp"]
+[ext_resource type="Texture2D" uid="uid://djpd25pwallw8" path="res://char scene/shadow.png" id="2_n8eos"]
+[ext_resource type="Texture2D" uid="uid://bdbbn2i4wskfr" path="res://uibtn/probase.tres" id="3_uk80p"]
+[ext_resource type="Texture2D" uid="uid://bfey0hscp0qvc" path="res://uibtn/proover.tres" id="4_2op2l"]
+[ext_resource type="Script" path="res://eny script/progresseny.gd" id="5_a7boo"]
+[ext_resource type="Texture2D" uid="uid://b4to3yff0jmum" path="res://char scene/job/9zwb5t.webp" id="6_jkmlk"]
+[ext_resource type="AudioStream" uid="uid://c85g2sc5bkray" path="res://sfx/character/slash.wav" id="7_kdubm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eyut2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dtnvt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34ddi"]
+size = Vector2(22.0488, 21.4146)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vn4ik"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jkmlk")
+}],
+"loop": true,
+"name": &"ack1",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jkmlk")
+}],
+"loop": false,
+"name": &"death",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jkmlk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jkmlk")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jkmlk")
+}],
+"loop": true,
+"name": &"run",
+"speed": 18.0
+}]
+
+[node name="jobboss" type="CharacterBody2D"]
+light_mask = 2
+visibility_layer = 2
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_a7agp")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.435294)
+position = Vector2(-1.05454, 11.8672)
+rotation = -3.14035
+scale = Vector2(1.13864, 0.0574804)
+texture = ExtResource("2_n8eos")
+offset = Vector2(-3.95776, -302.63)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 12)
+scale = Vector2(3.6425, 2.86318)
+shape = SubResource("CircleShape2D_eyut2")
+
+[node name="range" type="Area2D" parent="."]
+position = Vector2(-1.5, 29.5)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
+position = Vector2(0.5, -39.5)
+scale = Vector2(31.7939, 31.7939)
+shape = SubResource("CircleShape2D_dtnvt")
+
+[node name="hitbox" type="Area2D" parent="."]
+position = Vector2(-1, 29)
+scale = Vector2(2.60693, 2.22343)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -42)
+scale = Vector2(3.8602, 4.58298)
+shape = SubResource("RectangleShape2D_34ddi")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -46.0
+offset_top = 26.0
+offset_right = 21.0
+offset_bottom = 66.0
+scale = Vector2(1.35092, 1.35092)
+value = 100.0
+texture_under = ExtResource("3_uk80p")
+texture_progress = ExtResource("4_2op2l")
+tint_under = Color(0, 0, 0, 1)
+tint_progress = Color(1, 1, 0, 1)
+script = ExtResource("5_a7boo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -28)
+scale = Vector2(0.217083, 0.217083)
+sprite_frames = SubResource("SpriteFrames_vn4ik")
+animation = &"ack1"
+offset = Vector2(-6, -64)
+
+[node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, 29)
+stream = ExtResource("7_kdubm")
+volume_db = -5.0
+
+[connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
