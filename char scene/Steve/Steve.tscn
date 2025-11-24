@@ -71,7 +71,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 4.0
+"speed": 8.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_je7n3"]
@@ -121,6 +121,8 @@ texture_filter = 1
 position = Vector2(0, -9)
 scale = Vector2(0.0365523, 0.0365523)
 sprite_frames = SubResource("SpriteFrames_fh5tc")
+animation = &"run"
+frame_progress = 0.885908
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
