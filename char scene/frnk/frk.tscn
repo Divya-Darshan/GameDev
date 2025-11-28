@@ -1,34 +1,28 @@
-[gd_scene load_steps=19 format=3 uid="uid://b57ih7g70ucqe"]
+[gd_scene load_steps=25 format=3 uid="uid://br0x6jf2shgrd"]
 
-[ext_resource type="Script" path="res://player scripts/sem.gd" id="1_rjlu0"]
-[ext_resource type="Texture2D" uid="uid://djpd25pwallw8" path="res://char scene/shadow.png" id="2_7lqdl"]
-[ext_resource type="Texture2D" uid="uid://b42gng5widt0n" path="res://char scene/com/sprite-comparison-v0-65dn4a0i0rwd1.webp" id="3_ux88v"]
-[ext_resource type="Texture2D" uid="uid://bdbbn2i4wskfr" path="res://uibtn/probase.tres" id="4_xceku"]
-[ext_resource type="Texture2D" uid="uid://bfey0hscp0qvc" path="res://uibtn/proover.tres" id="5_40o4n"]
-[ext_resource type="Script" path="res://player scripts/progressbar/progressbar.gd" id="6_xajg8"]
-[ext_resource type="Texture2D" uid="uid://begt7h836uh8o" path="res://uibtn/GUI.png" id="7_xpuig"]
-[ext_resource type="FontFile" uid="uid://b07xmv84cnmcm" path="res://fonts/m6x11.ttf" id="8_bthvd"]
-[ext_resource type="AudioStream" uid="uid://c85g2sc5bkray" path="res://sfx/character/slash.wav" id="9_wr2bb"]
+[ext_resource type="Script" path="res://player scripts/sem.gd" id="1_6hxfd"]
+[ext_resource type="Texture2D" uid="uid://djpd25pwallw8" path="res://char scene/shadow.png" id="2_q2d00"]
+[ext_resource type="Texture2D" uid="uid://dti3qdsqn311f" path="res://char scene/frnk/idle.png" id="3_uu0wt"]
+[ext_resource type="Texture2D" uid="uid://7qnaj6wr4eyp" path="res://char scene/frnk/run/0001.png" id="4_0by67"]
+[ext_resource type="Texture2D" uid="uid://bdbbn2i4wskfr" path="res://uibtn/probase.tres" id="4_tb548"]
+[ext_resource type="Texture2D" uid="uid://c1y7jmmkctmtx" path="res://char scene/frnk/run/0002.png" id="5_e1jao"]
+[ext_resource type="Texture2D" uid="uid://bfey0hscp0qvc" path="res://uibtn/proover.tres" id="5_kmsqu"]
+[ext_resource type="Script" path="res://player scripts/progressbar/progressbar.gd" id="6_brags"]
+[ext_resource type="Texture2D" uid="uid://tq7dqnluwcgu" path="res://char scene/frnk/run/0003.png" id="6_f83fm"]
+[ext_resource type="Texture2D" uid="uid://begt7h836uh8o" path="res://uibtn/GUI.png" id="7_0a05n"]
+[ext_resource type="Texture2D" uid="uid://6lcnca5dva45" path="res://char scene/frnk/run/0004.png" id="7_6o784"]
+[ext_resource type="Texture2D" uid="uid://dcpfyw6uin6r8" path="res://char scene/frnk/run/0005.png" id="8_eoog3"]
+[ext_resource type="FontFile" uid="uid://b07xmv84cnmcm" path="res://fonts/m6x11.ttf" id="8_uf3o0"]
+[ext_resource type="Texture2D" uid="uid://0f5c3i8158ie" path="res://char scene/frnk/run/0006.png" id="9_qs7r3"]
+[ext_resource type="AudioStream" uid="uid://c85g2sc5bkray" path="res://sfx/character/slash.wav" id="9_tuihb"]
+[ext_resource type="Texture2D" uid="uid://1srkqr3f63no" path="res://char scene/frnk/run/0007.png" id="10_touc7"]
+[ext_resource type="Texture2D" uid="uid://d0oj3c2dxpo3u" path="res://char scene/frnk/run/0008.png" id="11_6eink"]
+[ext_resource type="Texture2D" uid="uid://csbj08et7a5j5" path="res://char scene/frnk/run/0009.png" id="12_46bfi"]
+[ext_resource type="Texture2D" uid="uid://dvxvc0m583nup" path="res://char scene/frnk/run/0010.png" id="13_50h0t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_efksp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vargi"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5rf13"]
-atlas = ExtResource("3_ux88v")
-region = Rect2(0, 255, 270, 226)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jetn3"]
-atlas = ExtResource("3_ux88v")
-region = Rect2(0, 481, 270, 226)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_id356"]
-atlas = ExtResource("3_ux88v")
-region = Rect2(0, 29, 270, 226)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_666g6"]
-atlas = ExtResource("3_ux88v")
-region = Rect2(540, 29, 270, 226)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fh5tc"]
 animations = [{
@@ -44,7 +38,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5rf13")
+"texture": ExtResource("3_uu0wt")
 }],
 "loop": true,
 "name": &"default",
@@ -57,32 +51,53 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jetn3")
+"texture": ExtResource("4_0by67")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_id356")
+"texture": ExtResource("5_e1jao")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_666g6")
+"texture": ExtResource("6_f83fm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6o784")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_eoog3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qs7r3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_touc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6eink")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_46bfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_50h0t")
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 17.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_je7n3"]
-atlas = ExtResource("7_xpuig")
+atlas = ExtResource("7_0a05n")
 region = Rect2(144.906, 81.1251, 46.1627, 13.9238)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uwoqy"]
-atlas = ExtResource("7_xpuig")
+atlas = ExtResource("7_0a05n")
 region = Rect2(144.898, 97.9193, 46.1961, 13.306)
 
 [node name="com" type="CharacterBody2D"]
 position = Vector2(0, 1)
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_rjlu0")
+script = ExtResource("1_6hxfd")
 
 [node name="hitbox" type="Area2D" parent="."]
 visible = false
@@ -100,21 +115,20 @@ self_modulate = Color(1, 1, 1, 0.435294)
 position = Vector2(11.7028, 11.9881)
 rotation = -3.14035
 scale = Vector2(0.263587, -0.0480756)
-texture = ExtResource("2_7lqdl")
+texture = ExtResource("2_q2d00")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-5.96046e-08, -0.999999)
+position = Vector2(13, -1)
 rotation = -6.28319
-scale = Vector2(0.631421, 0.631421)
+scale = Vector2(1.35159, 1.35159)
 shape = SubResource("CircleShape2D_vargi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-9.83722, -25.0119)
-scale = Vector2(0.371576, 0.371576)
+position = Vector2(9, -22)
+scale = Vector2(0.779249, 0.779249)
 sprite_frames = SubResource("SpriteFrames_fh5tc")
 animation = &"run"
-frame_progress = 0.787746
+frame_progress = 0.870413
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -127,10 +141,10 @@ offset_bottom = 150.0
 scale = Vector2(6.07231, 6.07231)
 pivot_offset = Vector2(30.88, 20.585)
 value = 100.0
-texture_under = ExtResource("4_xceku")
-texture_progress = ExtResource("5_40o4n")
+texture_under = ExtResource("4_tb548")
+texture_progress = ExtResource("5_kmsqu")
 tint_under = Color(0.589096, 0.589096, 0.589096, 1)
-script = ExtResource("6_xajg8")
+script = ExtResource("6_brags")
 metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
@@ -141,6 +155,7 @@ offset_left = -440.0
 offset_right = -440.0
 grow_vertical = 2
 scale = Vector2(1.28388, 1.28388)
+metadata/_edit_use_anchors_ = true
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/HBoxContainer"]
 position = Vector2(24.1456, -161.23)
@@ -156,11 +171,12 @@ offset_bottom = 24.4784
 scale = Vector2(0.598934, 0.598934)
 theme_override_colors/font_color = Color(0.815857, 0.773463, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.176471)
-theme_override_fonts/font = ExtResource("8_bthvd")
+theme_override_fonts/font = ExtResource("8_uf3o0")
 text = "respawns"
+metadata/_edit_use_anchors_ = true
 
 [node name="slashsfx" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_wr2bb")
+stream = ExtResource("9_tuihb")
 volume_db = -1.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
