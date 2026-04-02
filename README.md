@@ -41,7 +41,7 @@
 
 ### 🎮 **Play on Itch.io**
 
-<a href="#">
+<a href="https://darshni.itch.io/gamedev">
   <img src="https://img.shields.io/badge/Play%20on%20Itch.io-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white&labelColor=0A0A0A&color=FA5C5C" height="130"/>
 </a>
 
